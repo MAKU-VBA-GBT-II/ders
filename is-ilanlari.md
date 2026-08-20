@@ -6,7 +6,7 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 - **Son başvuru tarihi:** **`<BAŞVURU SON TARİHİ>`**
 - **İlan tarihi:** `<İLAN TARİHİ>` · **Seçimlerin açıklanması:** `<SEÇİM GÜNÜ>`
 
-> Her ilanın altında, formda istenecek sorular listelenmiştir — başvurmadan önce hazırlıklı olun. Tüm sürecin kuralları `soul.md` §1.4'te.
+> Her ilanın altında, formda istenecek sorular listelenmiştir — başvurmadan önce hazırlıklı olun. Tüm sürecin kuralları dönem planının §1.4.ünde.
 
 ---
 
@@ -207,4 +207,4 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 1. Başvurular `<BAŞVURU SON TARİHİ>`'ne kadar Google Form üzerinden toplanır; geç başvuru alınmaz.
 2. Öğretim elemanı başvuruları değerlendirir: **gerekçenin açıklığı, birinci dönem izleri, sektör tercihleri.**
 3. 6 lider `<SEÇİM GÜNÜ>`'nde ilan edilir; sonuçlar grup `README.md`'lerine işlenir.
-4. Seçilemeyen adaylar P2–P5 numaralarıyla rotasyona katılır — bu bir kayıp değildir; rotasyon herkesin 3 rol denemesini garanti eder (`soul.md` §1.3–§1.4).
+4. Seçilemeyen adaylar P2–P5 numaralarıyla rotasyona katılır — bu bir kayıp değildir; rotasyon herkesin 3 rol denemesini garanti eder (dönem planı §1.3–§1.4).
