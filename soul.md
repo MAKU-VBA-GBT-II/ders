@@ -11,6 +11,14 @@
 
 ---
 
+## 0.1 Açık Görevler (TODO)
+
+- [ ] **Tarih placeholder'larını doldur:** Yukarıdaki takvim notunda listelenen tüm `<...>` placeholder'ları dönem başlamadan önce gerçek değerlerle doldurulacak. Kapsam: `soul.md`, `is-ilanlari.md` ve lokal `vba2-donem-plani.md`.
+  - [ ] `<FORM LİNKİ>` — iş başvuruları için Google Form linki (`is-ilanlari.md` içinde)
+  - [ ] İsteğe bağlı: dönem haritasındaki hafta aralıklarının akademik takvime eşlenmesi (H1 = hangi tarih … H15 = hangi tarih)
+
+---
+
 ## 0. Dersin Bağlamı ve Bu Plan Nasıl Çalışır
 
 **Birinci dönemde ne yaptık:** Her öğrenci bireysel çalıştı — simülasyonlar kurdu, değişkenlerle oynayıp veri üretti, üretilen veriyi analiz etti ve görselleştirdi. Ödevler GitHub üzerinden toplandı; notlandırma eşik esaslıydı (eşiklerin hepsi geçilmezse puan 0).
