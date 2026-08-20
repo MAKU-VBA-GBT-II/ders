@@ -36,9 +36,8 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 
 1. Ad-soyad
 2. Öğrenci numarası
-3. İlgilendiğiniz sektörlerin sıralaması (1'den 6'ya: E-ticaret, Lojistik, Bankacılık, Sigorta, Perakende, Tedarik)
-4. Gerekçe (zorunlu, tek cümle): "Neden **e-ticaret** sektörünün proje lideri olmak istiyorsun?"
-5. (İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)
+3. Gerekçe (zorunlu, tek cümle): "Neden **e-ticaret** sektörünün proje lideri olmak istiyorsun?"
+4. (İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)
 
 ---
 
@@ -68,9 +67,8 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 
 1. Ad-soyad
 2. Öğrenci numarası
-3. İlgilendiğiniz sektörlerin sıralaması (1'den 6'ya: E-ticaret, Lojistik, Bankacılık, Sigorta, Perakende, Tedarik)
-4. Gerekçe (zorunlu, tek cümle): "Neden **lojistik** sektörünün proje lideri olmak istiyorsun?"
-5. (İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)
+3. Gerekçe (zorunlu, tek cümle): "Neden **lojistik** sektörünün proje lideri olmak istiyorsun?"
+4. (İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)
 
 ---
 
@@ -100,9 +98,8 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 
 1. Ad-soyad
 2. Öğrenci numarası
-3. İlgilendiğiniz sektörlerin sıralaması (1'den 6'ya: E-ticaret, Lojistik, Bankacılık, Sigorta, Perakende, Tedarik)
-4. Gerekçe (zorunlu, tek cümle): "Neden **bankacılık** sektörünün proje lideri olmak istiyorsun?"
-5. (İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)
+3. Gerekçe (zorunlu, tek cümle): "Neden **bankacılık** sektörünün proje lideri olmak istiyorsun?"
+4. (İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)
 
 ---
 
@@ -132,9 +129,8 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 
 1. Ad-soyad
 2. Öğrenci numarası
-3. İlgilendiğiniz sektörlerin sıralaması (1'den 6'ya: E-ticaret, Lojistik, Bankacılık, Sigorta, Perakende, Tedarik)
-4. Gerekçe (zorunlu, tek cümle): "Neden **sigorta** sektörünün proje lideri olmak istiyorsun?"
-5. (İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)
+3. Gerekçe (zorunlu, tek cümle): "Neden **sigorta** sektörünün proje lideri olmak istiyorsun?"
+4. (İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)
 
 ---
 
@@ -164,9 +160,8 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 
 1. Ad-soyad
 2. Öğrenci numarası
-3. İlgilendiğiniz sektörlerin sıralaması (1'den 6'ya: E-ticaret, Lojistik, Bankacılık, Sigorta, Perakende, Tedarik)
-4. Gerekçe (zorunlu, tek cümle): "Neden **perakende** sektörünün proje lideri olmak istiyorsun?"
-5. (İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)
+3. Gerekçe (zorunlu, tek cümle): "Neden **perakende** sektörünün proje lideri olmak istiyorsun?"
+4. (İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)
 
 ---
 
@@ -196,9 +191,8 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 
 1. Ad-soyad
 2. Öğrenci numarası
-3. İlgilendiğiniz sektörlerin sıralaması (1'den 6'ya: E-ticaret, Lojistik, Bankacılık, Sigorta, Perakende, Tedarik)
-4. Gerekçe (zorunlu, tek cümle): "Neden **tedarik** sektörünün proje lideri olmak istiyorsun?"
-5. (İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)
+3. Gerekçe (zorunlu, tek cümle): "Neden **tedarik** sektörünün proje lideri olmak istiyorsun?"
+4. (İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)
 
 ---
 
