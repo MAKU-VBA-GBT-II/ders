@@ -6,7 +6,7 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 - **Son başvuru tarihi:** **`<BAŞVURU SON TARİHİ>`**
 - **İlan tarihi:** `<İLAN TARİHİ>` · **Seçimlerin açıklanması:** `<SEÇİM GÜNÜ>`
 
-> Her ilanın altında, formda istenecek sorular listelenmiştir — başvurmadan önce hazırlıklı olun. Tüm sürecin kuralları dönem planının §1.4.ünde.
+> Her ilanın altında, formda istenecek sorular listelenmiştir — başvurmadan önce hazırlıklı olun. Tüm sürecin kuralları dönem planının §1.4'ünde.
 
 ---
 
