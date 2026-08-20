@@ -1,8 +1,7 @@
 # İş İlanları — VBA II (Veri Bilimi ve Analitik)
 
-Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** arıyor. İlanları inceleyin; başvurmak için tek Google Form'u doldurun.
+Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** arıyor. İlanları inceleyin; başvuru linkinizi ilgilendiğiniz ilanın altında bulabilirsiniz.
 
-- **Başvuru:** Google Form → **`<FORM LİNKİ>`**
 - **Son başvuru tarihi:** **`<BAŞVURU SON TARİHİ>`**
 - **İlan tarihi:** `<İLAN TARİHİ>` · **Seçimlerin açıklanması:** `<SEÇİM GÜNÜ>`
 
@@ -30,7 +29,7 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 - Düzenli çalışma alışkanlığı; söz verilen tarihe uyma.
 - Ekip koordinasyonu isteği ve yazılı iletişim becerisi (bu derste işler GitHub üzerinde yürür).
 
-**Başvuru:** Google Form → **`<FORM LİNKİ>`** · Son tarih: **`<BAŞVURU SON TARİHİ>`**
+**Başvuru:** [E-ticaret proje lideri başvuru formunu aç](https://docs.google.com/forms/d/e/1FAIpQLSf-GaDp09US74VwnqFYAiubFZLllU8cla4f4Nvq2ab2pQSf5w/viewform?usp=publish-editor) · Son tarih: **`<BAŞVURU SON TARİHİ>`**
 
 ### Bu ilan için formda istenecek sorular
 
@@ -61,7 +60,7 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 - Düzenli çalışma alışkanlığı; söz verilen tarihe uyma.
 - Ekip koordinasyonu isteği ve yazılı iletişim becerisi (bu derste işler GitHub üzerinde yürür).
 
-**Başvuru:** Google Form → **`<FORM LİNKİ>`** · Son tarih: **`<BAŞVURU SON TARİHİ>`**
+**Başvuru:** [Lojistik proje lideri başvuru formunu aç](https://docs.google.com/forms/d/e/1FAIpQLSftNBcdk2mV206WmFpPxhwnG5KkOni42YCZ5r-6EBLj-uLi2w/viewform?usp=publish-editor) · Son tarih: **`<BAŞVURU SON TARİHİ>`**
 
 ### Bu ilan için formda istenecek sorular
 
@@ -92,7 +91,7 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 - Düzenli çalışma alışkanlığı; söz verilen tarihe uyma.
 - Ekip koordinasyonu isteği ve yazılı iletişim becerisi (bu derste işler GitHub üzerinde yürür).
 
-**Başvuru:** Google Form → **`<FORM LİNKİ>`** · Son tarih: **`<BAŞVURU SON TARİHİ>`**
+**Başvuru:** [Bankacılık proje lideri başvuru formunu aç](https://docs.google.com/forms/d/e/1FAIpQLSeu7ufjOOZZB23VznlYdg1Kdfq01cmTregxOz1I442cwRrQLw/viewform?usp=publish-editor) · Son tarih: **`<BAŞVURU SON TARİHİ>`**
 
 ### Bu ilan için formda istenecek sorular
 
@@ -123,7 +122,7 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 - Düzenli çalışma alışkanlığı; söz verilen tarihe uyma.
 - Ekip koordinasyonu isteği ve yazılı iletişim becerisi (bu derste işler GitHub üzerinde yürür).
 
-**Başvuru:** Google Form → **`<FORM LİNKİ>`** · Son tarih: **`<BAŞVURU SON TARİHİ>`**
+**Başvuru:** [Sigorta proje lideri başvuru formunu aç](https://docs.google.com/forms/d/e/1FAIpQLScaCrSKnvvJ5VF0yPIUdvXS3nEGdPmcE5qljMxlDtKXGKO05w/viewform?usp=publish-editor) · Son tarih: **`<BAŞVURU SON TARİHİ>`**
 
 ### Bu ilan için formda istenecek sorular
 
@@ -154,7 +153,7 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 - Düzenli çalışma alışkanlığı; söz verilen tarihe uyma.
 - Ekip koordinasyonu isteği ve yazılı iletişim becerisi (bu derste işler GitHub üzerinde yürür).
 
-**Başvuru:** Google Form → **`<FORM LİNKİ>`** · Son tarih: **`<BAŞVURU SON TARİHİ>`**
+**Başvuru:** [Perakende proje lideri başvuru formunu aç](https://docs.google.com/forms/d/e/1FAIpQLSdTSXqOV5SMbACVYt_1VVlNlsPz7yMWCoyhGwLTJXCFWg3m7Q/viewform?usp=publish-editor) · Son tarih: **`<BAŞVURU SON TARİHİ>`**
 
 ### Bu ilan için formda istenecek sorular
 
@@ -185,7 +184,7 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 - Düzenli çalışma alışkanlığı; söz verilen tarihe uyma.
 - Ekip koordinasyonu isteği ve yazılı iletişim becerisi (bu derste işler GitHub üzerinde yürür).
 
-**Başvuru:** Google Form → **`<FORM LİNKİ>`** · Son tarih: **`<BAŞVURU SON TARİHİ>`**
+**Başvuru:** [Tedarik proje lideri başvuru formunu aç](https://docs.google.com/forms/d/e/1FAIpQLSeDc5Ycepv6uBh0aqM-kPdciLr7zGaMEL1bAC-VNY4TBsQQIQ/viewform?usp=publish-editor) · Son tarih: **`<BAŞVURU SON TARİHİ>`**
 
 ### Bu ilan için formda istenecek sorular
 
@@ -199,6 +198,6 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 ## Seçim Süreci
 
 1. Başvurular `<BAŞVURU SON TARİHİ>`'ne kadar Google Form üzerinden toplanır; geç başvuru alınmaz.
-2. Öğretim elemanı başvuruları değerlendirir: **gerekçenin açıklığı, birinci dönem izleri, sektör tercihleri.**
+2. Öğretim elemanı başvuruları değerlendirir: **gerekçenin açıklığı, birinci dönem izleri, başvurulan sektörle uyum.**
 3. 6 lider `<SEÇİM GÜNÜ>`'nde ilan edilir; sonuçlar grup `README.md`'lerine işlenir.
 4. Seçilemeyen adaylar P2–P5 numaralarıyla rotasyona katılır — bu bir kayıp değildir; rotasyon herkesin 3 rol denemesini garanti eder (dönem planı §1.3–§1.4).
