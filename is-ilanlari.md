@@ -200,4 +200,7 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 1. Başvurular `<BAŞVURU SON TARİHİ>`'ne kadar Google Form üzerinden toplanır; geç başvuru alınmaz.
 2. Öğretim elemanı başvuruları değerlendirir: **gerekçenin açıklığı, birinci dönem izleri, başvurulan sektörle uyum.**
 3. 6 lider `<SEÇİM GÜNÜ>`'nde ilan edilir; sonuçlar grup `README.md`'lerine işlenir.
-4. Seçilemeyen adaylar P2–P5 numaralarıyla rotasyona katılır — bu bir kayıp değildir; rotasyon herkesin 3 rol denemesini garanti eder (dönem planı §1.3–§1.4).
+4. Seçilen her lider, Hafta 1 içinde kendi şirketi için BE, FE, DA ve QA iş ilanlarını yayımlar.
+5. Adaylar bir veya daha fazla role CV/portföy ile başvurur; CV'ler kamuya açık depoya konmaz.
+6. Liderler başvuruları açıklanmış ölçütlerle değerlendirir, dört kişilik ekiplerini kurar ve listeyi öğretim elemanına onaylatır.
+7. Her öğrenci bir şirkette yer almalıdır; açıkta kalan adayların son yerleştirmesini öğretim elemanı yapar. Ekipteki başlangıç rolleri Görev 1–3 boyunca dönem planı §1.3'e göre döner.
