@@ -10,6 +10,7 @@ Bu klasör, VBA II (Veri Bilimi ve Analitik) dersinin planlama çalışma alanı
 ## Önemli dosyalar
 
 - `vba2-donem-plani.md` — dönem planının Obsidian kopyası (aynı içerik)
+- `ders/AGENTS.md` — bu dosyanın `ders` reposundaki yayını (GitHub'da, öğrenciler görür). **Senkron kuralı:** Plan her değiştiğinde üç kopya birden güncellenmeli: `AGENTS.md` ↔ `vba2-donem-plani.md` ↔ `ders/AGENTS.md` (sonuncusu commit + push gerektirir).
 - `ders/is-ilanlari.md` — 6 proje lideri iş ilanı (GitHub'da)
 - `group-a` … `group-f` — öğrenci repolarının lokal kopyaları
 
