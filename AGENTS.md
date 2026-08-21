@@ -48,6 +48,7 @@ Bu klasör, VBA II (Veri Bilimi ve Analitik) dersinin planlama çalışma alanı
 2. GitHub terimleri (Issue, Pull Request, commit vb.) İngilizce bırakılmıştır; anlamı ve nasıl yapılacağı §2'deki sözlükte anlatılmıştır. Anlamadığınız terimde önce §2'ye bakın.
 3. Her talimat kontrol edilebilir bir çıktı üretir: ya depoda (repository) vardır ya da yoktur. Notlandırma bu izlere göre yapılır.
 4. Belgede geçen "Görev 1 / Görev 2 / Görev 3" dönemin üç küçük ekip görevidir; commit ve etiketlerde kısaltma olarak `gorev1`, `gorev2`, `gorev3` kullanılır.
+5. Yapay zekâ araçları (ChatGPT, Copilot vb.) serbesttir. Teslim edilen işin doğruluğu, şemaya uyumu ve GitHub'daki iz sizin sorumluluğunuzdadır; "araç yaptı" mazeret değildir.
 
 **Dönem haritası (tek bakışta):**
 
@@ -295,7 +296,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
    |---|---|---|
    | `G1-veri — Sektör verisini üret` | BE | `data/<sektor-verisi>.csv` depoda: en az 100 satır, sektör şeması `docs/veri-sozlugu-g1.md` içinde yazılı. |
     | `G1-analiz — Metrikleri hesapla ve bulguları yaz` | DA | `docs/analiz-g1.md` depoda: en az 5 metrik (en az ikisi kırılımlı), her birinin yorumu ve bulgular bölümü mevcut. |
-   | `G1-gorsel — 2 grafik üret` | FE | Sektöre uygun 2 PNG grafik `/visuals` içinde; grafikler BE'nin verisinden üretilmiş. |
+    | `G1-gorsel — 2 grafik üret` | FE | 2 PNG grafik `/visuals` içinde: biri zaman serisi, diğeri kırılım; başlık ve eksen etiketi var; BE verisinden üretilmiş. |
    | `G1-test — Veri kalitesi testleri` | QA | `tests/test-cases.md` en az 5 senaryo içeriyor. |
 
 2. 4 Issue'yu panoya ekleyip `To Do` sütununa koyun; hafta boyunca kartların doğru sütunda olduğunu her gün kontrol edin.
@@ -303,8 +304,8 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 **BE şu adımları uygular:**
 
-1. DA ile birlikte şirketin sektörüne uygun veri kümesini ve şemasını kesinleştirin. Simülasyon betiğini `/src` içine yazın; veri üretimi tekrarlanabilir olmalıdır.
-2. `data/<sektor-verisi>.csv` dosyasını üretin. Alan adları, tipler, aralıklar, kategori değerleri, birimler ve satır sayısı `docs/veri-sozlugu-g1.md` içinde yazılı olmalıdır.
+1. DA ile birlikte şirketin sektörüne uygun veri kümesini ve şemasını kesinleştirin. Simülasyon betiğini `/src` içine yazın; veri üretimi **sabit tohumla tekrarlanabilir** olmalıdır (aynı tohum → aynı dosya).
+2. `data/<sektor-verisi>.csv` dosyasını üretin. **En az 6 alan** bulunmalıdır: kimlik, tarih, ana kategorik alan, en az 2 sayısal alan ve en az bir ek alan (birim fiyat, mesafe, durum vb.). Alan adları, tipler, aralıklar, kategori değerleri, birimler ve satır sayısı `docs/veri-sozlugu-g1.md` içinde yazılı olmalıdır.
 3. Dosyada en az 100 veri satırı ve sektörün ana kategorik alanında en az 4 farklı değer bulunmalıdır. Commit mesajına veya Issue yorumuna dosya yolunu, satır sayısını ve şemayı yazın.
 4. **Devir teslim yorumu (notlandırılır):** `G1-analiz` ve `G1-gorsel` Issue'larının her birine şu bilgileri yazın: *"Veri hazır — commit `<hash>`. Dosya: `data/<sektor-verisi>.csv` (<satır sayısı> satır). Şema: `docs/veri-sozlugu-g1.md`."* Bu yorum, DA ve FE'nin başlayabileceği resmî devir teslimdir.
 
@@ -329,7 +330,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 1. Grafikleri **yapmadan önce** iki grafik için taslak hazırlayın; eksenleri, başlıkları ve gösterilecek metriği belirtin.
 2. Taslağın fotoğrafını veya ekran görüntüsünü `G1-gorsel` Issue'suna ekleyin. **Taslak eklenmeden grafik yapımına başlamak kural ihlalidir.**
-3. Sektöre uygun iki grafiği PNG olarak `/visuals` klasörüne kaydedin. Dosya adları grafiğin içeriğini açıklamalıdır; örneğin `gunluk-ciro.png`, `rota-yogunlugu.png` veya `tedarikci-gecikme.png`.
+3. Sektöre uygun iki grafiği PNG olarak `/visuals` klasörüne kaydedin. **Biri zaman serisi, diğeri kategorik kırılım** olmalıdır. Her grafikte başlık, eksen etiketi ve birim bulunmalıdır. Dosya adları grafiğin içeriğini açıklamalıdır; örneğin `gunluk-ciro.png`, `rota-yogunlugu.png` veya `tedarikci-gecikme.png`.
 4. BE ve DA'nın devir teslim yorumlarını bekleyin; grafikler **BE'nin verisinden** ve DA'nın belirlediği metriklerden üretilmelidir. Grafik üretim kodunu `/src` içine kaydedin.
 5. Commit + push; Issue'ya commit hash'ini ve iki çıktı dosyasını yazan kanıt yorumu ekleyin.
 
@@ -381,17 +382,17 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
    | # | Issue başlığı | Atanan | İşin tanımı ve kabul kriteri |
    |---|---|---|---|
-   | 1 | `G2-sem — Veri şeması ve analiz planı` | DA | Sektörünüzün mini veri kümesinin şeması (alan adları, tipler, aralıklar, satır sayısı) ve hesaplanacak en az 3 metrik `docs/veri-sozlugu.md`'ye işlenmiş ve devir teslim yorumları atılmış olacak. |
-   | 2 | `G2-veri — Parametreli simülasyon` | BE | En az 2 ayarlanabilir parametresi olan simülasyon `feature/veri` dalında yazılmış, PR açılmış, QA incelemesinden geçip merge edilmiş olacak. |
-   | 3 | `G2-analiz — Metrik hesabı ve bulgular` | DA | Şemadaki 3 metrik hesaplanmış, bulgular `docs/analiz-g2.md`'de, devir teslim yorumu atılmış olacak. |
-   | 4 | `G2-gorsel — Grafik seti` | FE | Taslak Issue'ya eklenmiş, en az 3 grafik `feature/gorsel` dalında üretilmiş, PR ile merge edilmiş olacak. |
+    | 1 | `G2-sem — Veri şeması ve analiz planı` | DA | Sektörünüzün mini veri kümesinin şeması (alan adları, tipler, aralıklar, satır sayısı) ve hesaplanacak en az 5 metrik `docs/veri-sozlugu.md`'ye işlenmiş ve devir teslim yorumları atılmış olacak. |
+    | 2 | `G2-veri — Parametreli simülasyon` | BE | En az 2 ayarlanabilir parametresi olan simülasyon `feature/veri` dalında yazılmış, PR açılmış, QA incelemesinden geçip merge edilmiş olacak. |
+    | 3 | `G2-analiz — Metrik hesabı ve bulgular` | DA | Şemadaki 5 metrik (2 kırılım + top-N) hesaplanmış, bulgular `docs/analiz-g2.md`'de, devir teslim yorumu atılmış olacak. |
+    | 4 | `G2-gorsel — Grafik seti` | FE | Taslak Issue'ya eklenmiş, 3 grafik (zaman serisi + kırılım + dağılım) `feature/gorsel` dalında üretilmiş, PR ile merge edilmiş olacak. |
    | 5 | `G2-test — Test senaryoları ve PR incelemesi` | QA | `tests/test-cases.md` güncel; BE'nin PR'ında ≥2 somut inceleme yorumu var. |
 
 3. `reports/report-w05.md` raporunu `<TESLİM GÜNÜ/SAATİ>`'a kadar yazıp commit'leyin.
 
 **DA şu adımları uygular:**
 
-1. Sektörünüzün mini veri kümesi için `docs/veri-sozlugu.md` yazın: **her alanın** adı, tipi, aralığı/kuralı, örnek değeri + hedeflenen satır sayısı + **hesaplanacak en az 3 metrik** (adı + formülü + neyi ölçtüğü). Fikir vermesi için sektör bazında örnekler:
+1. Sektörünüzün mini veri kümesi için `docs/veri-sozlugu.md` yazın: **her alanın** adı, tipi, aralığı/kuralı, örnek değeri + hedeflenen satır sayısı + **hesaplanacak en az 5 metrik** (Görev 1 standardı: toplam + ortalama + 2 kırılım + top-N; her birinin adı, formülü ve neyi ölçtüğü). Fikir vermesi için sektör bazında örnekler:
 
    | Şirket | Örnek veri kümesi | Örnek metrikler |
    |---|---|---|
@@ -403,7 +404,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
    | F — Tedarik | siparisler: siparis_id, tedarikci, urun, miktar, teslim_gun | ortalama tedarik süresi · kritik stok ürün sayısı · tedarikçi bazlı gecikme oranı |
 
 2. `feature/sozluk-g2` gibi bir branch'te commit + push yapıp PR açın. Belge PR'ları inceleme beklemeden yazarı tarafından merge edilebilir (§3.5): açın, merge edin — iki dakikalık iştir ama iz bırakır.
-3. Devir teslim yorumlarını `G2-veri` Issue'suna yazın: *"Şema yayımlandı — commit `<hash>`. Alanlar, aralıklar ve 3 metrik `docs/veri-sozlugu.md`'de. BE üretebilir."*
+3. Devir teslim yorumlarını `G2-veri` Issue'suna yazın: *"Şema yayımlandı — commit `<hash>`. Alanlar, aralıklar ve 5 metrik `docs/veri-sozlugu.md`'de. BE üretebilir."*
 
 **BE şu adımları uygular:**
 
@@ -417,7 +418,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 **FE şu adımları uygular:**
 
 1. Önce taslak: 3 grafiğin mockup'ını `G2-gorsel` Issue'suna ekleyin (Görev 1'deki kural aynen geçerli).
-2. `feature/gorsel` adında branch açın; en az 3 grafiği üretin (örn. zaman serisi + kategori karşılaştırması + dağılım/pasta). Grafikler `/visuals` klasörüne PNG olarak kaydedilsin; üretim kodu `/src` içinde olsun.
+2. `feature/gorsel` adında branch açın; **3 grafik** üretin: zaman serisi + kategorik kırılım + dağılım (histogram veya pasta). Her grafikte başlık, eksen etiketi ve birim bulunmalıdır. Grafikler `/visuals` klasörüne PNG olarak kaydedilsin; üretim kodu `/src` içinde olsun.
 3. Commit → publish. PR'ı Hafta 6'da açacaksınız; bu hafta iskelet bitmiş olsun.
 
 **QA şu adımları uygular:**
@@ -432,7 +433,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 2. PR açın (reviewer: QA). QA'nın istediği düzeltmeleri yapın; onay sonrası merge edin.
 
 **DA:**
-1. `docs/analiz-g2.md` dosyasını yazın: şemadaki 3 metriği nihai veri üzerinde hesaplayın, her birini 1-2 cümleyle yorumlayın; kullandığınız veri commit'ini belirtin.
+1. `docs/analiz-g2.md` dosyasını yazın: şemadaki 5 metriği nihai veri üzerinde hesaplayın (2 kırılım + top-N dahil), her birini 1-2 cümleyle yorumlayın; **bulgular bölümüne 3 gözlem + 1 eylem önerisi** ekleyin. Kullandığınız veri commit'ini belirtin.
 2. `docs/requirements.md` dosyasını geriye dönük yazın: 1 sayfalık resmî gereksinim belgesi — mini ürünün amacı, yaptıkları (numaralı liste), yapmadıkları. Bu belge büyük proje önerisinin şablonu olacak; özenli yazın.
 
 **BE:**
@@ -491,7 +492,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 2. Partnerin deposundaki `exchange/output.csv` dosyasını indirin; onu okuyup işleyen `ImportCSV` betiğini yazın. Sözleşmedeki ilgili akışın alan adlarını ve tiplerini doğrulayarak `data/partner-verisi.csv` olarak (veya doğrudan belleğe) yükleyin. Kendi ürettiğiniz test dosyasıyla değil, **partnerin gerçek çıktısıyla** test edin.
 
 **DA:**
-1. Partnerin gerçek verisi üzerinde bir analiz yazın: `docs/partner-analizi.md` — en az 3 metrik + yorumlar. Kullandığınız dosyanın hangi commit'ten alındığını belirtin.
+1. Partnerin gerçek verisi üzerinde bir analiz yazın: `docs/partner-analizi.md` — en az 5 metrik (en az biri kırılımlı) + **kendi sektörünüzle 2 karşılaştırmalı gözlem** (örn. "partnerin ortalama teslim süresi bizim sipariş hacmimizle nasıl örtüşüyor?"). Kullandığınız dosyanın hangi commit'ten alındığını belirtin.
 2. Sözleşme anlaşmazlıklarında hakemlik yapın. Sözleşme değişirse sürümleyin: `veri-sozlesmesi.md` içinde `v1.1` başlığı + değişiklik günlüğü satırı ("v1.1 — tarih formatı netleştirildi, 2026-04-12"). Güncel sürüm yine iki depoda birebir aynı olmalı.
 
 **FE:** Partnerin verisi üzerinden en az 2 grafik üretin (`visuals/partner-*.png`) ve `/src` içindeki görselleştirme betiğine "içe aktarım" yeteneği ekleyin.
@@ -533,7 +534,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 | Şirket | Büyük projenin zorunlu özellikleri |
 |---|---|
-| **A — E-ticaret** | parametreli sipariş simülasyonu · ürün bazlı satış analiz raporu · aylık trend grafiği · satış verisinin CSV dışa aktarımı |
+| **A — E-ticaret** | parametreli sipariş simülasyonu · ürün bazlı satış analiz raporu · aylık trend grafiği · düşük satış uyarısı (eşik kuralı) · satış verisinin CSV dışa aktarımı |
 | **B — Lojistik** | parametreli sevkiyat simülasyonu · teslimat süresi analizi · geciken sevkiyat raporu · rota/hacim görselleştirmesi |
 | **C — Bankacılık** | parametreli işlem simülasyonu · şüpheli işlem tespit kuralı · müşteri segment analizi · işlem hacmi trend grafiği |
 | **D — Sigorta** | parametreli talep simülasyonu · prim/ödeme analizi · risk kategorisi hesabı · aylık özet dashboard |
