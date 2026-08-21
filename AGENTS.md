@@ -41,7 +41,7 @@ Bu klasör, VBA II (Veri Bilimi ve Analitik) dersinin planlama çalışma alanı
 
 **Bu dönem ne yapacağız:** Öğrenciler 5'er kişilik "veri şirketlerine" bölünür. Her şirkette biri veriyi **üretir** (backend), biri **analiz eder** (veri analisti), biri **görselleştirir** (frontend), biri **sınar ve belgeler** (QA), biri **yönetir** (PM). Aralarındaki **veri akışı** — kimin ürettiği veriyi kimin aldığı, hangi formatta teslim ettiği, karşılıklı sözleşmelere uyulup uyulmadığı — **notlandırmanın parçasıdır** ve hepsi GitHub'da iz olarak kaydedilir.
 
-**Teknoloji serbest:** Programlama dili zorunluluğu yoktur. Her şirket, birinci dönemde öğrendiklerinden (Python, Jupyter, pandas, matplotlib vb.) kendi tercihini yapar ve Hafta 1'de README'ye yazar. Tek kural: **veri dosyaları CSV/JSON gibi açık, makinece okunabilir formatlarda** olur.
+**Teknoloji:** Görev 1–3'te programlama dili serbesttir; şirket Hafta 1'de tercihini README'ye yazar. Veri dosyaları CSV/JSON gibi açık formatlarda olur. **Büyük projede (Hafta 9–15) yığın sabittir:** Cloudflare ücretsiz katmanı — Pages (arayüz) + Worker (arka uç) + D1 (veri). Ürün internette yayınlanmış bir adresle teslim edilir.
 
 **Kurallar:**
 1. Her hafta için her role ayrı, numaralı talimatlar verilmiştir. Öğrenci önce o haftaki rolünü Rol Rotasyon Matrisi'nden (§1.3) bulur, sonra kendi rolünün talimatlarını uygular.
@@ -527,10 +527,21 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
    - **Amaç:** ürün kimin hangi sorununu çözüyor (2–3 cümle).
    - **Özellikler:** 5–8 somut özellik, `R1`, `R2`, … diye numaralı. Her R maddesi test edilebilir bir cümledir. Kötü: "R1: Kullanıcı dostu olacak." İyi: "R1: Kullanıcı, gün sayısı ve ürün sayısı parametrelerini değiştirerek satış verisi üretebilecek."
    - **Veri modeli taslağı:** hangi veri kümeleri/dosyalar olacak, ana alanlar neler.
-   - **Kapsam dışı listesi:** bilinçli olarak yapılmayacaklar (örn. "canlı API entegrasyonu yok"). Bu liste, dönem sonunda "ama şunu da yapsaydınız" tartışmasını önler.
+    - **Kapsam dışı listesi:** bilinçli olarak yapılmayacaklar. Büyük projede örnekler: ücretli Cloudflare planı yok, özel alan adı yok, kullanıcı girişi zorunlu değil, üçüncü parti ücretli API yok, gerçek kişi verisi yok.
 3. **Hoca kapısı:** Öneri Hafta 10 dersinde onaylanır veya revize edilir. **Onaydan önce kod yazmak yasaktır.**
 
-**Şirkete özgü zorunlu asgari özellik setleri** (her satır = olmazsa olmaz R maddeleri; şirketler üzerine 2–3 kendi özelliğini ekler):
+**Zorunlu teknik iskelet (tüm şirketler, Cloudflare ücretsiz katman):**
+
+| Parça | Ne | Teslim |
+|---|---|---|
+| Arayüz | Cloudflare Pages | Parametre formu + grafikler + kural/uyarı alanı + CSV indirme; birinci dönemdeki arayüz deneyimini grup olarak ölçeklendirir |
+| Arka uç | Cloudflare Worker | En az 3 uç: `simüle et` · `metrikleri getir` · `CSV dışa aktar` |
+| Veri | Cloudflare D1 | Son üretilen veri kümesi saklanır; sayfa yenilenince kaybolmaz |
+| Yayın | `*.pages.dev` veya Worker adresi | Çalışan adres `README.md`'de yazılıdır; demo bu adresten yapılır |
+
+Hesap: şirketin ortak bir Cloudflare hesabı yeterlidir (ücretsiz). `wrangler` ile yayınlanır. Kimlik doğrulama, özel alan adı ve ücretli eklenti istenmez.
+
+**Şirkete özgü zorunlu asgari özellik setleri** (her satır = olmazsa olmaz R maddeleri; şirketler üzerine 2–3 kendi özelliğini ekler; hepsi yayınlanmış uygulamada çalışır):
 
 | Şirket | Büyük projenin zorunlu özellikleri |
 |---|---|
@@ -544,8 +555,8 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 #### Hafta 10 — Temel Atma
 
 - **DA:** Tam veri sözlüğü v1'i commit'leyin: **her** veri kümesi, **her** alan, **her** fonksiyon imzası (girdi/çıktı tipleriyle). Büyük projede sözlük eksikse BE ve FE durur; darboğaz sizsiniz, erken bitirin.
-- **BE:** Sözlükteki her imza için içi boş (sadece imza + `TODO` yorumu) fonksiyonlardan oluşan iskelet betikler yazın. Ölçüt: iskelet çalıştırılabilir (boş çıktıyla da olsa hata vermeden çalışır).
-- **FE:** Tüm grafik/dashboard taslaklarını ilgili Issue'lara ekleyin; ana dashboard iskeletini (tüm parçaların bir arada görüneceği çıktı, örn. tek sayfalık PNG/HTML) oluşturun.
+- **BE:** Sözlükteki her imza için Worker uç iskeletini yazın (gövde `TODO` olabilir). Ölçüt: `wrangler dev` hata vermeden ayağa kalkar; D1 şeması commit'lenmiştir.
+- **FE:** Pages arayüz iskeletini yayınlayın veya yerel olarak çalıştırın: parametre formu + grafik alanları + uyarı alanı boş da olsa yerinde durur. Taslaklar ilgili Issue'lara eklenir.
 - **QA:** Test planını yazın: **her R maddesi için en az 3 test senaryosu** `tests/test-cases.md`'de (normal + sınır + hatalı girdi).
 - **PM:**
   1. İki milestone oluşturun: `M1 — Ara Kontrol` (bitiş: Hafta 11) ve `M2 — Özellik Tamamlama` (bitiş: Hafta 13).
@@ -556,9 +567,9 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 Derste canlı kontrol edilen zorunlu durum:
 
-- [ ] Veri modeli dosyaları mevcut ve sözlükle birebir uyumlu.
-- [ ] Ana dashboard tüm parçalara ulaşabiliyor (parçalar taslak/boş olabilir).
-- [ ] En az **2 R maddesi uçtan uca çalışıyor** (parametre veriliyor → veri üretiliyor → metrik hesaplanıyor → grafik çıkıyor).
+- [ ] Veri modeli (D1 şeması + sözlük) mevcut ve birebir uyumlu.
+- [ ] Yayınlanmış adres açılıyor; arayüzdeki tüm parçalar yerinde (parçalar taslak/boş olabilir).
+- [ ] En az **2 R maddesi uçtan uca, canlı adreste çalışıyor** (parametre → Worker → D1 → grafik).
 - [ ] Hafta 9'dan bu yana ≥4 merge edilmiş PR ve her birinde gerçek inceleme var.
 
 Canlı kontrol nasıl işler: hoca şirketin bilgisayarında `main` dalının son halini açtırır; PM değil, **hocanın seçtiği rastgele bir üye** çalışan 2 özelliği gösterir.
@@ -588,7 +599,7 @@ Canlı kontrol nasıl işler: hoca şirketin bilgisayarında `main` dalının so
 
 **Teslim** = deponun `final` etiketli (release) hali; içinde: tüm betikler, veri dosyaları, görselleştirmeler, eksiksiz kılavuz, test log'u, tüm haftalık raporlar.
 
-**Canlı demo, şirket başına 10 dakika:** Hangi üyenin hangi özelliği göstereceğini **hoca o anda seçer ve ilan eder** + 5 dakika soru-cevap. Bu format, herkesin yalnızca kendi parçasını değil **ürünün bütününü** anlamasını test eder — "o kısmı arkadaşım yaptı, bilmiyorum" cevabı demo puanını düşürür.
+**Canlı demo, şirket başına 10 dakika:** Demo, `README.md`'deki yayınlanmış adresten yapılır. Hangi üyenin hangi özelliği göstereceğini **hoca o anda seçer ve ilan eder** + 5 dakika soru-cevap. Bu format, herkesin yalnızca kendi parçasını değil **ürünün bütününü** anlamasını test eder — "o kısmı arkadaşım yaptı, bilmiyorum" cevabı demo puanını düşürür.
 
 **Final notu bileşimi:** %10 Kilometre Taşı 1 + %10 Kilometre Taşı 2 + %80 dönem sonu değerlendirmesi. Dönem sonu değerlendirmesinin içi: %50 ürün kalitesi (özellikler çalışıyor, veri doğru, görseller anlamlı) · %30 süreç izlenebilirliği (PR'lar, Issue'lar, raporlar, milestone'lar) · %20 demo + akran değerlendirmesi.
 
