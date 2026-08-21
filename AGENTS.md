@@ -274,14 +274,14 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 | Şirket | Veri kümesi | Örnek metrikler | Örnek görseller |
 |---|---|---|---|
-| A — E-ticaret | Siparişler | toplam ciro · ortalama sipariş adedi · en çok sipariş edilen ürün | günlük ciro · ürün satış payı |
-| B — Lojistik | Sevkiyatlar | ortalama teslimat süresi · gecikme oranı · en yoğun rota | rota yoğunluğu · teslimat süresi dağılımı |
-| C — Bankacılık | İşlemler | toplam işlem hacmi · ortalama işlem tutarı · şüpheli işlem sayısı | günlük işlem hacmi · işlem türü dağılımı |
-| D — Sigorta | Talepler ve ödemeler | toplam ödeme · ortalama talep tutarı · en sık talep türü | talep türleri · ödeme tutarı karşılaştırması |
-| E — Perakende | Mağaza satışları | toplam ciro · kategori satış payı · günlük ortalama satış | günlük satış · kategori karşılaştırması |
-| F — Tedarik | Tedarik siparişleri | ortalama teslim süresi · gecikme oranı · tedarikçi performansı | tedarikçi karşılaştırması · teslim süresi |
+| A — E-ticaret | Siparişler | toplam ciro · ortalama sipariş adedi · ürün bazlı ciro tablosu · haftalık trend · en çok ciroya katkı veren 3 ürün | günlük ciro · ürün satış payı |
+| B — Lojistik | Sevkiyatlar | ortalama teslimat süresi · gecikme oranı · rota bazlı süre tablosu · haftalık hacim · en yoğun 3 rota | rota yoğunluğu · teslimat süresi dağılımı |
+| C — Bankacılık | İşlemler | toplam işlem hacmi · ortalama işlem tutarı · işlem türü kırılımı · günlük hacim trendi · en yüksek tutarlı 3 işlem türü | günlük işlem hacmi · işlem türü dağılımı |
+| D — Sigorta | Talepler ve ödemeler | toplam ödeme · ortalama talep tutarı · talep türü kırılımı · haftalık talep sayısı · en sık 3 talep türü | talep türleri · ödeme tutarı karşılaştırması |
+| E — Perakende | Mağaza satışları | toplam ciro · günlük ortalama satış · kategori kırılımı · haftalık trend · en çok ciroya katkı veren 3 kategori | günlük satış · kategori karşılaştırması |
+| F — Tedarik | Tedarik siparişleri | ortalama teslim süresi · gecikme oranı · tedarikçi kırılımı · haftalık sipariş hacmi · en geciken 3 tedarikçi | tedarikçi karşılaştırması · teslim süresi |
 
-**Ortak asgari ölçütler:** Veri sentetik ve makinece okunabilir CSV formatında olmalıdır; en az 100 veri satırı, sektörün ana kategorik alanında en az 4 farklı değer ve belgelenmiş alan kuralları bulunmalıdır. Gerçek kişi verisi kullanılmaz. Her grup 3 metrik, 2 grafik ve en az 5 test senaryosu üretir.
+**Ortak asgari ölçütler:** Veri sentetik ve makinece okunabilir CSV formatında olmalıdır; en az 100 veri satırı, sektörün ana kategorik alanında en az 4 farklı değer ve belgelenmiş alan kuralları bulunmalıdır. Gerçek kişi verisi kullanılmaz. Her grup **en az 5 metrik** (en az ikisi kırılımlı), 2 grafik ve en az 5 test senaryosu üretir.
 
 **Pedagojik hedef:** Uygulamanın kendisi değil, **devir teslim zinciri**: BE üretir → DA analiz eder → FE görselleştirir → QA sınar → PM raporlar. Her ok (devir teslim), GitHub üzerinde yazılı bir izle kanıtlanır — notlandırılan budur.
 
@@ -294,7 +294,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
    | Issue başlığı | Atanan | Kabul kriteri örneği |
    |---|---|---|
    | `G1-veri — Sektör verisini üret` | BE | `data/<sektor-verisi>.csv` depoda: en az 100 satır, sektör şeması `docs/veri-sozlugu-g1.md` içinde yazılı. |
-   | `G1-analiz — 3 metriği hesapla` | DA | `docs/analiz-g1.md` depoda: sektöre uygun 3 metrik hesaplanmış ve yorumlanmış. |
+    | `G1-analiz — Metrikleri hesapla ve bulguları yaz` | DA | `docs/analiz-g1.md` depoda: en az 5 metrik (en az ikisi kırılımlı), her birinin yorumu ve bulgular bölümü mevcut. |
    | `G1-gorsel — 2 grafik üret` | FE | Sektöre uygun 2 PNG grafik `/visuals` içinde; grafikler BE'nin verisinden üretilmiş. |
    | `G1-test — Veri kalitesi testleri` | QA | `tests/test-cases.md` en az 5 senaryo içeriyor. |
 
@@ -313,11 +313,17 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 1. BE ile veri kümesinin sektör amacını, alanlarını ve geçerli aralıklarını netleştirip `docs/veri-sozlugu-g1.md` dosyasına yazın.
 2. BE'nin devir teslim yorumunu bekleyin; veri hazır değilken analiz yazmayın.
 3. `docs/analiz-g1.md` dosyasını yazın. İçerik zorunlu:
-   - Sektöre uygun **3 metrik**; her metriğin formülü ve neyi ölçtüğü.
+   - Sektöre uygun **en az 5 metrik**; her metriğin formülü ve neyi ölçtüğü. Bu 5'in içinde şunlar bulunmalıdır:
+     - 1 genel toplam (örn. toplam ciro, toplam işlem hacmi, toplam ödeme).
+     - 1 ortalama (örn. sipariş başına adet, teslimat süresi, işlem tutarı).
+     - **Kırılım 1:** ana kategorik alana göre tablo (ürün / rota / işlem türü / talep türü / kategori / tedarikçi).
+     - **Kırılım 2:** zamana göre (günlük veya haftalık trend).
+     - **En iyi N listesi:** en çok katkı veren / en yoğun / en geciken 3 kalem.
    - Her metriğin altında **1-2 cümle yorum**.
+   - **Bulgular bölümü:** veriden çıkan **3 somut gözlem** + **1 eylem önerisi** (örn. "kampanya X ürününe yönlendirilmeli").
    - Kullanılan veri dosyası ve commit bilgisi.
 4. Analiz kodunu `/src` içine kaydedin; hesaplama tekrarlanabilir olmalıdır.
-5. **Devir teslim yorumu (notlandırılır):** `G1-gorsel` Issue'suna yazın: *"Analiz hazır — `docs/analiz-g1.md`, commit `<hash>`. 3 metrik + yorumlar. FE görselleştirebilir."*
+5. **Devir teslim yorumu (notlandırılır):** `G1-gorsel` Issue'suna yazın: *"Analiz hazır — `docs/analiz-g1.md`, commit `<hash>`. 5 metrik (2 kırılım + top-N) + bulgular. FE görselleştirebilir."*
 
 **FE şu adımları uygular:**
 
@@ -355,7 +361,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 3. `gorev1-final` release'ini oluşturun (§2.4).
 
 **Görev 1 kritik eşikleri (değerlendirme süreci: §5):**
-- *Grup eşikleri:* `gorev1-final` release'i son tarihte mevcut · sektör veri dosyası ve şeması teslim edilmiş · devir teslim zinciri kanıtlı (BE'nin `G1-analiz`/`G1-gorsel`'e veri yorumu + DA'nın `G1-gorsel`'e analiz yorumu) · `bug` etiketli ≥2 Issue açılmış ve `Fixes #n` ile kapatılmış · `report-w03.md` ve `report-w04.md` zamanında commit'lenmiş.
+- *Grup eşikleri:* `gorev1-final` release'i son tarihte mevcut · sektör veri dosyası ve şeması teslim edilmiş · `docs/analiz-g1.md` en az 5 metrik (2 kırılım + top-N) ve bulgular bölümü içeriyor · devir teslim zinciri kanıtlı (BE'nin `G1-analiz`/`G1-gorsel`'e veri yorumu + DA'nın `G1-gorsel`'e analiz yorumu) · `bug` etiketli ≥2 Issue açılmış ve `Fixes #n` ile kapatılmış · `report-w03.md` ve `report-w04.md` zamanında commit'lenmiş.
 - *Bireysel eşikler:* kendi rol teslimatı, Issue'sundaki kabul kriterini sağlıyor · ≥2 commit · üstlendiği Issue'lar kanıt yorumuyla kapatılmış.
 
 ---
