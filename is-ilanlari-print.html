@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>İş İlanları — VBA II</title>
+  <style>
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; }
+    :root {
+      --ink: #102a43;
+      --muted: #52606d;
+      --line: #d9e2ec;
+      --blue: #1769aa;
+      --teal: #0f8b8d;
+      --gold: #f3b33d;
+      --pale: #f5f8fb;
+    }
+    html, body { margin: 0; padding: 0; }
+    body {
+      color: var(--ink);
+      background: white;
+      font-family: Arial, "Helvetica Neue", sans-serif;
+      font-size: 9.8pt;
+      line-height: 1.42;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .cover, .job-page {
+      width: 210mm;
+      min-height: 297mm;
+      position: relative;
+      page-break-after: always;
+      overflow: hidden;
+    }
+    .cover {
+      padding: 25mm 20mm 18mm;
+      color: white;
+      background: linear-gradient(145deg, #102a43 0%, #174e70 57%, #0f8b8d 100%);
+    }
+    .cover::after {
+      content: "";
+      position: absolute;
+      width: 180mm;
+      height: 180mm;
+      right: -82mm;
+      bottom: -70mm;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 50%;
+      box-shadow: 0 0 0 28mm rgba(255,255,255,.04), 0 0 0 56mm rgba(255,255,255,.03);
+    }
+    .cover-kicker { letter-spacing: 2.2px; font-size: 9pt; color: #bfe8e5; font-weight: bold; }
+    .cover h1 { font-size: 31pt; line-height: 1.08; max-width: 145mm; margin: 22mm 0 7mm; letter-spacing: -.5px; }
+    .cover h2 { font-size: 15pt; font-weight: normal; color: #e6fffe; margin: 0; max-width: 130mm; }
+    .cover-rule { width: 34mm; height: 4px; background: var(--gold); margin: 17mm 0 18mm; }
+    .cover-intro { width: 136mm; font-size: 12pt; line-height: 1.6; color: #e6f6f7; }
+    .cover-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9mm; margin-top: 25mm; position: relative; z-index: 1; }
+    .cover-stat { border-top: 1px solid rgba(255,255,255,.35); padding-top: 4mm; }
+    .cover-stat strong { display: block; font-size: 20pt; color: white; }
+    .cover-stat span { color: #c6e4e4; font-size: 9pt; }
+    .cover-note { position: absolute; left: 20mm; bottom: 20mm; max-width: 122mm; padding: 5mm 6mm; border-left: 3px solid var(--gold); background: rgba(0,0,0,.14); color: #e6f6f7; font-size: 9pt; z-index: 1; }
+    .job-page { padding: 10mm 15mm 12mm; background: #fff; }
+    .topline { display: flex; justify-content: space-between; color: #718096; font-size: 8pt; letter-spacing: 1.1px; font-weight: bold; padding-bottom: 4mm; border-bottom: 1px solid var(--line); }
+    .sector-mark { margin-top: 6mm; color: var(--teal); font-size: 8pt; letter-spacing: 1.5px; font-weight: bold; }
+    .job-page h1 { font-size: 21pt; line-height: 1.1; letter-spacing: -.3px; margin: 2mm 0 2mm; max-width: 170mm; }
+    .company-lead { color: var(--muted); font-size: 10.5pt; max-width: 175mm; line-height: 1.48; }
+    .application-card { position: relative; margin-top: 5mm; padding: 4mm 6mm; background: var(--ink); color: white; display: grid; grid-template-columns: 1fr auto; column-gap: 8mm; align-items: center; border-radius: 4px; }
+    .card-label, .eyebrow { font-size: 8pt; letter-spacing: 1.35px; font-weight: bold; }
+    .card-label { color: #9ee7e2; }
+    .card-note { margin-top: 1.5mm; font-size: 8.5pt; color: #d8f0f0; }
+    .apply-button { display: inline-block; white-space: nowrap; background: var(--gold); color: #102a43; text-decoration: none; font-weight: bold; font-size: 9.5pt; padding: 3.1mm 4.5mm; border-radius: 3px; }
+    .apply-button span { font-size: 13pt; margin-left: 1mm; }
+    .apply-button.disabled { background: #829ab1; color: white; }
+    .deadline { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.22); margin-top: 4mm; padding-top: 2.5mm; font-size: 8.5pt; color: #d8f0f0; }
+    .deadline span { letter-spacing: 1px; margin-right: 2mm; color: #9ee7e2; font-weight: bold; }
+    .placeholder { color: #ffd166; }
+    .description-card, .content-card, .questions-card { border: 1px solid var(--line); border-radius: 4px; padding: 5mm 6mm; }
+    .description-card { margin-top: 4mm; background: var(--pale); border-left: 4px solid var(--teal); }
+    .description-card p { margin: 2mm 0 0; color: #334e68; }
+    .eyebrow { color: var(--blue); }
+    .two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-top: 4mm; }
+    .content-card { min-height: 42mm; padding: 4mm 5mm; }
+    .accent-card { background: #fbfcfe; }
+    ul, ol { margin: 2.5mm 0 0; padding-left: 5mm; }
+    li { margin: 1.5mm 0; color: #334e68; }
+    .questions-card { margin-top: 4mm; padding: 4mm 5mm; background: #fffdf7; border-color: #f3d98b; }
+    .questions-card ol { columns: 2; column-gap: 10mm; font-size: 9.2pt; }
+    .questions-card li { break-inside: avoid; }
+    .page-footer { position: absolute; bottom: 7mm; left: 15mm; right: 15mm; display: flex; justify-content: space-between; color: #829ab1; font-size: 7.5pt; border-top: 1px solid var(--line); padding-top: 2.5mm; }
+    strong { color: inherit; }
+    code { font-family: Menlo, monospace; font-size: .9em; background: #edf2f7; padding: .5mm 1mm; border-radius: 2px; }
+  </style>
+</head>
+<body>
+  <section class="cover">
+    <div class="cover-kicker">MAKU · VBA II · 2026</div>
+    <h1>Veri Şirketi<br>Proje Liderliği</h1>
+    <h2>6 sektör için proje lideri iş ilanları</h2>
+    <div class="cover-rule"></div>
+    <p class="cover-intro">Dönemin ilk roleplay adımı: Bir veri şirketinin proje lideri olun. İlanları okuyun, ilgilendiğiniz sektörün formunu açın ve başvurunuzu gönderin.</p>
+    <div class="cover-grid">
+      <div class="cover-stat"><strong>6</strong><span>sektör ve şirket</span></div>
+      <div class="cover-stat"><strong>1</strong><span>dönem boyu proje lideri</span></div>
+      <div class="cover-stat"><strong>4</strong><span>form başvuru sorusu</span></div>
+      <div class="cover-stat"><strong>GitHub</strong><span>şirket çalışma ortamı</span></div>
+    </div>
+    <div class="cover-note"><b>Başvuru takvimi:</b> İlan tarihi, son başvuru tarihi ve seçim günü dönem başlamadan önce duyurulacaktır. Bu PDF'teki sarı alanlar placeholder'dır.</div>
+  </section>
+  
+    <section class="job-page">
+      <div class="topline"><span>VBA II / VERİ BİLİMİ VE ANALİTİK</span><span>1 / 6</span></div>
+      <div class="sector-mark">PROJE LİDERİ <b>·</b> PM</div>
+      <h1>E-ticaret Veri Şirketi · Proje Lideri</h1>
+      <div class="company-lead">Çevrimiçi satış verisi üreten ve analiz eden bir veri şirketi. Dönem boyunca sipariş simülasyonları kurar, satış verisini analiz eder ve görselleştirir. <em>(Görev 2: sipariş akışı simülasyonu + ürün bazlı satış grafikleri · Büyük Proje: E-ticaret Satış Analiz Platformu.)</em></div>
+
+      <div class="application-card">
+        <div>
+          <div class="card-label">BAŞVURU FORMU</div>
+          <div class="card-note">Bu ilana özel Google Form. Bağlantı PDF içinde tıklanabilir.</div>
+        </div>
+        <a class="apply-button" href="https://docs.google.com/forms/d/e/1FAIpQLSf-GaDp09US74VwnqFYAiubFZLllU8cla4f4Nvq2ab2pQSf5w/viewform?usp=publish-editor">Google Formu Aç <span>↗</span></a>
+        <div class="deadline"><span>SON BAŞVURU</span> <b class="placeholder"><span class="placeholder">&lt;BAŞVURU SON TARİHİ&gt;</span></b></div>
+      </div>
+
+      <div class="description-card">
+        <div class="eyebrow">ROLÜN AMACI</div>
+        <p>Panonun, takvimin ve haftalık raporun sahibidir. Görevleri Issue olarak açar, atar, takip eder; işlerin zamanında bitmesini sağlar. Kendisi merge yapmaz; başkalarının doğru şekilde yapmasını sağlar.</p>
+      </div>
+
+      <div class="two-column">
+        <div class="content-card">
+          <div class="eyebrow">SORUMLULUKLAR</div>
+          <ul><li>Haftalık 15 dakikalık toplantıyı yönetir; alınan kararları Issue'lara işler.</li><li>Görevleri Issue olarak açar, atar; panoyu denetler, yanlış sütunda kart bırakmaz.</li><li>Haftalık sprint raporunu yazar; her görevin sonunda release oluşturur.</li><li>Tıkanan işlerde ilk başvurulan kişidir; çözemezse hocayı Issue'da @mention'lar.</li><li>Dönem boyu bu rolü sürdürür; Büyük Proje'de de PM'dir.</li></ul>
+        </div>
+        <div class="content-card accent-card">
+          <div class="eyebrow">ARANAN NİTELİKLER</div>
+          <ul><li>Birinci dönem veri temellerine hâkimiyet (simülasyon, analiz, görselleştirme).</li><li>Düzenli çalışma alışkanlığı; söz verilen tarihe uyma.</li><li>Ekip koordinasyonu isteği ve yazılı iletişim becerisi (bu derste işler GitHub üzerinde yürür).</li></ul>
+        </div>
+      </div>
+
+      <div class="questions-card">
+        <div class="eyebrow">GOOGLE FORMDA İSTENECEK BİLGİLER</div>
+        <ol><li>Ad-soyad</li><li>Öğrenci numarası</li><li>Gerekçe (zorunlu, tek cümle): "Neden <strong>e-ticaret</strong> sektörünün proje lideri olmak istiyorsun?"</li><li>(İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)</li></ol>
+      </div>
+
+      <div class="page-footer"><span>MAKU-VBA-GBT-II / ders</span><span>Veri şirketi simülasyonu</span></div>
+    </section>
+    
+
+    <section class="job-page">
+      <div class="topline"><span>VBA II / VERİ BİLİMİ VE ANALİTİK</span><span>2 / 6</span></div>
+      <div class="sector-mark">PROJE LİDERİ <b>·</b> PM</div>
+      <h1>Lojistik Veri Şirketi · Proje Lideri</h1>
+      <div class="company-lead">Sevkiyat ve teslimat verisi üreten, teslimat sürelerini analiz eden bir veri şirketi. Dönem boyunca sevkiyat simülasyonları kurar, rotaları ve gecikmeleri görselleştirir. <em>(Görev 2: sevkiyat simülasyonu + teslimat süresi grafikleri · Büyük Proje: Lojistik Takip ve Analiz Sistemi.)</em></div>
+
+      <div class="application-card">
+        <div>
+          <div class="card-label">BAŞVURU FORMU</div>
+          <div class="card-note">Bu ilana özel Google Form. Bağlantı PDF içinde tıklanabilir.</div>
+        </div>
+        <a class="apply-button" href="https://docs.google.com/forms/d/e/1FAIpQLSftNBcdk2mV206WmFpPxhwnG5KkOni42YCZ5r-6EBLj-uLi2w/viewform?usp=publish-editor">Google Formu Aç <span>↗</span></a>
+        <div class="deadline"><span>SON BAŞVURU</span> <b class="placeholder"><span class="placeholder">&lt;BAŞVURU SON TARİHİ&gt;</span></b></div>
+      </div>
+
+      <div class="description-card">
+        <div class="eyebrow">ROLÜN AMACI</div>
+        <p>Panonun, takvimin ve haftalık raporun sahibidir. Görevleri Issue olarak açar, atar, takip eder; işlerin zamanında bitmesini sağlar. Kendisi merge yapmaz; başkalarının doğru şekilde yapmasını sağlar.</p>
+      </div>
+
+      <div class="two-column">
+        <div class="content-card">
+          <div class="eyebrow">SORUMLULUKLAR</div>
+          <ul><li>Haftalık 15 dakikalık toplantıyı yönetir; alınan kararları Issue'lara işler.</li><li>Görevleri Issue olarak açar, atar; panoyu denetler, yanlış sütunda kart bırakmaz.</li><li>Haftalık sprint raporunu yazar; her görevin sonunda release oluşturur.</li><li>Tıkanan işlerde ilk başvurulan kişidir; çözemezse hocayı Issue'da @mention'lar.</li><li>Dönem boyu bu rolü sürdürür; Büyük Proje'de de PM'dir.</li></ul>
+        </div>
+        <div class="content-card accent-card">
+          <div class="eyebrow">ARANAN NİTELİKLER</div>
+          <ul><li>Birinci dönem veri temellerine hâkimiyet (simülasyon, analiz, görselleştirme).</li><li>Düzenli çalışma alışkanlığı; söz verilen tarihe uyma.</li><li>Ekip koordinasyonu isteği ve yazılı iletişim becerisi (bu derste işler GitHub üzerinde yürür).</li></ul>
+        </div>
+      </div>
+
+      <div class="questions-card">
+        <div class="eyebrow">GOOGLE FORMDA İSTENECEK BİLGİLER</div>
+        <ol><li>Ad-soyad</li><li>Öğrenci numarası</li><li>Gerekçe (zorunlu, tek cümle): "Neden <strong>lojistik</strong> sektörünün proje lideri olmak istiyorsun?"</li><li>(İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)</li></ol>
+      </div>
+
+      <div class="page-footer"><span>MAKU-VBA-GBT-II / ders</span><span>Veri şirketi simülasyonu</span></div>
+    </section>
+    
+
+    <section class="job-page">
+      <div class="topline"><span>VBA II / VERİ BİLİMİ VE ANALİTİK</span><span>3 / 6</span></div>
+      <div class="sector-mark">PROJE LİDERİ <b>·</b> PM</div>
+      <h1>Bankacılık Veri Şirketi · Proje Lideri</h1>
+      <div class="company-lead">Banka işlemleri verisi üreten, müşteri davranışını analiz eden ve şüpheli işlem tespiti üzerine çalışan bir veri şirketi. <em>(Görev 2: banka işlemi simülasyonu + müşteri özet grafikleri · Büyük Proje: İşlem Analizi ve Anomali Tespit Aracı.)</em></div>
+
+      <div class="application-card">
+        <div>
+          <div class="card-label">BAŞVURU FORMU</div>
+          <div class="card-note">Bu ilana özel Google Form. Bağlantı PDF içinde tıklanabilir.</div>
+        </div>
+        <a class="apply-button" href="https://docs.google.com/forms/d/e/1FAIpQLSeu7ufjOOZZB23VznlYdg1Kdfq01cmTregxOz1I442cwRrQLw/viewform?usp=publish-editor">Google Formu Aç <span>↗</span></a>
+        <div class="deadline"><span>SON BAŞVURU</span> <b class="placeholder"><span class="placeholder">&lt;BAŞVURU SON TARİHİ&gt;</span></b></div>
+      </div>
+
+      <div class="description-card">
+        <div class="eyebrow">ROLÜN AMACI</div>
+        <p>Panonun, takvimin ve haftalık raporun sahibidir. Görevleri Issue olarak açar, atar, takip eder; işlerin zamanında bitmesini sağlar. Kendisi merge yapmaz; başkalarının doğru şekilde yapmasını sağlar.</p>
+      </div>
+
+      <div class="two-column">
+        <div class="content-card">
+          <div class="eyebrow">SORUMLULUKLAR</div>
+          <ul><li>Haftalık 15 dakikalık toplantıyı yönetir; alınan kararları Issue'lara işler.</li><li>Görevleri Issue olarak açar, atar; panoyu denetler, yanlış sütunda kart bırakmaz.</li><li>Haftalık sprint raporunu yazar; her görevin sonunda release oluşturur.</li><li>Tıkanan işlerde ilk başvurulan kişidir; çözemezse hocayı Issue'da @mention'lar.</li><li>Dönem boyu bu rolü sürdürür; Büyük Proje'de de PM'dir.</li></ul>
+        </div>
+        <div class="content-card accent-card">
+          <div class="eyebrow">ARANAN NİTELİKLER</div>
+          <ul><li>Birinci dönem veri temellerine hâkimiyet (simülasyon, analiz, görselleştirme).</li><li>Düzenli çalışma alışkanlığı; söz verilen tarihe uyma.</li><li>Ekip koordinasyonu isteği ve yazılı iletişim becerisi (bu derste işler GitHub üzerinde yürür).</li></ul>
+        </div>
+      </div>
+
+      <div class="questions-card">
+        <div class="eyebrow">GOOGLE FORMDA İSTENECEK BİLGİLER</div>
+        <ol><li>Ad-soyad</li><li>Öğrenci numarası</li><li>Gerekçe (zorunlu, tek cümle): "Neden <strong>bankacılık</strong> sektörünün proje lideri olmak istiyorsun?"</li><li>(İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)</li></ol>
+      </div>
+
+      <div class="page-footer"><span>MAKU-VBA-GBT-II / ders</span><span>Veri şirketi simülasyonu</span></div>
+    </section>
+    
+
+    <section class="job-page">
+      <div class="topline"><span>VBA II / VERİ BİLİMİ VE ANALİTİK</span><span>4 / 6</span></div>
+      <div class="sector-mark">PROJE LİDERİ <b>·</b> PM</div>
+      <h1>Sigorta Veri Şirketi · Proje Lideri</h1>
+      <div class="company-lead">Sigorta talepleri ve ödemeler verisi üreten, risk kategorilerini analiz eden bir veri şirketi. <em>(Görev 2: sigorta talebi simülasyonu + prim/ödeme grafikleri · Büyük Proje: Talep Analizi ve Risk Raporlama Sistemi.)</em></div>
+
+      <div class="application-card">
+        <div>
+          <div class="card-label">BAŞVURU FORMU</div>
+          <div class="card-note">Bu ilana özel Google Form. Bağlantı PDF içinde tıklanabilir.</div>
+        </div>
+        <a class="apply-button" href="https://docs.google.com/forms/d/e/1FAIpQLScaCrSKnvvJ5VF0yPIUdvXS3nEGdPmcE5qljMxlDtKXGKO05w/viewform?usp=publish-editor">Google Formu Aç <span>↗</span></a>
+        <div class="deadline"><span>SON BAŞVURU</span> <b class="placeholder"><span class="placeholder">&lt;BAŞVURU SON TARİHİ&gt;</span></b></div>
+      </div>
+
+      <div class="description-card">
+        <div class="eyebrow">ROLÜN AMACI</div>
+        <p>Panonun, takvimin ve haftalık raporun sahibidir. Görevleri Issue olarak açar, atar, takip eder; işlerin zamanında bitmesini sağlar. Kendisi merge yapmaz; başkalarının doğru şekilde yapmasını sağlar.</p>
+      </div>
+
+      <div class="two-column">
+        <div class="content-card">
+          <div class="eyebrow">SORUMLULUKLAR</div>
+          <ul><li>Haftalık 15 dakikalık toplantıyı yönetir; alınan kararları Issue'lara işler.</li><li>Görevleri Issue olarak açar, atar; panoyu denetler, yanlış sütunda kart bırakmaz.</li><li>Haftalık sprint raporunu yazar; her görevin sonunda release oluşturur.</li><li>Tıkanan işlerde ilk başvurulan kişidir; çözemezse hocayı Issue'da @mention'lar.</li><li>Dönem boyu bu rolü sürdürür; Büyük Proje'de de PM'dir.</li></ul>
+        </div>
+        <div class="content-card accent-card">
+          <div class="eyebrow">ARANAN NİTELİKLER</div>
+          <ul><li>Birinci dönem veri temellerine hâkimiyet (simülasyon, analiz, görselleştirme).</li><li>Düzenli çalışma alışkanlığı; söz verilen tarihe uyma.</li><li>Ekip koordinasyonu isteği ve yazılı iletişim becerisi (bu derste işler GitHub üzerinde yürür).</li></ul>
+        </div>
+      </div>
+
+      <div class="questions-card">
+        <div class="eyebrow">GOOGLE FORMDA İSTENECEK BİLGİLER</div>
+        <ol><li>Ad-soyad</li><li>Öğrenci numarası</li><li>Gerekçe (zorunlu, tek cümle): "Neden <strong>sigorta</strong> sektörünün proje lideri olmak istiyorsun?"</li><li>(İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)</li></ol>
+      </div>
+
+      <div class="page-footer"><span>MAKU-VBA-GBT-II / ders</span><span>Veri şirketi simülasyonu</span></div>
+    </section>
+    
+
+    <section class="job-page">
+      <div class="topline"><span>VBA II / VERİ BİLİMİ VE ANALİTİK</span><span>5 / 6</span></div>
+      <div class="sector-mark">PROJE LİDERİ <b>·</b> PM</div>
+      <h1>Perakende Veri Şirketi · Proje Lideri</h1>
+      <div class="company-lead">Mağaza satışları ve stok verisi üreten, kategori performansını analiz eden bir veri şirketi. <em>(Görev 2: mağaza satış simülasyonu + stok grafikleri · Büyük Proje: Perakende Satış ve Stok Analiz Aracı.)</em></div>
+
+      <div class="application-card">
+        <div>
+          <div class="card-label">BAŞVURU FORMU</div>
+          <div class="card-note">Bu ilana özel Google Form. Bağlantı PDF içinde tıklanabilir.</div>
+        </div>
+        <a class="apply-button" href="https://docs.google.com/forms/d/e/1FAIpQLSdTSXqOV5SMbACVYt_1VVlNlsPz7yMWCoyhGwLTJXCFWg3m7Q/viewform?usp=publish-editor">Google Formu Aç <span>↗</span></a>
+        <div class="deadline"><span>SON BAŞVURU</span> <b class="placeholder"><span class="placeholder">&lt;BAŞVURU SON TARİHİ&gt;</span></b></div>
+      </div>
+
+      <div class="description-card">
+        <div class="eyebrow">ROLÜN AMACI</div>
+        <p>Panonun, takvimin ve haftalık raporun sahibidir. Görevleri Issue olarak açar, atar, takip eder; işlerin zamanında bitmesini sağlar. Kendisi merge yapmaz; başkalarının doğru şekilde yapmasını sağlar.</p>
+      </div>
+
+      <div class="two-column">
+        <div class="content-card">
+          <div class="eyebrow">SORUMLULUKLAR</div>
+          <ul><li>Haftalık 15 dakikalık toplantıyı yönetir; alınan kararları Issue'lara işler.</li><li>Görevleri Issue olarak açar, atar; panoyu denetler, yanlış sütunda kart bırakmaz.</li><li>Haftalık sprint raporunu yazar; her görevin sonunda release oluşturur.</li><li>Tıkanan işlerde ilk başvurulan kişidir; çözemezse hocayı Issue'da @mention'lar.</li><li>Dönem boyu bu rolü sürdürür; Büyük Proje'de de PM'dir.</li></ul>
+        </div>
+        <div class="content-card accent-card">
+          <div class="eyebrow">ARANAN NİTELİKLER</div>
+          <ul><li>Birinci dönem veri temellerine hâkimiyet (simülasyon, analiz, görselleştirme).</li><li>Düzenli çalışma alışkanlığı; söz verilen tarihe uyma.</li><li>Ekip koordinasyonu isteği ve yazılı iletişim becerisi (bu derste işler GitHub üzerinde yürür).</li></ul>
+        </div>
+      </div>
+
+      <div class="questions-card">
+        <div class="eyebrow">GOOGLE FORMDA İSTENECEK BİLGİLER</div>
+        <ol><li>Ad-soyad</li><li>Öğrenci numarası</li><li>Gerekçe (zorunlu, tek cümle): "Neden <strong>perakende</strong> sektörünün proje lideri olmak istiyorsun?"</li><li>(İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)</li></ol>
+      </div>
+
+      <div class="page-footer"><span>MAKU-VBA-GBT-II / ders</span><span>Veri şirketi simülasyonu</span></div>
+    </section>
+    
+
+    <section class="job-page">
+      <div class="topline"><span>VBA II / VERİ BİLİMİ VE ANALİTİK</span><span>6 / 6</span></div>
+      <div class="sector-mark">PROJE LİDERİ <b>·</b> PM</div>
+      <h1>Tedarik Veri Şirketi · Proje Lideri</h1>
+      <div class="company-lead">Tedarik siparişleri ve stok seviyeleri verisi üreten, tedarik sürelerini analiz eden bir veri şirketi. <em>(Görev 2: tedarik siparişi simülasyonu + stok seviyesi grafikleri · Büyük Proje: Tedarik Zinciri İzleme Sistemi.)</em></div>
+
+      <div class="application-card">
+        <div>
+          <div class="card-label">BAŞVURU FORMU</div>
+          <div class="card-note">Bu ilana özel Google Form. Bağlantı PDF içinde tıklanabilir.</div>
+        </div>
+        <a class="apply-button" href="https://docs.google.com/forms/d/e/1FAIpQLSeDc5Ycepv6uBh0aqM-kPdciLr7zGaMEL1bAC-VNY4TBsQQIQ/viewform?usp=publish-editor">Google Formu Aç <span>↗</span></a>
+        <div class="deadline"><span>SON BAŞVURU</span> <b class="placeholder"><span class="placeholder">&lt;BAŞVURU SON TARİHİ&gt;</span></b></div>
+      </div>
+
+      <div class="description-card">
+        <div class="eyebrow">ROLÜN AMACI</div>
+        <p>Panonun, takvimin ve haftalık raporun sahibidir. Görevleri Issue olarak açar, atar, takip eder; işlerin zamanında bitmesini sağlar. Kendisi merge yapmaz; başkalarının doğru şekilde yapmasını sağlar.</p>
+      </div>
+
+      <div class="two-column">
+        <div class="content-card">
+          <div class="eyebrow">SORUMLULUKLAR</div>
+          <ul><li>Haftalık 15 dakikalık toplantıyı yönetir; alınan kararları Issue'lara işler.</li><li>Görevleri Issue olarak açar, atar; panoyu denetler, yanlış sütunda kart bırakmaz.</li><li>Haftalık sprint raporunu yazar; her görevin sonunda release oluşturur.</li><li>Tıkanan işlerde ilk başvurulan kişidir; çözemezse hocayı Issue'da @mention'lar.</li><li>Dönem boyu bu rolü sürdürür; Büyük Proje'de de PM'dir.</li></ul>
+        </div>
+        <div class="content-card accent-card">
+          <div class="eyebrow">ARANAN NİTELİKLER</div>
+          <ul><li>Birinci dönem veri temellerine hâkimiyet (simülasyon, analiz, görselleştirme).</li><li>Düzenli çalışma alışkanlığı; söz verilen tarihe uyma.</li><li>Ekip koordinasyonu isteği ve yazılı iletişim becerisi (bu derste işler GitHub üzerinde yürür).</li></ul>
+        </div>
+      </div>
+
+      <div class="questions-card">
+        <div class="eyebrow">GOOGLE FORMDA İSTENECEK BİLGİLER</div>
+        <ol><li>Ad-soyad</li><li>Öğrenci numarası</li><li>Gerekçe (zorunlu, tek cümle): "Neden <strong>tedarik</strong> sektörünün proje lideri olmak istiyorsun?"</li><li>(İsteğe bağlı) Birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev)</li></ol>
+      </div>
+
+      <div class="page-footer"><span>MAKU-VBA-GBT-II / ders</span><span>Veri şirketi simülasyonu</span></div>
+    </section>
+    
+</body>
+</html>
