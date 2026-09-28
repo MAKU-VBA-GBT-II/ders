@@ -6,17 +6,18 @@ Bu klasör, VBA II (Veri Bilimi ve Analitik) dersinin planlama çalışma alanı
 
 - **Tarih placeholder'ları doldurulacak:** `is-ilanlari.md` ve `vba2-donem-plani.md` içindeki `<İLAN TARİHİ>`, `<BAŞVURU SON TARİHİ>`, `<SEÇİM GÜNÜ>`, `<TESLİM GÜNÜ/SAATİ>`, `<ARA TESLİM GÜNÜ/SAATİ>` ve `<KOD DONDURMA GÜNÜ>` placeholder'ları dönem başlamadan önce gerçek değerlerle doldurulacak. Kullanıcı "yapılacak bir şey var mı?" diye sorarsa veya başka bir iş yaparken bunu hatırlat.
 - Hafta 5 başında her grup reposunda `main` branch protection açılacak (aşağıdaki plan §3 kural 5).
+- **7 × 4 düzeni (2026-09-28):** Öğrenci sayısı 28'e inince G şirketi (Dijital Pazarlama) eklendi; DA ve QA rolleri tek rolde (**DQ**) birleştirildi; Görev 3'te G→A→B→G üçlü döngüsü kuruldu.
 
 ## Önemli dosyalar
 
 - `vba2-donem-plani.md` — dönem planının Obsidian kopyası (aynı içerik)
 - `ders/AGENTS.md` — bu dosyanın `ders` reposundaki yayını (GitHub'da, öğrenciler görür). **Senkron kuralı:** Plan her değiştiğinde üç kopya birden güncellenmeli: `AGENTS.md` ↔ `vba2-donem-plani.md` ↔ `ders/AGENTS.md` (sonuncusu commit + push gerektirir).
-- `ders/is-ilanlari.md` — 6 proje lideri iş ilanı (GitHub'da)
-- `group-a` … `group-f` — öğrenci repolarının lokal kopyaları
+- `ders/is-ilanlari.md` — 7 proje lideri iş ilanı (GitHub'da; G ilanı sonradan eklendi)
+- `group-a` … `group-g` — öğrenci repolarının lokal kopyaları
 
 ## Dönem Planı (tam metin)
 # VBA II — Veri Şirketi Simülasyonu Dönem Planı
-**VBA = Veri Bilimi ve Analitik · 6 Şirket × 5 Öğrenci = 30 Öğrenci · 15 Hafta · GitHub Tabanlı Ekip Çalışması**
+**VBA = Veri Bilimi ve Analitik · 7 Şirket × 4 Öğrenci = 28 Öğrenci · 15 Hafta · GitHub Tabanlı Ekip Çalışması**
 
 > **TAKVİM NOTU:** Bu belgedeki takvim tarihleri henüz belirlenmemiştir; yerlerinde `<...>` placeholder'ları vardır ve dönem başlamadan önce ekleneceklerdir:
 > - `<İLAN TARİHİ>` · `<BAŞVURU SON TARİHİ>` · `<SEÇİM GÜNÜ>` — iş ilanı takvimi (§1.4)
@@ -39,7 +40,7 @@ Bu klasör, VBA II (Veri Bilimi ve Analitik) dersinin planlama çalışma alanı
 
 **Birinci dönemde ne yaptık:** Her öğrenci bireysel çalıştı — simülasyonlar kurdu, değişkenlerle oynayıp veri üretti, üretilen veriyi analiz etti ve görselleştirdi. Ödevler GitHub üzerinden toplandı; notlandırma eşik esaslıydı (eşiklerin hepsi geçilmezse puan 0).
 
-**Bu dönem ne yapacağız:** Öğrenciler 5'er kişilik "veri şirketlerine" bölünür. Her şirkette biri veriyi **üretir** (backend), biri **analiz eder** (veri analisti), biri **görselleştirir** (frontend), biri **sınar ve belgeler** (QA), biri **yönetir** (PM). Aralarındaki **veri akışı** — kimin ürettiği veriyi kimin aldığı, hangi formatta teslim ettiği, karşılıklı sözleşmelere uyulup uyulmadığı — **notlandırmanın parçasıdır** ve hepsi GitHub'da iz olarak kaydedilir.
+**Bu dönem ne yapacağız:** Öğrenciler 4'er kişilik "veri şirketlerine" bölünür. Her şirkette biri veriyi **üretir** (backend), biri **görselleştirir** (frontend), biri **analiz eder, sınar ve belgeler** (veri analisti ve kalite — DQ), biri **yönetir** (PM). Aralarındaki **veri akışı** — kimin ürettiği veriyi kimin aldığı, hangi formatta teslim ettiği, karşılıklı sözleşmelere uyulup uyulmadığı — **notlandırmanın parçasıdır** ve hepsi GitHub'da iz olarak kaydedilir.
 
 **Teknoloji:** Görev 1–3'te programlama dili serbesttir; şirket Hafta 1'de tercihini README'ye yazar. Veri dosyaları CSV/JSON gibi açık formatlarda olur. **Büyük projede (Hafta 9–15) yığın sabittir:** Cloudflare ücretsiz katmanı — Pages (arayüz) + Worker (arka uç) + D1 (veri). Ürün internette yayınlanmış bir adresle teslim edilir.
 
@@ -72,14 +73,15 @@ Her grup simüle edilmiş bir veri şirketidir. Hafta 1'de her grup kendine bir 
 
 | Şirket | Öğrenciler (liste sırasına göre) | Sektör | Görev 2 Mini Ürünü | Büyük Proje (H9–15) |
 |---|---|---|---|---|
-| **A** | 1–5 | E-ticaret | Sipariş akışı simülasyonu + ürün bazlı satış grafikleri | E-ticaret Satış Analiz Platformu |
-| **B** | 6–10 | Lojistik | Sevkiyat simülasyonu + teslimat süresi grafikleri | Lojistik Takip ve Analiz Sistemi |
-| **C** | 11–15 | Bankacılık | Banka işlemi simülasyonu + müşteri özet grafikleri | İşlem Analizi ve Anomali Tespit Aracı |
-| **D** | 16–20 | Sigorta | Sigorta talebi simülasyonu + prim/ödeme grafikleri | Talep Analizi ve Risk Raporlama Sistemi |
-| **E** | 21–25 | Perakende | Mağaza satış simülasyonu + stok grafikleri | Perakende Satış ve Stok Analiz Aracı |
-| **F** | 26–30 | Tedarik | Tedarik siparişi simülasyonu + stok seviyesi grafikleri | Tedarik Zinciri İzleme Sistemi |
+| **A** | 1–4 | E-ticaret | Sipariş akışı simülasyonu + ürün bazlı satış grafikleri | E-ticaret Satış Analiz Platformu |
+| **B** | 5–8 | Lojistik | Sevkiyat simülasyonu + teslimat süresi grafikleri | Lojistik Takip ve Analiz Sistemi |
+| **C** | 9–12 | Bankacılık | Banka işlemi simülasyonu + müşteri özet grafikleri | İşlem Analizi ve Anomali Tespit Aracı |
+| **D** | 13–16 | Sigorta | Sigorta talebi simülasyonu + prim/ödeme grafikleri | Talep Analizi ve Risk Raporlama Sistemi |
+| **E** | 17–20 | Perakende | Mağaza satış simülasyonu + stok grafikleri | Perakende Satış ve Stok Analiz Aracı |
+| **F** | 21–24 | Tedarik | Tedarik siparişi simülasyonu + stok seviyesi grafikleri | Tedarik Zinciri İzleme Sistemi |
+| **G** | 25–28 | Dijital Pazarlama | Kampanya simülasyonu + kanal bazlı dönüşüm grafikleri | Kampanya Performans ve Dönüşüm Analiz Platformu |
 
-**Gruplar arası veri değişim eşleşmeleri (Görev 3):** A↔B (siparişler → sevkiyatlar), C↔D (banka işlemleri → sigorta ödemeleri), E↔F (mağaza satışları → tedarik siparişleri).
+**Gruplar arası veri değişim eşleşmeleri (Görev 3):** G→A→B→G üçlü döngüsü (kampanyalar → siparişler → sevkiyatlar → teslimat bilgisiyle yeniden hedefleme), C↔D (banka işlemleri → sigorta ödemeleri), E↔F (mağaza satışları → tedarik siparişleri).
 
 ### 1.2 Roller
 
@@ -87,45 +89,47 @@ Her grup simüle edilmiş bir veri şirketidir. Hafta 1'de her grup kendine bir 
 |---|---|---|
 | **PM** | Proje Yöneticisi | Panonun, takvimin ve haftalık raporun sahibidir. Görevleri Issue olarak açar, atar, takip eder; işlerin zamanında bitmesini sağlar. Kendisi merge yapmaz; başkalarının doğru şekilde yapmasını sağlar. |
 | **BE** | Backend / Veri Üretici | Verinin üretildiği kodun sahibidir: simülasyon betikleri, veri üretimi, dosya okuma/yazma. Ürettiği her veri kümesinin **şemasını** (alan adları, tipler, aralıklar) tesliminden önce yazar. |
-| **FE** | Frontend / Görselleştirici | Grafiklerin, dashboard'ların ve kullanıcının gördüğü her çıktının sahibidir. Yalnızca BE'nin ürettiği ve DA'nın tanımladığı veriyi görselleştirir; kendi başına veri üretmez. |
-| **DA** | Veri Analisti | Analizin sahibidir: hangi metrikler hesaplanacak, hangi sorular sorulacak, bulgular ne. Her analiz bir belgede (findings) sonuçlanır. |
-| **QA** | Test ve Dokümantasyon Mühendisi | Veri kalitesi testlerinin, hata kayıtlarının (bug Issue), PR incelemelerinin ve kullanım kılavuzunun sahibidir. QA onayı olmadan hiçbir şey `main`'e girmez. |
+| **FE** | Frontend / Görselleştirici | Grafiklerin, dashboard'ların ve kullanıcının gördüğü her çıktının sahibidir. Yalnızca BE'nin ürettiği ve DQ'nun tanımladığı veriyi görselleştirir; kendi başına veri üretmez. |
+| **DQ** | Veri Analisti ve Kalite Mühendisi | Analizin ve kalitenin sahibidir. **Analiz tarafı:** veri sözlüğü, hangi metrikler hesaplanacak, hangi sorular sorulacak, bulgular ne — her analiz bir belgede (findings) sonuçlanır. **Test tarafı:** veri kalitesi testleri, hata kayıtları (bug Issue), PR incelemeleri ve kullanım kılavuzu. DQ onayı olmadan hiçbir kod `main`'e girmez. |
+
+> **Not (7 × 4 düzeni):** Eski beş rollü planda ayrı olan Veri Analisti (DA) ve Test/Dokümantasyon (QA) rolleri, ekipler 4 kişiye inince tek rolde birleştirildi. Aşağıdaki talimatlarda DQ'nun işleri **DQ (analiz)** ve **DQ (test)** başlıklarıyla ayrı gösterilir; ikisi de aynı kişinin sorumluluğudur.
 
 **Veri akışı zinciri** (notlandırmanın omurgası):
 
 ```
-BE üretir ──veri dosyası──▶ DA analiz eder ──bulgular──▶ FE görselleştirir ──çıktı──▶ QA sınar
+BE üretir ──veri dosyası──▶ DQ analiz eder ──bulgular──▶ FE görselleştirir ──çıktı──▶ DQ sınar
 ```
+
+DQ zincirde iki kez yer alır: önce BE'nin verisini analiz eder, sonra BE'nin verisini ve FE'nin çıktısını sınar.
 
 Her ok bir "devir teslim"dir ve GitHub'da yazılı iz bırakmak zorundadır (§4'te her görevde ayrıntılı).
 
 ### 1.3 Rol Rotasyon Matrisi
 
-Her şirkette **proje lideri dönem boyu PM'dir** — öğretim elemanı tarafından dönem başında seçilir (§1.4). PM, kalan 4 üyeyi BE, FE, DA ve QA başlangıç rolleri için açtığı ilanlarla seçer. Her öğrenci Görev 1–3 boyunca üç farklı başlangıç dışı rolü deneyimler; böylece ekip kurma tercihi, rol rotasyonunun öğrenme hedefini ortadan kaldırmaz.
+Her şirkette **proje lideri dönem boyu PM'dir** — öğretim elemanı tarafından dönem başında seçilir (§1.4). PM, kalan 3 üyeyi BE, FE ve DQ başlangıç rolleri için açtığı ilanlarla seçer. Üç rol üç görevde döndüğü için her öğrenci Görev 1–3 boyunca üç rolün üçünü de deneyimler; böylece ekip kurma tercihi, rol rotasyonunun öğrenme hedefini ortadan kaldırmaz.
 
 | Başlangıç rolü | Görev 1 (H3–4) | Görev 2 (H5–6) | Görev 3 (H7–8) | Büyük Proje (H9–15) |
 |---|---|---|---|---|
 | **Lider** | PM | PM | PM | PM (sabit) |
-| BE | BE | FE | DA | Hafta 9'da müzakere edilir |
-| FE | FE | DA | QA | Hafta 9'da müzakere edilir |
-| DA | DA | QA | BE | Hafta 9'da müzakere edilir |
-| QA | QA | BE | FE | Hafta 9'da müzakere edilir |
+| BE | BE | FE | DQ | Hafta 9'da müzakere edilir |
+| FE | FE | DQ | BE | Hafta 9'da müzakere edilir |
+| DQ | DQ | BE | FE | Hafta 9'da müzakere edilir |
 
-Büyük projede kalan 4 rol (BE, FE, DA, QA) Hafta 9'da grup içi müzakereyle dağıtılır; son dağılımı öğretim elemanı onaylar.
+Büyük projede kalan 3 rol (BE, FE, DQ) Hafta 9'da grup içi müzakereyle dağıtılır; son dağılımı öğretim elemanı onaylar.
 
 ### 1.4 Proje Lideri İş İlanı ve Seçimi (Hafta 1)
 
-Roleplay'in ilk adımı **iki aşamalı işe alım sürecidir**: önce öğretim elemanı 6 proje liderini seçer, sonra her lider kendi şirketinin dört kişilik ekibini kurar.
+Roleplay'in ilk adımı **iki aşamalı işe alım sürecidir**: önce öğretim elemanı 7 proje liderini seçer, sonra her lider kendi şirketinin üç kişilik ekibini kurar.
 
-1. **Lider ilanları (`<İLAN TARİHİ>`):** Öğretim elemanı 6 ilanı yayımlar — her biri bir sektöre bağlıdır (§1.1 tablosu). İlan metninde şirketin sektörü, PM görev tanımı (§1.2) ve aranan nitelikler bulunur.
+1. **Lider ilanları (`<İLAN TARİHİ>`):** Öğretim elemanı 7 ilanı yayımlar — her biri bir sektöre bağlıdır (§1.1 tablosu). *(G — Dijital Pazarlama ilanı, öğrenci sayısı 28'e inip şirket sayısı 7'ye çıkınca eklendi; lideri mevcut başvurular arasından atandı.)* İlan metninde şirketin sektörü, PM görev tanımı (§1.2) ve aranan nitelikler bulunur.
 2. **Lider başvuruları (`<BAŞVURU SON TARİHİ>`'a kadar):** Adaylar öğretim elemanının paylaştığı **Google Form** üzerinden başvurur. Form alanları:
    - Ad-soyad, öğrenci no.
    - Tek cümlelik gerekçe: "Neden bu sektörün proje lideri olmak istiyorsun?" (zorunlu).
    - İsteğe bağlı: birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev).
-3. **Lider seçimi (`<SEÇİM GÜNÜ>`):** Öğretim elemanı başvuruları değerlendirir — gerekçenin açıklığı, birinci dönem izleri ve başvurulan sektörle uyum. 6 lider ilan edilir ve sonuçlar grup `README.md`'lerine işlenir.
-4. **Ekip ilanları (Hafta 1):** Her PM, BE, FE, DA ve QA için ayrı bir iş ilanı açar. İlanda rolün görevleri, kabul edilecek katkı türü, başvuru yöntemi ve son başvuru zamanı bulunur.
+3. **Lider seçimi (`<SEÇİM GÜNÜ>`):** Öğretim elemanı başvuruları değerlendirir — gerekçenin açıklığı, birinci dönem izleri ve başvurulan sektörle uyum. 7 lider ilan edilir ve sonuçlar grup `README.md`'lerine işlenir.
+4. **Ekip ilanları (Hafta 1):** Her PM, BE, FE ve DQ için ayrı bir iş ilanı açar. İlanda rolün görevleri, kabul edilecek katkı türü, başvuru yöntemi ve son başvuru zamanı bulunur.
 5. **Ekip başvuruları:** Öğrenciler bir veya daha fazla role CV/portföy ile başvurur. CV'ler kamuya açık depoya konmaz; PM ve öğretim elemanı tarafından değerlendirilir.
-6. **Ekip seçimi:** PM adayları açıklanmış ölçütlerle değerlendirir, dört üyeyi başlangıç rollerine yerleştirir ve listeyi öğretim elemanının onayına sunar. Her öğrenci bir şirkette yer almalıdır; açıkta kalan adayların son yerleştirmesini öğretim elemanı yapar.
+6. **Ekip seçimi:** PM adayları açıklanmış ölçütlerle değerlendirir, üç üyeyi başlangıç rollerine yerleştirir ve listeyi öğretim elemanının onayına sunar. Her öğrenci bir şirkette yer almalıdır; açıkta kalan adayların son yerleştirmesini öğretim elemanı yapar.
 7. **Liderin ilk görevleri (Hafta 1–2):** Şirket adını ekibe önerip oylatmak, teknoloji kararına öncülük etmek ve Hafta 2'de panoyu kurmak.
 
 ---
@@ -144,7 +148,7 @@ Yapılacak işin, hatanın veya kararın **yazılı ve numaralı kaydıdır**. B
 ### 2.2 Branch (Dal) ve Pull Request (PR — Birleştirme İsteği)
 `main` dalı ürünün çalışan halidir. Yeni özellik geliştirirken `feature/...` dalı açılır; iş bitince PR ile `main`'e katılır. **Hafta 5'ten itibaren `main`'e commit yalnızca PR yoluyla girer.**
 
-**Akış:** dal aç (`feature/veri`) → commit'ler → `Publish branch` → github.com'da `Compare & pull request` → açıklamaya `Closes #5` (bağladığı Issue) → **Reviewers** kısmından QA'yı seç → `Create pull request`. QA inceleyip `Approve` verdikten sonra merge düğmesine PR sahibi basar.
+**Akış:** dal aç (`feature/veri`) → commit'ler → `Publish branch` → github.com'da `Compare & pull request` → açıklamaya `Closes #5` (bağladığı Issue) → **Reviewers** kısmından DQ'yu seç → `Create pull request`. DQ inceleyip `Approve` verdikten sonra merge düğmesine PR sahibi basar.
 
 **İnceleme (review):** `Files changed` sekmesinde değişen satırlara yorum yazılır. "LGTM" tek başına inceleme sayılmaz; geçerli yorum somut gözlem içerir: "Bu döngü negatif değer üretebiliyor", "`gun` değişkeni yerine `gun_sayisi` olmalı", "Bu grafikte eksen etiketi yok" gibi.
 
@@ -163,7 +167,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 ## 3. Altyapı Kuralları (Hafta 1'de ilan edilir, pazarlık edilmez)
 
-1. **Tek GitHub organizasyonu:** `MAKU-VBA-GBT-II`; her grubun bir deposu (`group-a` … `group-f`). Öğretim elemanı organizasyonun sahibidir ve her şeyi görür. Depolar herkese açıktır (public) — mezuniyette portföy olarak kullanılabilirler; bu yüzden gerçek kişi verisi (TC no, telefon vb.) asla depoya girmez, tüm veriler simülasyon ürünüdür.
+1. **Tek GitHub organizasyonu:** `MAKU-VBA-GBT-II`; her grubun bir deposu (`group-a` … `group-g`). Öğretim elemanı organizasyonun sahibidir ve her şeyi görür. Depolar herkese açıktır (public) — mezuniyette portföy olarak kullanılabilirler; bu yüzden gerçek kişi verisi (TC no, telefon vb.) asla depoya girmez, tüm veriler simülasyon ürünüdür.
 
 2. **Zorunlu depo yapısı:**
 
@@ -181,9 +185,9 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 4. **Veri teslimi kuralı:** BE'nin ürettiği her veri dosyası, yanında **şemasıyla** teslim edilir: alan adları, tipler, aralıklar, satır sayısı. Şeması olmayan veri teslim edilmemiş sayılır. Şema bilgisi dosyanın commit mesajında veya Issue yorumunda olabilir (büyük projede `docs/veri-sozlugu.md` zorunludur).
 
-5. **Hafta 5'ten itibaren `main`'e yalnızca PR ile girilir.** İnceleyici (reviewer) = QA; PR'ı açan QA ise inceleyici PM olur. Kendi PR'ını kendisi onaylayan öğrenci o PR için puan almaz. Teknik kilitleme: öğretim elemanı Hafta 5 başında her depoda `Settings → Branches → Add branch protection rule` → `main` → `Require a pull request before merging` işaretler (public depolarda ücretsizdir).
+5. **Hafta 5'ten itibaren `main`'e yalnızca PR ile girilir.** İnceleyici (reviewer) = DQ; PR'ı açan DQ ise inceleyici PM olur. Kendi PR'ını kendisi onaylayan öğrenci o PR için puan almaz. Teknik kilitleme: öğretim elemanı Hafta 5 başında her depoda `Settings → Branches → Add branch protection rule` → `main` → `Require a pull request before merging` işaretler (public depolarda ücretsizdir).
 
-   **Kod/belge ayrımı:** Kod ve veri içeren PR'lar (`/src`, `/data`, `/visuals`) QA'nın `Approve` onayı olmadan merge edilmez. Yalnızca belge değiştiren PR'lar (`/docs`, `/reports`, `README`) inceleme beklemeden yazarı tarafından merge edilebilir — iz yine kalır.
+   **Kod/belge ayrımı:** Kod ve veri içeren PR'lar (`/src`, `/data`, `/visuals`) DQ'nun `Approve` onayı olmadan merge edilmez. Yalnızca belge değiştiren PR'lar (`/docs`, `/reports`, `README`) inceleme beklemeden yazarı tarafından merge edilebilir — iz yine kalır.
 
 6. **Notlandırma eşik esaslıdır** (birinci dönemle aynı felsefe): Her görevin ilan edilmiş kritik eşikleri vardır. Eşiklerin tamamını geçen öğrenci 90–100 arası puan alır; herhangi bir eşiği geçemeyen öğrencinin o görev puanı **0**'dır. Süreç §5'te tanımlıdır.
 
@@ -205,37 +209,37 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 ## 4. Hafta Hafta Talimatlar
 
-> Talimatlar **rol bazındadır** ve "Şirkete özgü" denmedikçe 6 grup için aynıdır. Her madde kontrol edilebilir bir teslimattır: depoda ya vardır ya yoktur.
+> Talimatlar **rol bazındadır** ve "Şirkete özgü" denmedikçe 7 grup için aynıdır. Her madde kontrol edilebilir bir teslimattır: depoda ya vardır ya yoktur.
 
 ---
 
 ### HAFTA 1 — Şirket Kuruluşu ve Araç Kurulumu
 
-**Herkes (30 öğrencinin tamamı) şu adımları uygular:**
+**Herkes (28 öğrencinin tamamı) şu adımları uygular:**
 
-1. **İş ilanlarını inceleyin; liderlik istiyorsanız başvurun:** Öğretim elemanının yayımladığı 6 proje lideri ilanını okuyun. Başvurmak isteyenler Google Form'u **`<BAŞVURU SON TARİHİ>`'a kadar** doldurur (süreç ve form alanları: §1.4).
+1. **İş ilanlarını inceleyin; liderlik istiyorsanız başvurun:** Öğretim elemanının yayımladığı 7 proje lideri ilanını okuyun. Başvurmak isteyenler Google Form'u **`<BAŞVURU SON TARİHİ>`'a kadar** doldurur (süreç ve form alanları: §1.4).
 2. **GitHub hesabınızı doğrulayın** (birinci dönemden hesabınız vardır); kullanıcı adınız profesyonel olsun — bu hesap mezuniyette CV'nize girecek.
 3. **Organizasyon davetini kabul edin:** `MAKU-VBA-GBT-II` organizasyonundan gelen davet → `Join`. Gelmediyse hocaya kullanıcı adınızı bildirin.
 4. **Araç kurulumunu tamamlayın:** GitHub Desktop (veya terminal + git) kurulu olsun; birinci dönemdeki çalışma ortamınız (Python/Jupyter vb.) hazır olsun.
 5. **Grubunuzun deposunu clone'layın:** GitHub Desktop → `File → Clone Repository` → `MAKU-VBA-GBT-II/group-X` → `Clone`. Terminalciler için: `git clone git@github.com:MAKU-VBA-GBT-II/group-X.git`.
 6. **Bildirimleri açın:** Depo sayfasında `Watch → All activity` (neden: §2.5). Her çalışma seansına `Fetch origin → Pull` ile başlama alışkanlığını edinin.
-7. **İlk kişisel commit:** Ekip seçimi tamamlandıktan sonra `README.md`'yi açın ve kendi satırınızı başlangıç rolünüzle ekleyin: `- Ad Soyad — PM (lider)` veya `- Ad Soyad — BE/FE/DA/QA (başlangıç rolü)`. Kaydedin → commit (mesaj: `README'ye Ad Soyad eklendi`) → `Push origin`. Bu commit, "bu öğrenci araç zincirini kurdu" kanıtıdır.
+7. **İlk kişisel commit:** Ekip seçimi tamamlandıktan sonra `README.md`'yi açın ve kendi satırınızı başlangıç rolünüzle ekleyin: `- Ad Soyad — PM (lider)` veya `- Ad Soyad — BE/FE/DQ (başlangıç rolü)`. Kaydedin → commit (mesaj: `README'ye Ad Soyad eklendi`) → `Push origin`. Bu commit, "bu öğrenci araç zincirini kurdu" kanıtıdır.
 
 **Proje liderleri (PM) şu adımları uygular:**
 
-1. BE, FE, DA ve QA için ayrı iş ilanları açın; görevleri, aranan katkıyı, başvuru yöntemini ve son başvuru zamanını yazın.
+1. BE, FE ve DQ için ayrı iş ilanları açın; görevleri, aranan katkıyı, başvuru yöntemini ve son başvuru zamanını yazın.
 2. Gelen CV ve portföyleri açıklanmış ölçütlerle değerlendirin. CV'leri kamuya açık depoya koymayın.
-3. Dört üyeyi başlangıç rollerine yerleştirin ve ekip listesini öğretim elemanının onayına sunun.
+3. Üç üyeyi başlangıç rollerine yerleştirin ve ekip listesini öğretim elemanının onayına sunun.
 4. Onaylanan ekip listesini `README.md`'ye işleyin; rol rotasyonunun Görev 1–3 boyunca §1.3'e göre uygulanacağını ekibe açıklayın.
 
 **Derste (hoca anlatır):** 15 dakikada Issue/PR/milestone kavramları (§2), ardından 15 dakikalık uygulama: herkes kendi deposunda bir test Issue'su açıp kapatır.
 
 **Hafta 1 sonu grup teslimatları (kontrol listesi):**
 - [ ] Proje lideri ilan edildi ve `README.md`'ye `PM (lider)` olarak işlendi.
-- [ ] PM dört rol ilanını yayımladı, CV'leri değerlendirdi ve ekip listesini öğretim elemanına onaylattı.
+- [ ] PM üç rol ilanını yayımladı, CV'leri değerlendirdi ve ekip listesini öğretim elemanına onaylattı.
 - [ ] Şirket adı liderin önerisiyle seçildi ve `README.md`'nin en üstüne yazıldı.
 - [ ] **Teknoloji kararı** `README.md`'ye yazıldı (örn. "Dil: Python · Kütüphaneler: pandas, matplotlib · Görselleştirme: PNG grafikleri"). Şirket içinde tutarlı olunmalı.
-- [ ] 5 üyenin 5'i de başlangıç rolüyle commit geçmişinde görünüyor.
+- [ ] 4 üyenin 4'ü de başlangıç rolüyle commit geçmişinde görünüyor.
 - [ ] Depo klasör yapısı oluşturuldu (boş klasörler için `.gitkeep`; herhangi bir üye yapabilir).
 
 ---
@@ -247,11 +251,11 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 **PM (proje lideri) şu adımları uygular:**
 
 1. Grubun Project Board'unu kurun (§2.3): 4 sütun — `To Do`, `In Progress`, `Review`, `Done`.
-2. 5 Issue açın, her üyeye bir tane:
+2. 4 Issue açın, her üyeye bir tane:
    - **Başlık:** `H2 ısınma — <üyenin adı>`
    - **Açıklama şablonu:** "Kendi dilinizde küçük bir betik yazın: 1'den 100'e 10 rastgele sayı üretsin, `data/prova-adiniz.csv` dosyasına tek sütun halinde yazsın (başlık satırı: `deger`). Betiği `/src` içine koyun. *Kabul kriteri:* `data/prova-adiniz.csv` dosyası senin commit'inle depoda; 10 satır veri içeriyor. *Son tarih:* `<TESLİM GÜNÜ/SAATİ>`."
    - **Assignee:** ilgili üye. Kendinize de bir tane açıp atayın.
-3. 5 Issue'yu da panoya ekleyin, `To Do` sütununa koyun.
+3. 4 Issue'yu da panoya ekleyin, `To Do` sütununa koyun.
 
 **Her üye (PM dahil) şu adımları uygular:**
 
@@ -262,14 +266,14 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 5. Issue'nuza yorum yazın: "Tamamlandı — commit `<hash>`, dosya: `data/prova-adiniz.csv` (10 satır)" → `Close issue` → panoda kartı `Done`'a çekin.
 
 **Hafta 2 sonu grup teslimatları:**
-- [ ] Pano 4 sütunla kurulmuş; 5 Issue açılmış ve kanıt yorumuyla kapatılmış.
-- [ ] `/data` içinde 5 farklı `prova-*.csv` dosyası; `/src` içinde bunları üreten 5 betik; her üye en az 1 commit atmış.
+- [ ] Pano 4 sütunla kurulmuş; 4 Issue açılmış ve kanıt yorumuyla kapatılmış.
+- [ ] `/data` içinde 4 farklı `prova-*.csv` dosyası; `/src` içinde bunları üreten 4 betik; her üye en az 1 commit atmış.
 
 ---
 
 ### GÖREV 1 — "Şirket Sektöründe Mini Veri Hattı" (Hafta 3–4)
 
-**Ürün:** Her şirket kendi sektörüne uygun küçük bir **sentetik veri hattı** kurar. Uygulama konusu gruplara göre değişir; ortak olan, verinin BE'den DA'ya, DA'dan FE'ye ve FE'den QA'ya kontrollü biçimde devredilmesidir.
+**Ürün:** Her şirket kendi sektörüne uygun küçük bir **sentetik veri hattı** kurar. Uygulama konusu gruplara göre değişir; ortak olan, verinin BE'den DQ'ya (analiz), DQ'dan FE'ye ve FE'den yeniden DQ'ya (test) kontrollü biçimde devredilmesidir.
 
 **Sektör veri konuları:**
 
@@ -281,10 +285,11 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 | D — Sigorta | Talepler ve ödemeler | toplam ödeme · ortalama talep tutarı · talep türü kırılımı · haftalık talep sayısı · en sık 3 talep türü | talep türleri · ödeme tutarı karşılaştırması |
 | E — Perakende | Mağaza satışları | toplam ciro · günlük ortalama satış · kategori kırılımı · haftalık trend · en çok ciroya katkı veren 3 kategori | günlük satış · kategori karşılaştırması |
 | F — Tedarik | Tedarik siparişleri | ortalama teslim süresi · gecikme oranı · tedarikçi kırılımı · haftalık sipariş hacmi · en geciken 3 tedarikçi | tedarikçi karşılaştırması · teslim süresi |
+| G — Dijital Pazarlama | Kampanya etkileşimleri | toplam reklam harcaması · ortalama tıklama oranı (CTR) · kanal kırılımı (arama / sosyal medya / e-posta / video) · haftalık dönüşüm trendi · müşteri kazanma maliyeti (CPA) en düşük 3 kampanya | günlük harcama ve tıklama · kanal bazlı dönüşüm oranı |
 
 **Ortak asgari ölçütler:** Veri sentetik ve makinece okunabilir CSV formatında olmalıdır; en az 100 veri satırı, sektörün ana kategorik alanında en az 4 farklı değer ve belgelenmiş alan kuralları bulunmalıdır. Gerçek kişi verisi kullanılmaz. Her grup **en az 5 metrik** (en az ikisi kırılımlı), 2 grafik ve en az 5 test senaryosu üretir.
 
-**Pedagojik hedef:** Uygulamanın kendisi değil, **devir teslim zinciri**: BE üretir → DA analiz eder → FE görselleştirir → QA sınar → PM raporlar. Her ok (devir teslim), GitHub üzerinde yazılı bir izle kanıtlanır — notlandırılan budur.
+**Pedagojik hedef:** Uygulamanın kendisi değil, **devir teslim zinciri**: BE üretir → DQ analiz eder → FE görselleştirir → DQ sınar → PM raporlar. Her ok (devir teslim), GitHub üzerinde yazılı bir izle kanıtlanır — notlandırılan budur.
 
 #### Hafta 3
 
@@ -295,21 +300,21 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
    | Issue başlığı | Atanan | Kabul kriteri örneği |
    |---|---|---|
    | `G1-veri — Sektör verisini üret` | BE | `data/<sektor-verisi>.csv` depoda: en az 100 satır, sektör şeması `docs/veri-sozlugu-g1.md` içinde yazılı. |
-    | `G1-analiz — Metrikleri hesapla ve bulguları yaz` | DA | `docs/analiz-g1.md` depoda: en az 5 metrik (en az ikisi kırılımlı), her birinin yorumu ve bulgular bölümü mevcut. |
+    | `G1-analiz — Metrikleri hesapla ve bulguları yaz` | DQ | `docs/analiz-g1.md` depoda: en az 5 metrik (en az ikisi kırılımlı), her birinin yorumu ve bulgular bölümü mevcut. |
     | `G1-gorsel — 2 grafik üret` | FE | 2 PNG grafik `/visuals` içinde: biri zaman serisi, diğeri kırılım; başlık ve eksen etiketi var; BE verisinden üretilmiş. |
-   | `G1-test — Veri kalitesi testleri` | QA | `tests/test-cases.md` en az 5 senaryo içeriyor. |
+   | `G1-test — Veri kalitesi testleri` | DQ | `tests/test-cases.md` en az 5 senaryo içeriyor. |
 
 2. 4 Issue'yu panoya ekleyip `To Do` sütununa koyun; hafta boyunca kartların doğru sütunda olduğunu her gün kontrol edin.
 3. `<TESLİM GÜNÜ/SAATİ>`'a kadar `reports/report-w03.md` dosyasını sprint şablonuyla (§7.1) doldurup commit'leyin: *planlanan / yapılan / tıkanan / kim-ne-yaptı*.
 
 **BE şu adımları uygular:**
 
-1. DA ile birlikte şirketin sektörüne uygun veri kümesini ve şemasını kesinleştirin. Simülasyon betiğini `/src` içine yazın; veri üretimi **sabit tohumla tekrarlanabilir** olmalıdır (aynı tohum → aynı dosya).
+1. DQ ile birlikte şirketin sektörüne uygun veri kümesini ve şemasını kesinleştirin. Simülasyon betiğini `/src` içine yazın; veri üretimi **sabit tohumla tekrarlanabilir** olmalıdır (aynı tohum → aynı dosya).
 2. `data/<sektor-verisi>.csv` dosyasını üretin. **En az 6 alan** bulunmalıdır: kimlik, tarih, ana kategorik alan, en az 2 sayısal alan ve en az bir ek alan (birim fiyat, mesafe, durum vb.). Alan adları, tipler, aralıklar, kategori değerleri, birimler ve satır sayısı `docs/veri-sozlugu-g1.md` içinde yazılı olmalıdır.
 3. Dosyada en az 100 veri satırı ve sektörün ana kategorik alanında en az 4 farklı değer bulunmalıdır. Commit mesajına veya Issue yorumuna dosya yolunu, satır sayısını ve şemayı yazın.
-4. **Devir teslim yorumu (notlandırılır):** `G1-analiz` ve `G1-gorsel` Issue'larının her birine şu bilgileri yazın: *"Veri hazır — commit `<hash>`. Dosya: `data/<sektor-verisi>.csv` (<satır sayısı> satır). Şema: `docs/veri-sozlugu-g1.md`."* Bu yorum, DA ve FE'nin başlayabileceği resmî devir teslimdir.
+4. **Devir teslim yorumu (notlandırılır):** `G1-analiz` ve `G1-gorsel` Issue'larının her birine şu bilgileri yazın: *"Veri hazır — commit `<hash>`. Dosya: `data/<sektor-verisi>.csv` (<satır sayısı> satır). Şema: `docs/veri-sozlugu-g1.md`."* Bu yorum, DQ ve FE'nin başlayabileceği resmî devir teslimdir.
 
-**DA şu adımları uygular:**
+**DQ (analiz) şu adımları uygular:**
 
 1. BE ile veri kümesinin sektör amacını, alanlarını ve geçerli aralıklarını netleştirip `docs/veri-sozlugu-g1.md` dosyasına yazın.
 2. BE'nin devir teslim yorumunu bekleyin; veri hazır değilken analiz yazmayın.
@@ -331,10 +336,10 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 1. Grafikleri **yapmadan önce** iki grafik için taslak hazırlayın; eksenleri, başlıkları ve gösterilecek metriği belirtin.
 2. Taslağın fotoğrafını veya ekran görüntüsünü `G1-gorsel` Issue'suna ekleyin. **Taslak eklenmeden grafik yapımına başlamak kural ihlalidir.**
 3. Sektöre uygun iki grafiği PNG olarak `/visuals` klasörüne kaydedin. **Biri zaman serisi, diğeri kategorik kırılım** olmalıdır. Her grafikte başlık, eksen etiketi ve birim bulunmalıdır. Dosya adları grafiğin içeriğini açıklamalıdır; örneğin `gunluk-ciro.png`, `rota-yogunlugu.png` veya `tedarikci-gecikme.png`.
-4. BE ve DA'nın devir teslim yorumlarını bekleyin; grafikler **BE'nin verisinden** ve DA'nın belirlediği metriklerden üretilmelidir. Grafik üretim kodunu `/src` içine kaydedin.
+4. BE ve DQ'nun devir teslim yorumlarını bekleyin; grafikler **BE'nin verisinden** ve DQ'nun belirlediği metriklerden üretilmelidir. Grafik üretim kodunu `/src` içine kaydedin.
 5. Commit + push; Issue'ya commit hash'ini ve iki çıktı dosyasını yazan kanıt yorumu ekleyin.
 
-**QA şu adımları uygular:**
+**DQ (test) şu adımları uygular:**
 
 1. `tests/test-cases.md` dosyasını şablona (§7.3) göre yazın; en az 5 senaryo:
    - Veri dosyası var mı ve boş değil mi?
@@ -347,14 +352,14 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 #### Hafta 4
 
-**QA:**
+**DQ (test):**
 1. Tüm test senaryolarını gerçek sektör veri dosyası üzerinde tek tek çalıştırın; sonuçları `tests/test-log.md` dosyasına tarihli olarak işleyin.
 2. **En az 2 hata Issue'su açın**, `bug` etiketiyle. Hata bulunamazsa `enhancement` etiketiyle iki somut iyileştirme önerisi açın. Her kayıtta yeniden üretme adımları, beklenen davranış ve gözlenen davranış bulunmalıdır.
 3. Hata Issue'larını ilgili kişiye atayın (veri hatası → BE, grafik hatası → FE).
 
 **BE + FE:** Size atanan hataları düzeltin. Düzeltme commit'inin mesajında hata numarasını `Fixes #7` biçiminde geçirin — Issue otomatik kapanır, hata-düzeltme bağı kurulmuş olur.
 
-**DA:** Nihai sektör veri dosyasının `docs/veri-sozlugu-g1.md` içindeki şemayla uyumlu olduğunu doğrulayın; `G1-analiz` Issue'suna kapanış yorumu yazın: *"Analiz nihai veri üzerinde doğrulandı — onaylıyorum."* Uyumsuzluk varsa farkları listeleyip BE'ye atayın.
+**DQ (analiz):** Nihai sektör veri dosyasının `docs/veri-sozlugu-g1.md` içindeki şemayla uyumlu olduğunu doğrulayın; `G1-analiz` Issue'suna kapanış yorumu yazın: *"Analiz nihai veri üzerinde doğrulandı — onaylıyorum."* Uyumsuzluk varsa farkları listeleyip BE'ye atayın.
 
 **PM:**
 1. Tüm G1 Issue'larının kanıt yorumuyla kapandığını doğrulayın; açık kalan varsa sahibini dürtün.
@@ -362,7 +367,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 3. `gorev1-final` release'ini oluşturun (§2.4).
 
 **Görev 1 kritik eşikleri (değerlendirme süreci: §5):**
-- *Grup eşikleri:* `gorev1-final` release'i son tarihte mevcut · sektör veri dosyası ve şeması teslim edilmiş · `docs/analiz-g1.md` en az 5 metrik (2 kırılım + top-N) ve bulgular bölümü içeriyor · devir teslim zinciri kanıtlı (BE'nin `G1-analiz`/`G1-gorsel`'e veri yorumu + DA'nın `G1-gorsel`'e analiz yorumu) · `bug` etiketli ≥2 Issue açılmış ve `Fixes #n` ile kapatılmış · `report-w03.md` ve `report-w04.md` zamanında commit'lenmiş.
+- *Grup eşikleri:* `gorev1-final` release'i son tarihte mevcut · sektör veri dosyası ve şeması teslim edilmiş · `docs/analiz-g1.md` en az 5 metrik (2 kırılım + top-N) ve bulgular bölümü içeriyor · devir teslim zinciri kanıtlı (BE'nin `G1-analiz`/`G1-gorsel`'e veri yorumu + DQ'nun `G1-gorsel`'e analiz yorumu) · `bug` etiketli ≥2 Issue açılmış ve `Fixes #n` ile kapatılmış · `report-w03.md` ve `report-w04.md` zamanında commit'lenmiş.
 - *Bireysel eşikler:* kendi rol teslimatı, Issue'sundaki kabul kriterini sağlıyor · ≥2 commit · üstlendiği Issue'lar kanıt yorumuyla kapatılmış.
 
 ---
@@ -382,15 +387,15 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
    | # | Issue başlığı | Atanan | İşin tanımı ve kabul kriteri |
    |---|---|---|---|
-    | 1 | `G2-sem — Veri şeması ve analiz planı` | DA | Sektörünüzün mini veri kümesinin şeması (alan adları, tipler, aralıklar, satır sayısı) ve hesaplanacak en az 5 metrik `docs/veri-sozlugu.md`'ye işlenmiş ve devir teslim yorumları atılmış olacak. |
-    | 2 | `G2-veri — Parametreli simülasyon` | BE | En az 2 ayarlanabilir parametresi olan simülasyon `feature/veri` dalında yazılmış, PR açılmış, QA incelemesinden geçip merge edilmiş olacak. |
-    | 3 | `G2-analiz — Metrik hesabı ve bulgular` | DA | Şemadaki 5 metrik (2 kırılım + top-N) hesaplanmış, bulgular `docs/analiz-g2.md`'de, devir teslim yorumu atılmış olacak. |
+    | 1 | `G2-sem — Veri şeması ve analiz planı` | DQ | Sektörünüzün mini veri kümesinin şeması (alan adları, tipler, aralıklar, satır sayısı) ve hesaplanacak en az 5 metrik `docs/veri-sozlugu.md`'ye işlenmiş ve devir teslim yorumları atılmış olacak. |
+    | 2 | `G2-veri — Parametreli simülasyon` | BE | En az 2 ayarlanabilir parametresi olan simülasyon `feature/veri` dalında yazılmış, PR açılmış, DQ incelemesinden geçip merge edilmiş olacak. |
+    | 3 | `G2-analiz — Metrik hesabı ve bulgular` | DQ | Şemadaki 5 metrik (2 kırılım + top-N) hesaplanmış, bulgular `docs/analiz-g2.md`'de, devir teslim yorumu atılmış olacak. |
     | 4 | `G2-gorsel — Grafik seti` | FE | Taslak Issue'ya eklenmiş, 3 grafik (zaman serisi + kırılım + dağılım) `feature/gorsel` dalında üretilmiş, PR ile merge edilmiş olacak. |
-   | 5 | `G2-test — Test senaryoları ve PR incelemesi` | QA | `tests/test-cases.md` güncel; BE'nin PR'ında ≥2 somut inceleme yorumu var. |
+   | 5 | `G2-test — Test senaryoları ve PR incelemesi` | DQ | `tests/test-cases.md` güncel; BE'nin PR'ında ≥2 somut inceleme yorumu var. |
 
 3. `reports/report-w05.md` raporunu `<TESLİM GÜNÜ/SAATİ>`'a kadar yazıp commit'leyin.
 
-**DA şu adımları uygular:**
+**DQ (analiz) şu adımları uygular:**
 
 1. Sektörünüzün mini veri kümesi için `docs/veri-sozlugu.md` yazın: **her alanın** adı, tipi, aralığı/kuralı, örnek değeri + hedeflenen satır sayısı + **hesaplanacak en az 5 metrik** (Görev 1 standardı: toplam + ortalama + 2 kırılım + top-N; her birinin adı, formülü ve neyi ölçtüğü). Fikir vermesi için sektör bazında örnekler:
 
@@ -402,6 +407,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
    | D — Sigorta | talepler: talep_id, musteri_id, tur, talep_tutar, prim | toplam ödeme · talep başına ortalama tutar · en sık talep türü |
    | E — Perakende | satislar: urun, kategori, adet, fiyat, tarih | toplam ciro · kategori bazlı satış payı · stok dönüş hızı |
    | F — Tedarik | siparisler: siparis_id, tedarikci, urun, miktar, teslim_gun | ortalama tedarik süresi · kritik stok ürün sayısı · tedarikçi bazlı gecikme oranı |
+   | G — Dijital Pazarlama | kampanyalar: kampanya_id, kanal, tarih, gosterim, tiklama, donusum, harcama | toplam harcama · tıklama oranı (CTR) · kanal bazlı müşteri kazanma maliyeti (CPA) |
 
 2. `feature/sozluk-g2` gibi bir branch'te commit + push yapıp PR açın. Belge PR'ları inceleme beklemeden yazarı tarafından merge edilebilir (§3.5): açın, merge edin — iki dakikalık iştir ama iz bırakır.
 3. Devir teslim yorumlarını `G2-veri` Issue'suna yazın: *"Şema yayımlandı — commit `<hash>`. Alanlar, aralıklar ve 5 metrik `docs/veri-sozlugu.md`'de. BE üretebilir."*
@@ -409,11 +415,11 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 **BE şu adımları uygular:**
 
 1. `feature/veri` adında bir branch açın (§2.2).
-2. Simülasyonu DA'nın şemasına birebir uyacak şekilde yazın. **En az 2 parametre** ayarlanabilir olsun (örn. gün sayısı, ürün/müşteri sayısı, rastgelelik tohumu) — parametreler betiğin başında veya komut satırından değiştirilebilsin.
+2. Simülasyonu DQ'nun şemasına birebir uyacak şekilde yazın. **En az 2 parametre** ayarlanabilir olsun (örn. gün sayısı, ürün/müşteri sayısı, rastgelelik tohumu) — parametreler betiğin başında veya komut satırından değiştirilebilsin.
 3. Üretilen veriyi `/data` içine kaydedin; commit mesajına şemayı yazın (satır sayısı + sütun listesi).
 4. Çıktıyı kendiniz doğrulayın: satır sayısı, alan adları, aralıklar şemayla uyumlu mu?
-5. `Publish branch` → **PR açın**: başlık `G2 parametreli simülasyon`, açıklamaya `Closes #<G2-veri Issue numarası>`, **Reviewers** kısmından QA'yı seçin.
-6. QA'nın yorumlarına **PR üzerinden** cevap verin; istenen düzeltmeleri aynı branch'e commit'leyin (PR otomatik güncellenir). QA `Approve` verdikten sonra merge düğmesine PR sahibi olarak siz basarsınız.
+5. `Publish branch` → **PR açın**: başlık `G2 parametreli simülasyon`, açıklamaya `Closes #<G2-veri Issue numarası>`, **Reviewers** kısmından DQ'yu seçin.
+6. DQ'nun yorumlarına **PR üzerinden** cevap verin; istenen düzeltmeleri aynı branch'e commit'leyin (PR otomatik güncellenir). DQ `Approve` verdikten sonra merge düğmesine PR sahibi olarak siz basarsınız.
 
 **FE şu adımları uygular:**
 
@@ -421,7 +427,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 2. `feature/gorsel` adında branch açın; **3 grafik** üretin: zaman serisi + kategorik kırılım + dağılım (histogram veya pasta). Her grafikte başlık, eksen etiketi ve birim bulunmalıdır. Grafikler `/visuals` klasörüne PNG olarak kaydedilsin; üretim kodu `/src` içinde olsun.
 3. Commit → publish. PR'ı Hafta 6'da açacaksınız; bu hafta iskelet bitmiş olsun.
 
-**QA şu adımları uygular:**
+**DQ (test) şu adımları uygular:**
 
 1. `tests/test-cases.md` dosyasını Görev 2'nin veri kümesi için yeniden yazın: en az 5 senaryo — satır sayısı, sütun adları, aralıklar, tip kontrolü ve parametre davranışı (örn. "gün sayısı 10'a çekilince satır sayısı şemaya göre değişiyor mu?").
 2. **BE'nin PR'ını inceleyin** (§2.2): `Files changed` sekmesinde koda bakın, **en az 2 somut yorum** yazın. Sorular da geçerli yorumdur: "Bu fonksiyon negatif değer üretebilir mi?" Onay vermeden önce yorumlarınıza cevap alın; sonra `Approve` — merge işlemini PR sahibi yapar.
@@ -430,17 +436,17 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 **FE:**
 1. Grafikleri merge edilmiş veri üzerinde son haline getirin; `feature/gorsel` dalına commit'leyin.
-2. PR açın (reviewer: QA). QA'nın istediği düzeltmeleri yapın; onay sonrası merge edin.
+2. PR açın (reviewer: DQ). DQ'nun istediği düzeltmeleri yapın; onay sonrası merge edin.
 
-**DA:**
+**DQ (analiz):**
 1. `docs/analiz-g2.md` dosyasını yazın: şemadaki 5 metriği nihai veri üzerinde hesaplayın (2 kırılım + top-N dahil), her birini 1-2 cümleyle yorumlayın; **bulgular bölümüne 3 gözlem + 1 eylem önerisi** ekleyin. Kullandığınız veri commit'ini belirtin.
 2. `docs/requirements.md` dosyasını geriye dönük yazın: 1 sayfalık resmî gereksinim belgesi — mini ürünün amacı, yaptıkları (numaralı liste), yapmadıkları. Bu belge büyük proje önerisinin şablonu olacak; özenli yazın.
 
 **BE:**
 1. Simülasyona **hata yönetimi** ekleyin: geçersiz parametrede (negatif gün sayısı, sıfır ürün vb.) program çökmemeli, anlamlı bir mesaj vermeli (Python'da `try/except` + `raise ValueError`; diğer dillerde eşdeğeri). Hata sessizce yutulmaz.
-2. `fix/error-handling` gibi bir branch'te çalışın → commit → PR → QA incelemesi → merge.
+2. `fix/error-handling` gibi bir branch'te çalışın → commit → PR → DQ incelemesi → merge.
 
-**QA:**
+**DQ (test):**
 1. Merge edilmiş ürün üzerinde tam test turu: tüm senaryoları çalıştırıp `tests/test-log.md`'ye işleyin.
 2. En az 2 `bug` Issue'su açın (şablon Görev 1 Hafta 4'teki gibi), ilgililere atayın.
 3. `docs/user-manual.md`'yi başlatın: kurulum bölümü (hangi ortam, hangi komutlar, veri nasıl üretilir) + ekran görüntülü 1 kullanım senaryosu.
@@ -452,13 +458,15 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 **Görev 2 kritik eşikleri:**
 - *Grup eşikleri:* `gorev2-final` release'i son tarihte mevcut · gerçek inceleme yorumları içeren ≥2 merge edilmiş PR · `/src` farkında hata yönetimi kodu görünüyor · kılavuz başlamış · milestone kapatılmış.
-- *Bireysel eşikler:* kendi rol teslimatı kabul kriterini sağlıyor · PR akışına izlenebilir katılım (BE/FE: kendi işi PR ile merge edilmiş; QA: ≥2 somut inceleme yorumu; DA: şema + devir teslim yorumları; PM: milestone + raporlar) · ≥2 commit veya eşdeğer yazılı iz.
+- *Bireysel eşikler:* kendi rol teslimatı kabul kriterini sağlıyor · PR akışına izlenebilir katılım (BE/FE: kendi işi PR ile merge edilmiş; DQ: şema + devir teslim yorumları + ≥2 somut inceleme yorumu; PM: milestone + raporlar) · ≥2 commit veya eşdeğer yazılı iz.
 
 ---
 
 ### GÖREV 3 — "B2B Veri Değişimi" (Hafta 7–8)
 
 **Ürün:** Eşleşen iki şirket de kendi veri kümesini **dışa aktarır** (export); karşı şirketin dosyasını **içe aktarıp analiz eder ve görselleştirir** (import). Eşleşmeler: A↔B, C↔D, E↔F (§1.1). Her çift iki yönlü veri akışını kapsayan ortak bir **veri sözleşmesi** müzakere eder. Roller yine döner (§1.3).
+
+**Üçlü döngü (G → A → B → G):** 7 şirket olduğu için G, A ve B üçlü döngüde çalışır: G kampanya verisini A'ya gönderir (A siparişleri kampanyalarla ilişkilendirir), A sipariş verisini B'ye gönderir, B teslimat verisini G'ye gönderir (G yeniden hedefleme için kullanır). Her şirket yine **tek** `exchange/output.csv` üretir ve tek dosya içe aktarır; yük ikili eşleşmelerle aynıdır. Bu üçlüde aşağıdaki talimatlarda geçen "partner" iki şirkettir: dosyasını aldığınız şirket (içe aktarma, analiz, "Değişim sonucu" Issue'su) ve dosyanızı gönderdiğiniz şirket (dışa aktarma). `docs/veri-sozlesmesi.md` üç akışı ayrı başlıklarla içerir ve **üç depoda birebir aynıdır**; sözleşme Issue'ları ve PM ortak toplantı tutanağı da üç depoya işlenir.
 
 **Sözleşme nedir:** İki tarafın da uyacağı yazılı dosya formatı tanımıdır — gerçek sektörde iki şirketin API/veri anlaşmasının küçük ölçekli hali. Sözleşmede hem `Şirket X → Şirket Y` hem de `Şirket Y → Şirket X` veri akışının şeması bulunur. **Veri değişiminin kendisi notlandırılır:** iki yön de gönderildi mi, karşı taraf dosyaları hatasız okuyabildi mi, sözleşmeye uyuldu mu.
 
@@ -468,20 +476,20 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 #### Hafta 7 — Sözleşme haftası
 
-**DA şu adımları uygular:**
+**DQ (analiz) şu adımları uygular:**
 
-1. Partner şirketin DA'sıyla iki yönlü veri sözleşmesini müzakere edin — **sözlü değil**, GitHub üzerinde: her iki depoda da `Veri sözleşmesi A↔B` (kendi eşleşmenize göre) başlıklı birer Issue açın; müzakere bu Issue'ların yorumlarında yürür.
+1. Partner şirketin DQ'suyla iki yönlü veri sözleşmesini müzakere edin — **sözlü değil**, GitHub üzerinde: her iki depoda da `Veri sözleşmesi A↔B` (kendi eşleşmenize göre) başlıklı birer Issue açın; müzakere bu Issue'ların yorumlarında yürür.
 2. Hem `Şirket X → Şirket Y` hem de `Şirket Y → Şirket X` akışı için dosya formatı, alan adları ve sırası, tipler, ayraç, kodlama, tarih formatı, ondalık ayracı, başlık satırı, birimler ve hatalı satır kuralında anlaşın.
 3. İki akışın şemasını `docs/veri-sozlesmesi.md` içinde ayrı başlıklarla yazın ve **her iki depoya da birebir aynı** commit'leyin. İki dosya arasında tek karakter fark olması sözleşme ihlalidir.
 
 **BE şu adımları uygular:**
 
 1. Sözleşmeye birebir uyan `ExportCSV` (veya JSON ise `ExportJSON`) fonksiyonunu/betiğini yazın: şirketinizin Görev 2 verisini `exchange/output.csv` dosyasına yazar. Format sözleşmede yazanın aynısı olmalı: alan sırası, ayraç, tarih formatı, kodlama.
-2. Branch + PR + QA incelemesi + merge (artık standart akış).
+2. Branch + PR + DQ incelemesi + merge (artık standart akış).
 
 **FE:** Görev 2 çıktılarına bir "dışa aktarım" dokunusu ekleyin: şirketinizin kendi `exchange/output.csv` dosyası tek komutla/betikle üretilebilsin (örneğin `src/export.py`). Branch + PR + merge.
 
-**QA:** Çapraz testleri tasarlayıp `tests/test-cases.md`'ye ekleyin. Her iki yöndeki dosya için eksik sütun, yanlış tarih formatı, tamamen boş dosya ve fazla sütun senaryolarını yazın. Her senaryo için beklenen davranışı belirtin ("program çöker" hiçbir senaryoda kabul edilebilir davranış değildir).
+**DQ (test):** Çapraz testleri tasarlayıp `tests/test-cases.md`'ye ekleyin. Her iki yöndeki dosya için eksik sütun, yanlış tarih formatı, tamamen boş dosya ve fazla sütun senaryolarını yazın. Her senaryo için beklenen davranışı belirtin ("program çöker" hiçbir senaryoda kabul edilebilir davranış değildir).
 
 **PM (lider):** Partner şirketin PM'iyle 15 dakikalık ortak bir toplantı ayarlayın; tutanağı `reports/joint-meeting-w07.md` olarak **iki depoya da** commit'leyin. Tutanakta: katılanlar, konuşulanlar, alınan kararlar, açık kalan konular.
 
@@ -491,13 +499,13 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 1. Kendi verinizden `exchange/output.csv` üretin ve commit'leyin (**ara teslim: `<ARA TESLİM GÜNÜ/SAATİ>`**).
 2. Partnerin deposundaki `exchange/output.csv` dosyasını indirin; onu okuyup işleyen `ImportCSV` betiğini yazın. Sözleşmedeki ilgili akışın alan adlarını ve tiplerini doğrulayarak `data/partner-verisi.csv` olarak (veya doğrudan belleğe) yükleyin. Kendi ürettiğiniz test dosyasıyla değil, **partnerin gerçek çıktısıyla** test edin.
 
-**DA:**
+**DQ (analiz):**
 1. Partnerin gerçek verisi üzerinde bir analiz yazın: `docs/partner-analizi.md` — en az 5 metrik (en az biri kırılımlı) + **kendi sektörünüzle 2 karşılaştırmalı gözlem** (örn. "partnerin ortalama teslim süresi bizim sipariş hacmimizle nasıl örtüşüyor?"). Kullandığınız dosyanın hangi commit'ten alındığını belirtin.
 2. Sözleşme anlaşmazlıklarında hakemlik yapın. Sözleşme değişirse sürümleyin: `veri-sozlesmesi.md` içinde `v1.1` başlığı + değişiklik günlüğü satırı ("v1.1 — tarih formatı netleştirildi, 2026-04-12"). Güncel sürüm yine iki depoda birebir aynı olmalı.
 
 **FE:** Partnerin verisi üzerinden en az 2 grafik üretin (`visuals/partner-*.png`) ve `/src` içindeki görselleştirme betiğine "içe aktarım" yeteneği ekleyin.
 
-**QA:**
+**DQ (test):**
 1. Değişim testini çalıştırın: partnerin gerçek dosyasını alın, içe aktarın, sonuçları `test-log.md`'ye işleyin.
 2. **Partner şirketin deposunda bir "Değişim sonucu" Issue'su açın — her durumda.** İçerik: kaç satır başarıyla içe aktarıldı, kaç satır reddedildi, tespit edilen sözleşme ihlalleri (varsa madde madde; yoksa "dosya sözleşmeye tam uyumlu, teşekkürler" teyidi). **Profesyonel dil zorunlu ve notlandırılır.** Kötü örnek: "dosyanız bozuk, düzeltin." İyi örnek: *"Sözleşme v1 §3'e göre tarih formatı `yyyy-mm-dd` olmalı; gönderilen dosyanın 12. satırında `05.03.2026` görünüyor. Yeniden üretme: dosyayı ekledim. Düzeltilmiş dosyayı bekliyoruz, teşekkürler."*
 
@@ -505,7 +513,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 **Görev 3 kritik eşikleri:**
 - *Grup eşikleri:* `gorev3-final` release'i son tarihte mevcut · iki şirketin `exchange/output.csv` dosyaları `<ARA TESLİM GÜNÜ/SAATİ>` ara teslimine kadar depodaydı · iki depoda birebir aynı, iki yönlü sözleşme dosyası · partner dosyalarının iki yönde başarıyla içe aktarılması (hoca derste canlı test eder) · partner deposunda "Değişim sonucu" Issue'su açılmış, dili profesyonel ve somut.
-- *Bireysel eşikler:* kendi rol teslimatı kabul kriterini sağlıyor · ≥2 commit veya eşdeğer yazılı iz (DA/PM için sözleşme müzakeresi ve tutanak kayıtları da izdir).
+- *Bireysel eşikler:* kendi rol teslimatı kabul kriterini sağlıyor · ≥2 commit veya eşdeğer yazılı iz (DQ/PM için sözleşme müzakeresi ve tutanak kayıtları da izdir).
 
 ---
 
@@ -522,8 +530,8 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 **Tüm şirketler şu adımları uygular:**
 
-1. **Kalan 4 rolü müzakere edin.** PM, dönem başında seçilen proje lideridir ve sabittir. BE, FE, DA, QA rolleri diğer 4 üyeye müzakereyle dağıtılır — herkes 3 rol deneyimledi; kim neyi iyi yaptı, kim neyi sevdi, açık konuşun. Nihai rol listesini `README.md`'ye commit'leyin; öğretim elemanı onaylar.
-2. **DA + PM birlikte 1 sayfalık proje önerisini yazar** (`docs/requirements.md`, Görev 2'de yazılan belge şablondur). Zorunlu içerik:
+1. **Kalan 3 rolü müzakere edin.** PM, dönem başında seçilen proje lideridir ve sabittir. BE, FE, DQ rolleri diğer 3 üyeye müzakereyle dağıtılır — herkes 3 rolün üçünü de deneyimledi; kim neyi iyi yaptı, kim neyi sevdi, açık konuşun. Nihai rol listesini `README.md`'ye commit'leyin; öğretim elemanı onaylar.
+2. **DQ + PM birlikte 1 sayfalık proje önerisini yazar** (`docs/requirements.md`, Görev 2'de yazılan belge şablondur). Zorunlu içerik:
    - **Amaç:** ürün kimin hangi sorununu çözüyor (2–3 cümle).
    - **Özellikler:** 5–8 somut özellik, `R1`, `R2`, … diye numaralı. Her R maddesi test edilebilir bir cümledir. Kötü: "R1: Kullanıcı dostu olacak." İyi: "R1: Kullanıcı, gün sayısı ve ürün sayısı parametrelerini değiştirerek satış verisi üretebilecek."
    - **Veri modeli taslağı:** hangi veri kümeleri/dosyalar olacak, ana alanlar neler.
@@ -551,13 +559,14 @@ Hesap: şirketin ortak bir Cloudflare hesabı yeterlidir (ücretsiz). `wrangler`
 | **D — Sigorta** | parametreli talep simülasyonu · prim/ödeme analizi · risk kategorisi hesabı · aylık özet dashboard |
 | **E — Perakende** | parametreli satış simülasyonu · kategori bazlı performans raporu · stok dönüş analizi · kritik stok uyarı kuralı |
 | **F — Tedarik** | parametreli sipariş simülasyonu · tedarik süresi analizi · kritik stok raporu · tedarikçi bazlı gecikme grafiği |
+| **G — Dijital Pazarlama** | parametreli kampanya simülasyonu · gösterim → tıklama → dönüşüm hunisi analizi · harcama getirisi (ROAS) ve müşteri kazanma maliyeti (CPA) raporu · bütçe verimsizliği uyarısı (CPA eşik kuralı) |
 
 #### Hafta 10 — Temel Atma
 
-- **DA:** Tam veri sözlüğü v1'i commit'leyin: **her** veri kümesi, **her** alan, **her** fonksiyon imzası (girdi/çıktı tipleriyle). Büyük projede sözlük eksikse BE ve FE durur; darboğaz sizsiniz, erken bitirin.
+- **DQ (analiz):** Tam veri sözlüğü v1'i commit'leyin: **her** veri kümesi, **her** alan, **her** fonksiyon imzası (girdi/çıktı tipleriyle). Büyük projede sözlük eksikse BE ve FE durur; darboğaz sizsiniz, erken bitirin.
 - **BE:** Sözlükteki her imza için Worker uç iskeletini yazın (gövde `TODO` olabilir). Ölçüt: `wrangler dev` hata vermeden ayağa kalkar; D1 şeması commit'lenmiştir.
 - **FE:** Pages arayüz iskeletini yayınlayın veya yerel olarak çalıştırın: parametre formu + grafik alanları + uyarı alanı boş da olsa yerinde durur. Taslaklar ilgili Issue'lara eklenir.
-- **QA:** Test planını yazın: **her R maddesi için en az 3 test senaryosu** `tests/test-cases.md`'de (normal + sınır + hatalı girdi).
+- **DQ (test):** Test planını yazın: **her R maddesi için en az 3 test senaryosu** `tests/test-cases.md`'de (normal + sınır + hatalı girdi).
 - **PM:**
   1. İki milestone oluşturun: `M1 — Ara Kontrol` (bitiş: Hafta 11) ve `M2 — Özellik Tamamlama` (bitiş: Hafta 13).
   2. Her R maddesini bir veya birkaç Issue'ya bölün; hepsini atayın, milestone'a bağlayın, panoya koyun. Örnek bölme: "R3: kritik stok raporu" → `R3-veri: KritikStok hesaplama fonksiyonu (BE)` + `R3-gorsel: Rapor grafiği (FE)`.
@@ -577,8 +586,8 @@ Canlı kontrol nasıl işler: hoca şirketin bilgisayarında `main` dalının so
 #### Hafta 12 — İnşa
 
 - **BE/FE:** Kalan özellikleri geliştirin. Değişmez kural: **her özellik = branch + PR + inceleme + merge.** Branch adı özelliği söylesin (`feature/R4-kritik-stok`), PR açıklaması R numarasını ve Issue'yu bağlasın (`Implements R4, closes #23`).
-- **QA:** Merge edilen her özelliği bekletmeden test edin; hataları `bug` Issue'suyla kaydedin. **Regresyon kontrolü** yapın: yeni merge'ler, daha önce geçen testleri bozmuş mu — eski senaryoları yeniden koşun.
-- **DA:** **Değişiklik kontrolü:** Sözlükten herhangi bir sapma (yeni alan, imza değişikliği), kod merge edilmeden **önce** sözlüğün sürümlü güncellemesini gerektirir (sözlüğe `v1.1 — gecikme_gun alanı eklendi` gibi değişiklik satırı işlenir). Önce belge, sonra kod.
+- **DQ (test):** Merge edilen her özelliği bekletmeden test edin; hataları `bug` Issue'suyla kaydedin. **Regresyon kontrolü** yapın: yeni merge'ler, daha önce geçen testleri bozmuş mu — eski senaryoları yeniden koşun.
+- **DQ (analiz):** **Değişiklik kontrolü:** Sözlükten herhangi bir sapma (yeni alan, imza değişikliği), kod merge edilmeden **önce** sözlüğün sürümlü güncellemesini gerektirir (sözlüğe `v1.1 — gecikme_gun alanı eklendi` gibi değişiklik satırı işlenir). Önce belge, sonra kod.
 
 #### Hafta 13 — **KİLOMETRE TAŞI 2 (notlandırılan ara kontrol, final notunun %10'u)**
 
@@ -589,9 +598,9 @@ Canlı kontrol nasıl işler: hoca şirketin bilgisayarında `main` dalının so
 #### Hafta 14 — Sağlamlaştırma
 
 - **Kod dondurma (code freeze) `<KOD DONDURMA GÜNÜ>` (örn. Çarşamba):** O andan itibaren `main`'e yalnızca `bug` etiketli Issue'lara bağlı düzeltme PR'ları girebilir; yeni özellik girmez. Amaç: teslimden önce ürünü sarsmamak.
-- **QA:** Son tam regresyon turu; ardından `M2` milestone'una imza yorumu: *"Tüm senaryolar koşuldu, bilinen kritik hata yok / bilinen hatalar: …"*
+- **DQ (test):** Son tam regresyon turu; ardından `M2` milestone'una imza yorumu: *"Tüm senaryolar koşuldu, bilinen kritik hata yok / bilinen hatalar: …"*
 - **FE:** Cila turu: grafik başlıkları, eksen etiketleri, renk paleti ve tüm çıktılarda dil/üslup tutarlılığı.
-- **DA:** Gereksinim ↔ ürün çapraz kontrol tablosu: `R1…Rn` için tek tablo — durum (tamamlandı / kısmen / iptal) + gerekçe. `docs/requirements.md`'nin sonuna eklenir.
+- **DQ (analiz):** Gereksinim ↔ ürün çapraz kontrol tablosu: `R1…Rn` için tek tablo — durum (tamamlandı / kısmen / iptal) + gerekçe. `docs/requirements.md`'nin sonuna eklenir.
 - **PM:** `reports/report-w14.md` = 1 sayfalık proje retrospektifi: neler iyi gitti / neyi farklı yapardık / ekip için 3 ders.
 - **Herkes:** **Akran değerlendirme formu #2**'yi doldurur.
 
@@ -620,8 +629,8 @@ Bu bölüm, notların nasıl oluştuğunu herkesin baştan bilmesi için yazılm
 4. **Puanlama: 0 veya 90–100.** Eşiklerin tamamını geçen öğrenci 90–100 arası puan alır; bandın neresinde olduğunu işinin kalitesi belirler:
    - kodun okunabilirliği ve hata yönetiminin özeni (BE),
    - grafiklerin ve çıktıların açıklığı, etiket ve başlık özeni (FE),
-   - analizlerin derinliği, belge ve raporların açıklığı (DA/PM),
-   - inceleme yorumlarının ve hata kayıtlarının derinliği (QA),
+   - analizlerin derinliği, belge ve raporların açıklığı (DQ/PM),
+   - inceleme yorumlarının ve hata kayıtlarının derinliği (DQ),
    - işin haftaya yayılması — her şeyin son gece tek commit'te gelmemesi (zaman damgaları görünürdür).
 
    Eşik geçilmemişse puan 0'dır; kısmi puan yoktur. Eşikler bu yüzden bilinçli olarak asgari düzeyde tutulmuştur: haftalık talimatları normal şekilde uygulayan bir öğrencinin takılacağı hiçbir eşik yoktur.
@@ -638,7 +647,7 @@ Bu süreç Görev 1–3'te aynen uygulanır; büyük projede eşik işlevini Kil
 
 | Ne zaman | Eylem | Süre |
 |---|---|---|
-| Pazartesi | 6 sprint raporunu (`/reports/report-wXX.md`) tara; eksik/tıkanma sinyali ara | ~20 dk |
+| Pazartesi | 7 sprint raporunu (`/reports/report-wXX.md`) tara; eksik/tıkanma sinyali ara | ~20 dk |
 | Çarşamba | GitHub org → her depo → Insights → Contributors; anomali not et (sıfır commit'li üyeler) | ~15 dk |
 | Derste | Şirket başına 5 dk ayakta toplantı: PM 2 dk konuşur, sen PM olmayan rastgele bir üyeye soru sorarsın | ~30 dk |
 | Her görev sonrası (son tarihin ertesi günü) | Eşik denetimini çalıştır; çıktı tablosunu doğrula, puanları ilan et (§5) | ~30 dk |
@@ -677,7 +686,7 @@ Bu süreç Görev 1–3'te aynen uygulanır; büyük projede eşik işlevini Kil
 
 ```markdown
 # Veri Sözlüğü — <ürün adı>
-**Sürüm:** v1 · **DA:** <ad> · **Tarih:** <yyyy-mm-dd>
+**Sürüm:** v1 · **DQ:** <ad> · **Tarih:** <yyyy-mm-dd>
 
 ## Veri Kümesi: <dosya adı>
 | Alan | Tip | Kural/Aralık | Örnek |
@@ -724,7 +733,7 @@ Her takım arkadaşı için:
 
 ```markdown
 # Veri Sözleşmesi — <Şirket X> ↔ <Şirket Y>
-**Sürüm:** v1 · **Tarih:** <yyyy-mm-dd> · **İmzacılar (DA'lar):** <ad>, <ad>
+**Sürüm:** v1 · **Tarih:** <yyyy-mm-dd> · **İmzacılar (DQ'lar):** <ad>, <ad>
 
 ## Veri akışı: <Şirket X> → <Şirket Y>
 

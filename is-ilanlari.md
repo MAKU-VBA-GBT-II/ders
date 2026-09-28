@@ -1,6 +1,6 @@
 # İş İlanları — VBA II (Veri Bilimi ve Analitik)
 
-Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** arıyor. İlanları inceleyin; başvuru linkinizi ilgilendiğiniz ilanın altında bulabilirsiniz.
+Dönemin ilk rol yapma adımı: 7 veri şirketimiz birer **proje lideri (PM)** arıyor. İlanları inceleyin; başvuru linkinizi ilgilendiğiniz ilanın altında bulabilirsiniz.
 
 - **Son başvuru tarihi:** **27 Eylül 2026, 23:59**
 - **İlan tarihi:** 24 Eylül 2026
@@ -195,12 +195,36 @@ Dönemin ilk rol yapma adımı: 6 veri şirketimiz birer **proje lideri (PM)** a
 
 ---
 
+## İlan 7 — Dijital Pazarlama Veri Şirketi · Proje Lideri
+
+> **Sonradan eklendi (28 Eylül 2026):** Öğrenci sayısı 28'e inince şirket sayısı 7'ye çıkarıldı ve ekipler 4 kişiye indirildi. Bu ilan için ayrı başvuru toplanmadı; lider, diğer ilanlara gelen başvurular arasından atandı.
+
+**Şirket hakkında:** Reklam kampanyası verisi (gösterim, tıklama, dönüşüm, harcama) üreten ve kanal performansını analiz eden bir veri şirketi. Dönem boyunca kampanya simülasyonları kurar, dönüşüm hunisini ve müşteri kazanma maliyetini görselleştirir. *(Görev 2: kampanya simülasyonu + kanal bazlı dönüşüm grafikleri · Büyük Proje: Kampanya Performans ve Dönüşüm Analiz Platformu.)*
+
+**Pozisyon:** Proje Lideri (PM)
+
+**Görev tanımı:** Panonun, takvimin ve haftalık raporun sahibidir. Görevleri Issue olarak açar, atar, takip eder; işlerin zamanında bitmesini sağlar. Kendisi merge yapmaz; başkalarının doğru şekilde yapmasını sağlar.
+
+**Sorumluluklar:**
+- Haftalık 15 dakikalık toplantıyı yönetir; alınan kararları Issue'lara işler.
+- Görevleri Issue olarak açar, atar; panoyu denetler, yanlış sütunda kart bırakmaz.
+- Haftalık sprint raporunu yazar; her görevin sonunda release oluşturur.
+- Tıkanan işlerde ilk başvurulan kişidir; çözemezse hocayı Issue'da @mention'lar.
+- Dönem boyu bu rolü sürdürür; Büyük Proje'de de PM'dir.
+
+**Aranan nitelikler:**
+- Birinci dönem veri temellerine hâkimiyet (simülasyon, analiz, görselleştirme).
+- Düzenli çalışma alışkanlığı; söz verilen tarihe uyma.
+- Ekip koordinasyonu isteği ve yazılı iletişim becerisi (bu derste işler GitHub üzerinde yürür).
+
+---
+
 ## Seçim Süreci
 
 1. Başvurular 27 Eylül 2026, 23:59'a kadar Google Form üzerinden toplanır; geç başvuru alınmaz.
 2. Öğretim elemanı başvuruları değerlendirir: **gerekçenin açıklığı, birinci dönem izleri, başvurulan sektörle uyum.**
-3. 6 lider ilan edilir; sonuçlar grup `README.md`'lerine işlenir.
-4. Seçilen her lider, Hafta 1 içinde kendi şirketi için BE, FE, DA ve QA iş ilanlarını yayımlar.
+3. 7 lider ilan edilir; sonuçlar grup `README.md`'lerine işlenir.
+4. Seçilen her lider, Hafta 1 içinde kendi şirketi için BE, FE ve DQ (veri analisti ve kalite) iş ilanlarını yayımlar.
 5. Adaylar bir veya daha fazla role CV/portföy ile başvurur; CV'ler kamuya açık depoya konmaz.
-6. Liderler başvuruları açıklanmış ölçütlerle değerlendirir, dört kişilik ekiplerini kurar ve listeyi öğretim elemanına onaylatır.
+6. Liderler başvuruları açıklanmış ölçütlerle değerlendirir, üç kişilik ekiplerini kurar ve listeyi öğretim elemanına onaylatır.
 7. Her öğrenci bir şirkette yer almalıdır; açıkta kalan adayların son yerleştirmesini öğretim elemanı yapar. Ekipteki başlangıç rolleri Görev 1–3 boyunca dönem planı §1.3'e göre döner.
