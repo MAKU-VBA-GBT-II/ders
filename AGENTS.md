@@ -167,7 +167,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 ## 3. Altyapı Kuralları (Hafta 1'de ilan edilir, pazarlık edilmez)
 
-1. **Tek GitHub organizasyonu:** `MAKU-VBA-GBT-II`; her grubun bir deposu (`group-a` … `group-g`). Öğretim elemanı organizasyonun sahibidir ve her şeyi görür. Depolar herkese açıktır (public) — mezuniyette portföy olarak kullanılabilirler; bu yüzden gerçek kişi verisi (TC no, telefon vb.) asla depoya girmez, tüm veriler simülasyon ürünüdür.
+1. **Tek GitHub organizasyonu:** `MAKU-VBA-GBT-II`; her grubun bir deposu (`group-a` … `group-g`). Öğretim elemanı organizasyonun sahibidir ve her şeyi görür. Depolar herkese açıktır (public) — mezuniyette portföy olarak kullanılabilirler; bu yüzden ders verisi olarak gerçek kişi verisi (TC no, telefon vb.) asla depoya girmez, tüm ders verileri simülasyon ürünüdür. Tek istisna işe alım başvurularıdır: CV'ler kamuya açık depoda saklanabilir (§1.4.5).
 
 2. **Zorunlu depo yapısı:**
 
