@@ -128,7 +128,7 @@ Roleplay'in ilk adımı **iki aşamalı işe alım sürecidir**: önce öğretim
    - İsteğe bağlı: birinci dönemden örnek bir çalışma linki (GitHub repo, grafik, ödev).
 3. **Lider seçimi (`<SEÇİM GÜNÜ>`):** Öğretim elemanı başvuruları değerlendirir — gerekçenin açıklığı, birinci dönem izleri ve başvurulan sektörle uyum. 7 lider ilan edilir ve sonuçlar grup `README.md`'lerine işlenir.
 4. **Ekip ilanları (Hafta 1):** Her PM, BE, FE ve DQ için ayrı bir iş ilanı açar. İlanda rolün görevleri, kabul edilecek katkı türü, başvuru yöntemi ve son başvuru zamanı bulunur.
-5. **Ekip başvuruları:** Öğrenciler bir veya daha fazla role CV/portföy ile başvurur. CV'ler kamuya açık depoya konmaz; PM ve öğretim elemanı tarafından değerlendirilir.
+5. **Ekip başvuruları:** Öğrenciler bir veya daha fazla role CV/portföy ile başvurur. CV'ler kamuya açık depoda saklanabilir (GitHub'da sorun yoktur); PM ve öğretim elemanı tarafından değerlendirilir.
 6. **Ekip seçimi:** PM adayları açıklanmış ölçütlerle değerlendirir, üç üyeyi başlangıç rollerine yerleştirir ve listeyi öğretim elemanının onayına sunar. Her öğrenci bir şirkette yer almalıdır; açıkta kalan adayların son yerleştirmesini öğretim elemanı yapar.
 7. **Liderin ilk görevleri (Hafta 1–2):** Şirket adını ekibe önerip oylatmak, teknoloji kararına öncülük etmek ve Hafta 2'de panoyu kurmak.
 
@@ -228,7 +228,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 **Proje liderleri (PM) şu adımları uygular:**
 
 1. BE, FE ve DQ için ayrı iş ilanları açın; görevleri, aranan katkıyı, başvuru yöntemini ve son başvuru zamanını yazın.
-2. Gelen CV ve portföyleri açıklanmış ölçütlerle değerlendirin. CV'leri kamuya açık depoya koymayın.
+2. Gelen CV ve portföyleri açıklanmış ölçütlerle değerlendirin. CV'ler kamuya açık depoda saklanabilir.
 3. Üç üyeyi başlangıç rollerine yerleştirin ve ekip listesini öğretim elemanının onayına sunun.
 4. Onaylanan ekip listesini `README.md`'ye işleyin; rol rotasyonunun Görev 1–3 boyunca §1.3'e göre uygulanacağını ekibe açıklayın.
 

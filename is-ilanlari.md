@@ -225,6 +225,6 @@ Dönemin ilk rol yapma adımı: 7 veri şirketimiz birer **proje lideri (PM)** a
 2. Öğretim elemanı başvuruları değerlendirir: **gerekçenin açıklığı, birinci dönem izleri, başvurulan sektörle uyum.**
 3. 7 lider ilan edilir; sonuçlar grup `README.md`'lerine işlenir.
 4. Seçilen her lider, Hafta 1 içinde kendi şirketi için BE, FE ve DQ (veri analisti ve kalite) iş ilanlarını yayımlar.
-5. Adaylar bir veya daha fazla role CV/portföy ile başvurur; CV'ler kamuya açık depoya konmaz.
+5. Adaylar bir veya daha fazla role CV/portföy ile başvurur; CV'ler kamuya açık depoda saklanabilir.
 6. Liderler başvuruları açıklanmış ölçütlerle değerlendirir, üç kişilik ekiplerini kurar ve listeyi öğretim elemanına onaylatır.
 7. Her öğrenci bir şirkette yer almalıdır; açıkta kalan adayların son yerleştirmesini öğretim elemanı yapar. Ekipteki başlangıç rolleri Görev 1–3 boyunca dönem planı §1.3'e göre döner.
