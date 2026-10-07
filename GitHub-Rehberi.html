@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Rehberi — VBA II</title>
+<style>
+:root { --ink:#1f2328; --line:#d0d7de; --bg:#ffffff; --code:#f6f8fa; --acc:#0969da; }
+* { box-sizing: border-box; }
+body { font: 16px/1.7 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); background: var(--bg); margin: 0 auto; max-width: 820px; padding: 40px 24px 80px; }
+h1 { font-size: 2rem; border-bottom: 1px solid var(--line); padding-bottom: .4em; }
+h2 { font-size: 1.45rem; margin-top: 2em; border-bottom: 1px solid var(--line); padding-bottom: .3em; }
+h3 { font-size: 1.15rem; margin-top: 1.6em; }
+blockquote { margin: 1em 0; padding: .4em 1em; border-left: 4px solid var(--acc); background: #f0f6ff; border-radius: 0 6px 6px 0; }
+code { font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace; background: var(--code); padding: .15em .4em; border-radius: 5px; font-size: .9em; }
+pre { background: var(--code); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; overflow-x: auto; }
+pre code { background: none; padding: 0; font-size: .88em; }
+table { border-collapse: collapse; width: 100%; margin: 1em 0; font-size: .95em; }
+th, td { border: 1px solid var(--line); padding: 7px 11px; text-align: left; vertical-align: top; }
+th { background: var(--code); }
+hr { border: 0; border-top: 1px solid var(--line); margin: 2.5em 0; }
+a { color: var(--acc); text-decoration: none; } a:hover { text-decoration: underline; }
+li { margin: .25em 0; }
+@media print { body { padding: 0; max-width: none; } }
+</style>
+</head>
+<body>
+<h1>GitHub Rehberi — VBA II</h1>
+<p>Bu derste tüm çalışma GitHub üzerinden yürür ve tek bir altın kural vardır:</p>
+<blockquote>
+<p><strong>GitHub'da yoksa, yapılmamıştır.</strong> (Dönem planı §3.3)</p>
+</blockquote>
+<p>Bir işi yaptıysanız bile GitHub'da iz bırakmadıysanız, süreç gözünde o iş yapılmamış sayılır. Bu rehber, bu izleri doğru bırakmanız için bilmeniz gereken her şeyi anlatır.</p>
+<hr />
+<h2>1. Hesap, organizasyon, depo, takım</h2>
+<table>
+<thead>
+<tr>
+<th>Kavram</th>
+<th>Nedir</th>
+<th>Bu dersteki karşılığı</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hesap</strong></td>
+<td>Kişisel GitHub kimliğiniz</td>
+<td><code>github.com/&lt;kullanici-adiniz&gt;</code></td>
+</tr>
+<tr>
+<td><strong>Organizasyon</strong></td>
+<td>Bir grup insanın ve depoların çatısı</td>
+<td><code>MAKU-VBA-GBT-II</code> — dersin "şirketler birliği"</td>
+</tr>
+<tr>
+<td><strong>Depo (repo)</strong></td>
+<td>Bir projenin tüm dosyaları + tüm geçmişi</td>
+<td><code>ders</code> (duyurular ve plan), <code>group-a</code>…<code>group-g</code> (şirket depoları)</td>
+</tr>
+<tr>
+<td><strong>Takım (team)</strong></td>
+<td>Organizasyon içindeki erişim grubu</td>
+<td>Her grup bir takım; <strong>yalnızca kendi deponuzda yazma (Write) hakkınız var</strong>, diğer depoları okuyabilirsiniz</td>
+</tr>
+<tr>
+<td><strong>README</strong></td>
+<td>Deponuzun vitrini</td>
+<td>Şirket adı, üyeler, roller, teknoloji kararı — burada yazılıysa vardır</td>
+</tr>
+</tbody>
+</table>
+<p>Organizasyon davetini e-postanızdan veya GitHub bildirimlerinizden kabul ettiğinizde takımınıza dahil olursunuz.</p>
+<h2>2. Günlük çalışma döngüsü</h2>
+<p>Her iş oturumunda aynı beş adım:</p>
+<pre><code class="language-text">pull (uzaktakini al) → değişikliği yap → commit (kaydet) → push (gönder) → kanıt yorumu (Issue'da)
+</code></pre>
+<ul>
+<li><strong>clone</strong> — depoyu bilgisayarınıza indirme. Depo başına <strong>bir kez</strong> yapılır.</li>
+<li><strong>pull</strong> — uzak depodaki yenilikleri bilgisayarınıza alma. <strong>Her çalışmaya başlarken</strong> yapın; GitHub Desktop'ta <strong>Fetch origin</strong> düğmesinin yaptığı iş budur.</li>
+<li><strong>push</strong> — bilgisayarınızdaki commit'leri uzak depoya gönderme. Yaptığınız iş, push edilmeden ekip arkadaşlarınız tarafından görünmez.</li>
+<li><strong>commit</strong> — aşağıda.</li>
+</ul>
+<p>Araç fark etmez: GitHub Desktop, tarayıcı üzerinden GitHub.com, VS Code veya terminal hepsi aynı sonucu verir. Nasıl rahat ediyorsanız öyle çalışın.</p>
+<h2>3. Commit nedir?</h2>
+<p>Commit, deponuzun o anki hâlinin <strong>imzalı bir fotoğrafıdır</strong>. Her commit'in:</p>
+<ul>
+<li><strong>bir kimliği (hash)</strong> vardır — kısa hâliyle <code>a3f92b1</code> gibi görünür; kanıt yorumlarında bunu kullanırsınız,</li>
+<li><strong>bir yazarı</strong> vardır — kimin neyi yaptığını gösterir; bireysel eşikler commit geçmişinden okunur,</li>
+<li><strong>bir mesajı</strong> vardır — ne yaptığınızı kısa ve emir kipinde anlatır.</li>
+</ul>
+<p>İyi commit mesajları:</p>
+<pre><code class="language-text">H2 ısınma — prova-ali.csv eklendi (10 satır)
+README: şirket adı düzeltildi
+Fixes #7 — hatalı satır sayısı düzeltildi
+</code></pre>
+<p>Kötü commit mesajları: <code>update</code>, <code>değişiklikler</code>, <code>son hali</code>, <code>dosya</code>.</p>
+<h2>4. Issue nedir?</h2>
+<p>Issue, GitHub'daki <strong>görev kaydıdır</strong>. Bu derste size gelen her iş bir Issue'dur; sizin de açacağınız işler Issue olacak.</p>
+<p>Bir görev Issue'sunda şu üç şeyin olması zorunludur (dönem planı §2.1):</p>
+<ol>
+<li><strong>Son tarih</strong> — ne zamana kadar?</li>
+<li><strong>Kabul kriteri</strong> — tek cümlelik "bitmiş" tanımı (örn. <em>"<code>data/prova-ali.csv</code> dosyası senin commit'inle depoda; 10 satır veri içeriyor"</em>)</li>
+<li><strong>Atanan (assignee)</strong> — iş kime ait?</li>
+</ol>
+<h3>Kanıt yorumu</h3>
+<p>İşi bitirdiğinizde Issue'yu <strong>kanıt yorumu olmadan kapatmayın</strong>. Şablon:</p>
+<pre><code class="language-text">Tamamlandı — commit a3f92b1, dosya: data/prova-ali.csv (10 satır)
+</code></pre>
+<p>Bu yorum, yaptığınız işi commit'e bağlar; süreç notu bu bağlantılardan okunur. Yorumsuz kapatılan Issue, iz bırakmamış sayılır.</p>
+<h3><code>Fixes #n</code> — hata-düzeltme bağı</h3>
+<p>Bir hata Issue'sunu düzeltirken commit mesajınıza <code>Fixes #7</code> yazarsanız, commit main'e girdiğinde <strong>Issue otomatik kapanır</strong>. Görev 1'deki bug akışının merkezinde bu vardır: bir hata bildirilir → düzeltilir → commit <code>Fixes #n</code> ile bağlanır → Issue kanıtla kapanır.</p>
+<h2>5. Pull, Push ve Fetch arasındaki fark</h2>
+<table>
+<thead>
+<tr>
+<th>Komut</th>
+<th>Yön</th>
+<th>Ne yapar</th>
+<th>Ne zaman</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fetch</code></td>
+<td>uzak → bilgisayar (bakar)</td>
+<td>Uzakta ne olduğunu gösterir, birleştirmez</td>
+<td>Merak ettiğinizde</td>
+</tr>
+<tr>
+<td><code>pull</code></td>
+<td>uzak → bilgisayar</td>
+<td>Uzaktaki yeni commit'leri dosyalarınıza getirir</td>
+<td><strong>Her çalışma başında</strong></td>
+</tr>
+<tr>
+<td><code>push</code></td>
+<td>bilgisayar → uzak</td>
+<td>Commit'lerinizi ekibin görmesi için uzak depoya yazar</td>
+<td><strong>Her commit'ten sonra</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Bilgisayarınızda commit'leyip push etmeyi unutursanız: siz yaptınız ama depoda yoktur → §3.3 gereği yapılmamıştır. Push etmeden ayrılmayın.</p>
+<h2>6. Branch ve Pull Request (Görev 2'den itibaren zorunlu)</h2>
+<p><strong>Hafta 5'ten itibaren yeni kural:</strong> <code>main</code> dalına doğrudan commit atılmaz. Her şey <strong>branch + Pull Request</strong> yoluyla girer.</p>
+<ul>
+<li><strong>Branch (dal)</strong> — depoyu bozmadan izole çalışmak için açtığınız kol. Adlandırma örneği: <code>feature/veri</code>, <code>feature/gorsel</code>.</li>
+<li><strong>Pull Request (PR)</strong> — "dalımı main'e katın" isteği. PR açınca ekibiniz değişikliğinizi <strong>dosya dosya, satır satır</strong> görebilir.</li>
+<li><strong>İnceleme yorumu</strong> — PR'ın altına somut yorum yazmak ("bu sütun eksik", "şu satır hatalı"). Görev 2'de BE'nin PR'ında en az 2 somut inceleme yorumu istenir; inceleyen DQ'dur.</li>
+<li><strong>Merge</strong> — PR incelemeden geçtikten sonra dalın main'e katılması. Merge sonrası branch silinir.</li>
+</ul>
+<p>Akış: <code>pull</code> → <code>branch aç</code> → <code>değişiklik + commit + push</code> → <code>PR aç</code> → <code>inceleme yorumları</code> → <code>merge</code>.</p>
+<h2>7. Project Board (Pano)</h2>
+<p>Her grubun <strong>Projects</strong> sekmesinde 4 sütunlu bir panosu olacak:</p>
+<pre><code class="language-text">To Do  →  In Progress  →  Review  →  Done
+</code></pre>
+<p>Issue açıldığında kart <code>To Do</code>'ya düşer. Bir işe başladığınızda kartınızı <code>In Progress</code>'e, incelemeye gönderdiğinizde <code>Review</code>'a, kanıtla kapattığınızda <code>Done</code>'a sürükleyin. Pano, ekibinizin nerede durduğunu bir bakışta gösterir — ve PM'niz raporunu buradan yazar.</p>
+<h2>8. Etiket, Milestone, Release</h2>
+<ul>
+<li><strong>Etiket (label)</strong> — Issue'ları türüne göre işaretler. Görev 1'de en az 2 adet <code>bug</code> etiketli Issue açacaksınız.</li>
+<li><strong>Milestone</strong> — Issue'ları bir görev paketine bağlar ("Görev 2"). Panoda ve Issue sayfasında aynı görevin işlerini topluca gösterir.</li>
+<li><strong>Release</strong> — göreve görece sabit bir versiyon. Görev teslimleri release ile yapılır: Görev 1'in teslimi <strong><code>gorev1-final</code></strong> adlı release'dir. Release yoksa görev teslim edilmemiş sayılır.</li>
+</ul>
+<h2>9. Ders kurallarına bağ</h2>
+<p>Bu rehberdeki her şey şu üç plan kuralına hizmet eder:</p>
+<ol>
+<li><strong>§3.3 — "GitHub'da yoksa, yapılmamıştır."</strong> Her işin izi commit + Issue + yorum'dur.</li>
+<li><strong>§2.1 — Issue düzeni.</strong> Son tarih, kabul kriteri, atanan zorunlu.</li>
+<li><strong>§2.2 — PR kuralı.</strong> Hafta 5'ten itibaren main'e doğrudan commit yok.</li>
+</ol>
+<p>Ayrıntılar dönem planında: <a href="AGENTS.md"><code>AGENTS.md</code></a></p>
+<h2>10. En sık yapılan beş hata</h2>
+<table>
+<thead>
+<tr>
+<th>Hata</th>
+<th>Sonucu</th>
+<th>Doğrusu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commit'leyip push etmemek</td>
+<td>İş ekipte görünmez</td>
+<td>Her commit'ten sonra push</td>
+</tr>
+<tr>
+<td>Kanıt yorumu yazmadan Issue kapatmak</td>
+<td>İş "iz bırakmadı" sayılır</td>
+<td>Kapatmadan önce kanıt yorumu</td>
+</tr>
+<tr>
+<td>Pull yapmadan çalışmaya başlamak</td>
+<td>Çakışma, ezilen dosya</td>
+<td>Her başlangıçta pull / Fetch origin</td>
+</tr>
+<tr>
+<td>README'de başkasının satırını ezerek yazmak</td>
+<td>Ekip bilgisi kaybolur</td>
+<td>Yalnız kendi satırınızı değiştirin</td>
+</tr>
+<tr>
+<td><code>update</code> gibi anlamsız commit mesajı</td>
+<td>Kimse ne yaptığınızı anlayamaz</td>
+<td>Kısa, emir kipi, dosya adıyla</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Sözlük — bir bakışta</h2>
+<table>
+<thead>
+<tr>
+<th>Terim</th>
+<th>Anlamı</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Org (organizasyon)</td>
+<td>Depoların çatısı: <code>MAKU-VBA-GBT-II</code></td>
+</tr>
+<tr>
+<td>Repo (depolar)</td>
+<td>Dosyalar + tüm geçmiş</td>
+</tr>
+<tr>
+<td>README</td>
+<td>Deponun vitrin sayfası</td>
+</tr>
+<tr>
+<td>clone</td>
+<td>Depoyu bilgisayara indirme (bir kez)</td>
+</tr>
+<tr>
+<td>pull / Fetch</td>
+<td>Uzaktan yeni commit'leri alma</td>
+</tr>
+<tr>
+<td>commit</td>
+<td>İmzalı değişiklik kaydı (hash + yazar + mesaj)</td>
+</tr>
+<tr>
+<td>push</td>
+<td>Commit'leri uzak depoya gönderme</td>
+</tr>
+<tr>
+<td>Issue</td>
+<td>Görev kaydı (son tarih + kabul kriteri + atanan)</td>
+</tr>
+<tr>
+<td>Kanıt yorumu</td>
+<td>İşi commit'e bağlayan kapanış yorumu</td>
+</tr>
+<tr>
+<td><code>Fixes #n</code></td>
+<td>Commit ile Issue'yu otomatik bağlayan/kapatan ifade</td>
+</tr>
+<tr>
+<td>Branch</td>
+<td>İzole çalışma dalı (<code>feature/veri</code>)</td>
+</tr>
+<tr>
+<td>Pull Request</td>
+<td>Dalın main'e katılma isteği (incelemeli)</td>
+</tr>
+<tr>
+<td>Merge</td>
+<td>PR'ın onaylanıp main'e katılması</td>
+</tr>
+<tr>
+<td>Project Board</td>
+<td>To Do / In Progress / Review / Done panosu</td>
+</tr>
+<tr>
+<td>Milestone</td>
+<td>Issue'ları göreve bağlayan paket</td>
+</tr>
+<tr>
+<td>Release</td>
+<td>Görev teslimi (<code>gorev1-final</code>)</td>
+</tr>
+<tr>
+<td>Label (etiket)</td>
+<td>Issue türü işareti (<code>bug</code>)</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
