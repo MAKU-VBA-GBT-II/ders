@@ -1,5 +1,7 @@
 # GitHub Rehberi — VBA II
 
+**Tarih:** 2026-10-08
+
 Bu derste tüm çalışma GitHub üzerinden yürür ve tek bir altın kural vardır:
 
 > **GitHub'da yoksa, yapılmamıştır.** (Dönem planı §3.3)
