@@ -376,7 +376,19 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 **Ürün:** Şirketin kendi sektöründe (§1.1) mini bir veri ürünü: parametreli bir **simülasyon** + **analiz** + **çoklu grafik**. Roller döndü (§1.3) — herkes yeni rolünün tanımını §1.2'den yeniden okusun.
 
-**Bu görevle devreye giren yeni kural:** `main`'e doğrudan commit atılmaz; **her şey branch + Pull Request + inceleme + merge yoluyla girer** (§2.2, §3.5). Görev 2'nin asıl öğrenme hedefi budur.
+**Bu görevle devreye giren yeni kural 1:** `main`'e doğrudan commit atılmaz; **her şey branch + Pull Request + inceleme + merge yoluyla girer** (§2.2, §3.5). Görev 2'nin asıl öğrenme hedefi budur.
+
+**Bu görevle devreye giren yeni kural 2:** **Her rol teslimatı bir agent skill kullanılarak üretilir; her öğrenci kendi rolü için bir skill yazar.** Skill = yapay zekâ aracınıza yüklenen tekrarlanabilir talimat paketi (rol tanımı + çıktı formatı kuralları + örnek çıktı; örn. `skills/<rol>/SKILL.md` + örnek dosyalar). Teslim ettiğiniz her işin ait olduğu skill'in repo içindeki kopyası `skills/` klasöründe bulunmalı ve hangi talimatlarla üretildiğine dair kısa bir özet (prompt özeti) issue/PR gövdesinde yer almalıdır. Skill kullanılmadan teslim edilen iş kabul edilmez.
+
+**Skill zorunluluğu — rol dağılımı:**
+- **DQ — `skills/dq-sozluk/SKILL.md`:** veri sözlüğü üretimi (alan adları, tipler, aralıklar, 5 metrik formülü) için skill; ayrıca test senaryosu üretimi için `skills/dq-test/SKILL.md`.
+- **BE — `skills/be-simulasyon/SKILL.md`:** şemaya uyumlu parametreli simülasyon kodu üretimi için skill.
+- **FE — `skills/fe-gorsel/SKILL.md`:** 3 grafik (zaman serisi + kırılım + dağılım) üretim kodu için skill.
+- **PM — `skills/pm-rapor/SKILL.md`:** sprint raporu ve issue taslakları üretimi için skill.
+
+Her skill en az şunları içerir: rolün amaç cümlesi · çıktı formatı kuralları (dosya adları, başlık yapısı, kabul kriterleriyle birebir örtüşme) · 1 örnek giriş/çıkış çifti · hangi durumlarda üretimin reddedileceği (özellikle sentetik olmayan/gerçek kişisel veri talebi — §3.1).
+
+*Skill kavramı, aracınıza skill yükleme, iyi/kötü talimat farkı ve üretim izinin (prompt özeti) issue'ya yazılması derste anlatılacaktır.*
 
 #### Hafta 5
 
@@ -457,8 +469,8 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 3. `gorev2-final` release'ini oluşturun; `reports/report-w06.md` raporunu yazın.
 
 **Görev 2 kritik eşikleri:**
-- *Grup eşikleri:* `gorev2-final` release'i son tarihte mevcut · gerçek inceleme yorumları içeren ≥2 merge edilmiş PR · `/src` farkında hata yönetimi kodu görünüyor · kılavuz başlamış · milestone kapatılmış.
-- *Bireysel eşikler:* kendi rol teslimatı kabul kriterini sağlıyor · PR akışına izlenebilir katılım (BE/FE: kendi işi PR ile merge edilmiş; DQ: şema + devir teslim yorumları + ≥2 somut inceleme yorumu; PM: milestone + raporlar) · ≥2 commit veya eşdeğer yazılı iz.
+- *Grup eşikleri:* `gorev2-final` release'i son tarihte mevcut · gerçek inceleme yorumları içeren ≥2 merge edilmiş PR · `/src` farkında hata yönetimi kodu görünüyor · kılavuz başlamış · milestone kapatılmış · **repo'da 4 rol skill'i mevcut (`skills/…/SKILL.md`) ve teslimatlarda kullanım izi var.**
+- *Bireysel eşikler:* kendi rol teslimatı kabul kriterini sağlıyor · **kendi rol skill'i yazılmış ve teslimat bu skill ile üretilmiş (iz: skill dosyası + issue/PR'da prompt özeti)** · PR akışına izlenebilir katılım (BE/FE: kendi işi PR ile merge edilmiş; DQ: şema + devir teslim yorumları + ≥2 somut inceleme yorumu; PM: milestone + raporlar) · ≥2 commit veya eşdeğer yazılı iz.
 
 ---
 
