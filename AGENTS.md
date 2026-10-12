@@ -13,7 +13,7 @@ Bu klasör, VBA II (Veri Bilimi ve Analitik) dersinin planlama çalışma alanı
 - `vba2-donem-plani.md` — dönem planının Obsidian kopyası (aynı içerik)
 - `ders/AGENTS.md` — bu dosyanın `ders` reposundaki yayını (GitHub'da, öğrenciler görür). **Senkron kuralı:** Plan her değiştiğinde üç kopya birden güncellenmeli: `AGENTS.md` ↔ `vba2-donem-plani.md` ↔ `ders/AGENTS.md` (sonuncusu commit + push gerektirir).
 - `ders/is-ilanlari.md` — 7 proje lideri iş ilanı (GitHub'da; G ilanı sonradan eklendi)
-- `group-a` … `group-g` — öğrenci repolarının lokal kopyaları
+- `group-a` … `group-g`, `group-z` — öğrenci repolarının lokal kopyaları
 
 ## Dönem Planı (tam metin)
 # VBA II — Veri Şirketi Simülasyonu Dönem Planı
@@ -78,10 +78,13 @@ Her grup simüle edilmiş bir veri şirketidir. Hafta 1'de her grup kendine bir 
 | **C** | 9–12 | Bankacılık | Banka işlemi simülasyonu + müşteri özet grafikleri | İşlem Analizi ve Anomali Tespit Aracı |
 | **D** | 13–16 | Sigorta | Sigorta talebi simülasyonu + prim/ödeme grafikleri | Talep Analizi ve Risk Raporlama Sistemi |
 | **E** | 17–20 | Perakende | Mağaza satış simülasyonu + stok grafikleri | Perakende Satış ve Stok Analiz Aracı |
-| **F** | 21–24 | Tedarik | Tedarik siparişi simülasyonu + stok seviyesi grafikleri | Tedarik Zinciri İzleme Sistemi |
+| **F** *(arşiv)* | 21–24 | Tedarik | Tedarik siparişi simülasyonu + stok seviyesi grafikleri | Tedarik Zinciri İzleme Sistemi |
 | **G** | 25–28 | Dijital Pazarlama | Kampanya simülasyonu + kanal bazlı dönüşüm grafikleri | Kampanya Performans ve Dönüşüm Analiz Platformu |
+| **Z** | İrem Deneri (PM), Ceren Gözel (BE), Baki Korkmaz (FE), Serra Erdem (DQ) — aday listesinden, 2026-10-09 | Tedarik | Tedarik siparişi simülasyonu + stok seviyesi grafikleri | Tedarik Zinciri İzleme Sistemi |
 
-**Gruplar arası veri değişim eşleşmeleri (Görev 3):** G→A→B→G üçlü döngüsü (kampanyalar → siparişler → sevkiyatlar → teslimat bilgisiyle yeniden hedefleme), C↔D (banka işlemleri → sigorta ödemeleri), E↔F (mağaza satışları → tedarik siparişleri).
+> **F arşivlendi (2026-10-06):** F'nin dolmayan rolleri yerleştirmeyle kapatıldı (Hiranur Doğan → C/BE, Burak Talha Demir → E/FE). F'nin Tedarik sektörü, aday listesinden kurulan **Z** şirketine devredildi; Görev 3 eşleşmesi artık **E↔Z**.
+
+**Gruplar arası veri değişim eşleşmeleri (Görev 3):** G→A→B→G üçlü döngüsü (kampanyalar → siparişler → sevkiyatlar → teslimat bilgisiyle yeniden hedefleme), C↔D (banka işlemleri → sigorta ödemeleri), E↔Z (mağaza satışları → tedarik siparişleri).
 
 ### 1.2 Roller
 
@@ -167,7 +170,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 ## 3. Altyapı Kuralları (Hafta 1'de ilan edilir, pazarlık edilmez)
 
-1. **Tek GitHub organizasyonu:** `MAKU-VBA-GBT-II`; her grubun bir deposu (`group-a` … `group-g`). Öğretim elemanı organizasyonun sahibidir ve her şeyi görür. Depolar herkese açıktır (public) — mezuniyette portföy olarak kullanılabilirler; bu yüzden ders verisi olarak gerçek kişi verisi (TC no, telefon vb.) asla depoya girmez, tüm ders verileri simülasyon ürünüdür. Tek istisna işe alım başvurularıdır: CV'ler kamuya açık depoda saklanabilir (§1.4.5).
+1. **Tek GitHub organizasyonu:** `MAKU-VBA-GBT-II`; her grubun bir deposu (`group-a` … `group-g`, `group-z`). Öğretim elemanı organizasyonun sahibidir ve her şeyi görür. Depolar herkese açıktır (public) — mezuniyette portföy olarak kullanılabilirler; bu yüzden ders verisi olarak gerçek kişi verisi (TC no, telefon vb.) asla depoya girmez, tüm ders verileri simülasyon ürünüdür. Tek istisna işe alım başvurularıdır: CV'ler kamuya açık depoda saklanabilir (§1.4.5).
 
 2. **Zorunlu depo yapısı:**
 
@@ -476,7 +479,7 @@ Her skill en az şunları içerir: rolün amaç cümlesi · çıktı formatı ku
 
 ### GÖREV 3 — "B2B Veri Değişimi" (Hafta 7–8)
 
-**Ürün:** Eşleşen iki şirket de kendi veri kümesini **dışa aktarır** (export); karşı şirketin dosyasını **içe aktarıp analiz eder ve görselleştirir** (import). Eşleşmeler: A↔B, C↔D, E↔F (§1.1). Her çift iki yönlü veri akışını kapsayan ortak bir **veri sözleşmesi** müzakere eder. Roller yine döner (§1.3).
+**Ürün:** Eşleşen iki şirket de kendi veri kümesini **dışa aktarır** (export); karşı şirketin dosyasını **içe aktarıp analiz eder ve görselleştirir** (import). Eşleşmeler: A↔B, C↔D, E↔Z (§1.1). Her çift iki yönlü veri akışını kapsayan ortak bir **veri sözleşmesi** müzakere eder. Roller yine döner (§1.3).
 
 **Üçlü döngü (G → A → B → G):** 7 şirket olduğu için G, A ve B üçlü döngüde çalışır: G kampanya verisini A'ya gönderir (A siparişleri kampanyalarla ilişkilendirir), A sipariş verisini B'ye gönderir, B teslimat verisini G'ye gönderir (G yeniden hedefleme için kullanır). Her şirket yine **tek** `exchange/output.csv` üretir ve tek dosya içe aktarır; yük ikili eşleşmelerle aynıdır. Bu üçlüde aşağıdaki talimatlarda geçen "partner" iki şirkettir: dosyasını aldığınız şirket (içe aktarma, analiz, "Değişim sonucu" Issue'su) ve dosyanızı gönderdiğiniz şirket (dışa aktarma). `docs/veri-sozlesmesi.md` üç akışı ayrı başlıklarla içerir ve **üç depoda birebir aynıdır**; sözleşme Issue'ları ve PM ortak toplantı tutanağı da üç depoya işlenir.
 
