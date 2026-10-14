@@ -19,8 +19,6 @@ th { background: var(--code); white-space: nowrap; }
 hr { border: 0; border-top: 1px solid var(--line); margin: 2.5em 0; }
 a { color: var(--acc); text-decoration: none; } a:hover { text-decoration: underline; }
 li { margin: .25em 0; }
-.rank { font-weight: 700; text-align: center; }
-.score { font-weight: 700; text-align: center; }
 .center { text-align: center; }
 .ok { color: var(--ok); font-weight: 600; } .warn { color: var(--warn); font-weight: 600; } .bad { color: var(--bad); font-weight: 600; }
 .chip { display: inline-block; border-radius: 999px; padding: 0 10px; font-size: .82em; font-weight: 600; border: 1px solid var(--line); }
@@ -37,110 +35,32 @@ li { margin: .25em 0; }
 <h1>Grup İlerleme Panosu — VBA II</h1>
 <p><strong>Tarih:</strong> 2026-10-15 &nbsp;·&nbsp; <strong>Kapsam:</strong> Görev 1 (ekip kurulumu, ilanlar, README) + H2 ısınma + yan görev (Git keşfi) &nbsp;·&nbsp; <strong>Veri kaynağı:</strong> <a href="https://github.com/MAKU-VBA-GBT-II">MAKU-VBA-GBT-II</a> organizasyonu (Issue, commit, Pull Request kayıtları)</p>
 <blockquote>
-<p><strong>GitHub'da yoksa, yapılmamıştır.</strong> (Dönem planı §3.3) — Bu pano yalnızca GitHub'da bırakılan izleri sayar. H2 ısınma ve yan görev için duyurulan son tarih <strong>14 Ekim Çarşamba 23:59</strong>'du; teslimler bu panoya işlendi.</p>
+<p><strong>GitHub'da yoksa, yapılmamıştır.</strong> (Dönem planı §3.3) — Bu pano yalnızca GitHub'da bırakılan izleri gösterir. H2 ısınma ve yan görev için duyurulan son tarih <strong>14 Ekim Çarşamba 23:59</strong>'du; teslimler bu panoya işlendi.</p>
 </blockquote>
 
-<h2>Sıralama</h2>
+<h2>Özet tablo</h2>
 <table>
 <thead>
 <tr>
-<th>#</th><th>Grup</th><th>Şirket / Sektör</th><th>Puan</th><th>H2 ısınma</th><th>Yan görev</th><th>Commit atan üye</th><th>Commit</th><th>PR (merge)</th><th>Açık issue</th>
+<th>Grup</th><th>Şirket / Sektör</th><th>H2 ısınma</th><th>Yan görev</th><th>Commit atan üye</th><th>Commit</th><th>PR (merge)</th><th>Açık issue</th>
 </tr>
 </thead>
 <tbody>
-<tr><td class="rank">1</td><td><strong><a href="https://github.com/MAKU-VBA-GBT-II/group-c">Grup C</a></strong></td><td>VBA BANKACILIK · Bankacılık</td><td class="score">100</td><td class="center ok">4/4</td><td class="center ok">4/4</td><td class="center">4/4</td><td class="center">31</td><td class="center">2</td><td class="center ok">0</td></tr>
-<tr><td class="rank">2</td><td><strong><a href="https://github.com/MAKU-VBA-GBT-II/group-e">Grup E</a></strong></td><td>RetailE · Perakende</td><td class="score">80</td><td class="center ok">4/4</td><td class="center warn">2/4</td><td class="center">4/4</td><td class="center">15</td><td class="center">1</td><td class="center ok">0</td></tr>
-<tr><td class="rank">3</td><td><strong><a href="https://github.com/MAKU-VBA-GBT-II/group-b">Grup B</a></strong></td><td>LIN · Lojistik</td><td class="score">69</td><td class="center ok">5/5</td><td class="center bad">0/5</td><td class="center">5/5</td><td class="center">29</td><td class="center">0</td><td class="center ok">0</td></tr>
-<tr><td class="rank">4</td><td><strong><a href="https://github.com/MAKU-VBA-GBT-II/group-d">Grup D</a></strong></td><td>EMİN SİGORTA · Sigorta</td><td class="score">67</td><td class="center warn">4/6</td><td class="center warn">3/4</td><td class="center">4/4</td><td class="center">16</td><td class="center">0</td><td class="center bad">3</td></tr>
-<tr><td class="rank">5</td><td><strong><a href="https://github.com/MAKU-VBA-GBT-II/group-g">Grup G</a></strong></td><td>PrimeBee · Dijital Pazarlama</td><td class="score">65</td><td class="center ok">5/5</td><td class="center bad">0/5</td><td class="center">5/5</td><td class="center">15</td><td class="center">0</td><td class="center ok">0</td></tr>
-<tr><td class="rank">6</td><td><strong><a href="https://github.com/MAKU-VBA-GBT-II/group-a">Grup A</a></strong></td><td>Sepetix Analitik · E-ticaret</td><td class="score">62</td><td class="center warn">4/5</td><td class="center bad">0/5</td><td class="center">5/5</td><td class="center">17</td><td class="center">1</td><td class="center warn">1</td></tr>
-<tr><td class="rank">7</td><td><strong><a href="https://github.com/MAKU-VBA-GBT-II/group-z">Grup Z</a></strong></td><td><em>şirket seçilmedi</em> · Tedarik</td><td class="score">57</td><td class="center ok">4/4</td><td class="center bad">0/4</td><td class="center warn">3/4</td><td class="center">5</td><td class="center">0</td><td class="center warn">2</td></tr>
+<tr><td><strong><a href="https://github.com/MAKU-VBA-GBT-II/group-a">Grup A</a></strong></td><td>Sepetix Analitik · E-ticaret</td><td class="center warn">4/5</td><td class="center bad">0/5</td><td class="center">5/5</td><td class="center">17</td><td class="center">1</td><td class="center warn">1</td></tr>
+<tr><td><strong><a href="https://github.com/MAKU-VBA-GBT-II/group-b">Grup B</a></strong></td><td>LIN · Lojistik</td><td class="center ok">5/5</td><td class="center bad">0/5</td><td class="center">5/5</td><td class="center">29</td><td class="center">0</td><td class="center ok">0</td></tr>
+<tr><td><strong><a href="https://github.com/MAKU-VBA-GBT-II/group-c">Grup C</a></strong></td><td>VBA BANKACILIK · Bankacılık</td><td class="center ok">4/4</td><td class="center ok">4/4</td><td class="center">4/4</td><td class="center">31</td><td class="center">2</td><td class="center ok">0</td></tr>
+<tr><td><strong><a href="https://github.com/MAKU-VBA-GBT-II/group-d">Grup D</a></strong></td><td>EMİN SİGORTA · Sigorta</td><td class="center warn">4/6</td><td class="center warn">3/4</td><td class="center">4/4</td><td class="center">16</td><td class="center">0</td><td class="center bad">3</td></tr>
+<tr><td><strong><a href="https://github.com/MAKU-VBA-GBT-II/group-e">Grup E</a></strong></td><td>RetailE · Perakende</td><td class="center ok">4/4</td><td class="center warn">2/4</td><td class="center">4/4</td><td class="center">15</td><td class="center">1</td><td class="center ok">0</td></tr>
+<tr><td><strong><a href="https://github.com/MAKU-VBA-GBT-II/group-g">Grup G</a></strong></td><td>PrimeBee · Dijital Pazarlama</td><td class="center ok">5/5</td><td class="center bad">0/5</td><td class="center">5/5</td><td class="center">15</td><td class="center">0</td><td class="center ok">0</td></tr>
+<tr><td><strong><a href="https://github.com/MAKU-VBA-GBT-II/group-z">Grup Z</a></strong></td><td><em>şirket seçilmedi</em> · Tedarik</td><td class="center ok">4/4</td><td class="center bad">0/4</td><td class="center warn">3/4</td><td class="center">5</td><td class="center">0</td><td class="center warn">2</td></tr>
 </tbody>
 </table>
-<p class="small">Puan formülü: H2 tamamlama oranı ×40 + yan görev teslim oranı ×20 + commit atan üye oranı ×20 + (merge edilmiş PR ×5, en çok 10) + repo commit hacmi oranı ×10. Puan işlem hareketliliğini ölçer; süreç notu (dönem planı §5) tepki süreleri ve kalite ayrıca değerlendirilir. Sınıf kuruluşundan bu yana hoca (<code>eofdred</code>) tarafından atılan kurulum commit'leri sayımlara dahil değildir.</p>
+<p class="small">Tabloda yalnızca GitHub kayıtlarından ölçülen izler sayılır; sınıf kuruluşundan bu yana hoca (<code>eofdred</code>) tarafından atılan kurulum commit'leri sayımlara dahil değildir. Bu pano bir yarışma tablosu değildir; süreç notu (dönem planı §5) tepki süreleri ve kalite ile birlikte ayrıca değerlendirilir.</p>
 
 <h2>Grup kartları</h2>
 
 <div class="card">
-<h3>1. Grup C — VBA BANKACILIK <span class="chip warn">Bankacılık</span></h3>
-<p><strong>Ekip:</strong> Rüveyda Başboğa (PM, <a href="https://github.com/basbogaruveyda-afk">basbogaruveyda-afk</a>) · Hiranur Doğan (BE, <a href="https://github.com/dgnHira">dgnHira</a>) · Melih Yavuk (FE, <a href="https://github.com/melihyavuk">melihyavuk</a>) · Gürol Pekmezci (DQ, <a href="https://github.com/GurolPekmezci">GurolPekmezci</a>)</p>
-<table>
-<thead><tr><th>Görev</th><th>Durum</th><th>Ölçülen iz</th></tr></thead>
-<tbody>
-<tr><td>Görev 1 — ilanlar (#1–#3)</td><td><span class="chip ok">tamamlandı</span></td><td>BE ilanı 11 Ekim'e kadar açık kaldı; README düzeltmesi (#4) 5 gün gecikmeyle çözüldü</td></tr>
-<tr><td>H2 ısınma</td><td><span class="chip ok">4/4 kapandı</span></td><td>Hiranur <a href="https://github.com/MAKU-VBA-GBT-II/group-c/issues/6">#6</a>, Rüveyda <a href="https://github.com/MAKU-VBA-GBT-II/group-c/issues/8">#8</a>, Gürol <a href="https://github.com/MAKU-VBA-GBT-II/group-c/issues/9">#9</a> (12 Ekim), Melih <a href="https://github.com/MAKU-VBA-GBT-II/group-c/issues/7">#7</a> (13 Ekim)</td></tr>
-<tr><td>Yan görev — Git keşfi</td><td><span class="chip ok">4/4 teslim</span></td><td><code>reports/yan-gorev-1/</code> altında kesif-gurol, kesif-hiranur, kesif-melih, kesif-ruveyda (11–13 Ekim) — sınıfın eksiksiz tek teslimi</td></tr>
-<tr><td>Commit dağılımı</td><td><span class="chip ok">4/4 üye</span></td><td>Rüveyda 15 · Hiranur 11 · Melih 3 · Gürol 2 <em>(toplam 31 — sınıfın en yoğun deposu)</em></td></tr>
-<tr><td>Pull Request</td><td><span class="chip ok">2 merge</span></td><td>Melih <a href="https://github.com/MAKU-VBA-GBT-II/group-c/pull/10">#10</a> (12 Ekim) → PM tarafından <a href="https://github.com/MAKU-VBA-GBT-II/group-c/pull/11">#11</a> ile geri alındı (revert)</td></tr>
-</tbody>
-</table>
-<p class="small">Not: Ekip, zayıf başlangıcın (5 gün cevapsız issue) ardından 11–13 Ekim'de toparlanarak tüm işleri kapattı. En yüksek işlem hacmine rağmen PR geri alması ve gecikme, süreç notunda ayrıca değerlendirilecek noktalardır.</p>
-</div>
-
-<div class="card">
-<h3>2. Grup E — RetailE <span class="chip warn">Perakende</span></h3>
-<p><strong>Ekip:</strong> Emin Umut Kılıç (PM, <a href="https://github.com/Umutklcc">Umutklcc</a>) · Yaşar Coşkun (BE, <a href="https://github.com/yasar07488">yasar07488</a>) · Burak Talha Demir (FE, <a href="https://github.com/buraktalhademir">buraktalhademir</a>) · Sena Çiftçi (DQ, <a href="https://github.com/senacifci5-prog">senacifci5-prog</a>)</p>
-<table>
-<thead><tr><th>Görev</th><th>Durum</th><th>Ölçülen iz</th></tr></thead>
-<tbody>
-<tr><td>Görev 1 — ilanlar (#1–#3)</td><td><span class="chip ok">tamamlandı</span></td><td>İlanlar 7 Ekim'de kapandı; BE/DQ başvuru izleri hoca hatırlatması (#6) sonrası işlendi</td></tr>
-<tr><td>H2 ısınma</td><td><span class="chip ok">4/4 kapandı</span></td><td>Umut <a href="https://github.com/MAKU-VBA-GBT-II/group-e/issues/7">#7</a> (12 Ekim), Burak <a href="https://github.com/MAKU-VBA-GBT-II/group-e/issues/8">#8</a> (10 Ekim), Yaşar <a href="https://github.com/MAKU-VBA-GBT-II/group-e/issues/9">#9</a> (13 Ekim), Sena <a href="https://github.com/MAKU-VBA-GBT-II/group-e/issues/10">#10</a> (14 Ekim — sınıfın son kapananı, son tarihe uyumlu)</td></tr>
-<tr><td>Yan görev — Git keşfi</td><td><span class="chip warn">2/4 teslim</span></td><td>kesif-sena (14 Ekim) + kesif-umut (12 Ekim) doğru yolda; Yaşar raporu <strong>repo kökünde <code>yan-gorev-1</code> dosyası</strong> olarak yanlış yola atmış (içerik: pandas keşfi); Burak teslim etmedi</td></tr>
-<tr><td>Commit dağılımı</td><td><span class="chip ok">4/4 üye</span></td><td>Umut 11 · Burak 2 · Yaşar 1 · Sena 1 <em>(toplam 15)</em></td></tr>
-<tr><td>Pull Request</td><td><span class="chip ok">1 merge</span></td><td>Sena <a href="https://github.com/MAKU-VBA-GBT-II/group-e/pull/4">#4</a> — README düzeltmesini branch + PR akışıyla yaptı (7 Ekim; PR kuralı Hafta 5'te başlarken öncül kullanım)</td></tr>
-</tbody>
-</table>
-</div>
-
-<div class="card">
-<h3>3. Grup B — LIN <span class="chip warn">Lojistik</span></h3>
-<p><strong>Ekip:</strong> Sude Çukurtaş (PM, <a href="https://github.com/sudecukurtas">sudecukurtas</a>) · Sema Coşkun (BE, <a href="https://github.com/sema788">sema788</a>) · Ece Naz Aktürk (FE, <a href="https://github.com/ece-naz">ece-naz</a>) · Aykut Çakıcı (DQ, <a href="https://github.com/Aykuutt">Aykuutt</a>) · İpek Özarslan (Junior, <a href="https://github.com/ipek0-0">ipek0-0</a>)</p>
-<table>
-<thead><tr><th>Görev</th><th>Durum</th><th>Ölçülen iz</th></tr></thead>
-<tbody>
-<tr><td>Görev 1 — ilanlar (#1–#3)</td><td><span class="chip ok">tamamlandı</span></td><td>İlanlar 1 Ekim'de kapandı (ilk kapatan grup); README ve teknoloji kararı tam</td></tr>
-<tr><td>H2 ısınma (junior dahil)</td><td><span class="chip ok">5/5 kapandı</span></td><td>Sude <a href="https://github.com/MAKU-VBA-GBT-II/group-b/issues/8">#8</a>, Sema <a href="https://github.com/MAKU-VBA-GBT-II/group-b/issues/5">#5</a>, Aykut <a href="https://github.com/MAKU-VBA-GBT-II/group-b/issues/6">#6</a>, Ece Naz <a href="https://github.com/MAKU-VBA-GBT-II/group-b/issues/7">#7</a> (8–9 Ekim), İpek <a href="https://github.com/MAKU-VBA-GBT-II/group-b/issues/13">#13</a> (13 Ekim)</td></tr>
-<tr><td>Yan görev — Git keşfi</td><td><span class="chip bad">0/5 teslim</span></td><td><code>reports/yan-gorev-1/</code> klasörü hiç açılmamış</td></tr>
-<tr><td>Commit dağılımı</td><td><span class="chip ok">5/5 üye</span></td><td>Sude 20 · Aykut 4 · Sema 2 · İpek 2 · Ece Naz 1 <em>(toplam 29; PM'nin 20 commit'i sınıf rekoru)</em></td></tr>
-<tr><td>Pull Request</td><td><span class="chip bad">0</span></td><td>Bu ana kadar hiç PR açılmadı (Hafta 5 kuralına henüz gerek yok)</td></tr>
-</tbody>
-</table>
-<p class="small">Not: DQ Aykut Çakıcı, 8–9 Ekim'de dört adet "issue ajanı" deneme issue'sı açıp kapattı (#9–#12) — sınıfta yapay zekâ ajanı deneyen ilk iz.</p>
-</div>
-
-<div class="card">
-<h3>4. Grup D — EMİN SİGORTA <span class="chip warn">Sigorta</span></h3>
-<p><strong>Ekip:</strong> Eylül Üstünkaya (PM, <a href="https://github.com/ustunkayaeylul72">ustunkayaeylul72</a>) · Mehmet Emin Emek (BE, <a href="https://github.com/emin-emek">emin-emek</a>) · Gülbahar Varol (FE, <a href="https://github.com/gulbaharvarol03-lang">gulbaharvarol03-lang</a>) · Ayşe Aydın (DQ, <a href="https://github.com/ays4ydn">ays4ydn</a>) · Juniorlar: Fatma Nisa Arslan, Ebru Gönül <em>(GitHub adresleri hâlâ yok)</em></p>
-<table>
-<thead><tr><th>Görev</th><th>Durum</th><th>Ölçülen iz</th></tr></thead>
-<tbody>
-<tr><td>Görev 1 — ilanlar (#1–#3)</td><td><span class="chip ok">tamamlandı</span></td><td>İlanlar 5 Ekim'de kapandı; README ve teknoloji kararı tam; CV'ler depoda</td></tr>
-<tr><td>H2 ısınma</td><td><span class="chip warn">4/6</span></td><td>Eylül <a href="https://github.com/MAKU-VBA-GBT-II/group-d/issues/5">#5</a> (10 Ekim), Ayşe <a href="https://github.com/MAKU-VBA-GBT-II/group-d/issues/7">#7</a>, Mehmet Emin <a href="https://github.com/MAKU-VBA-GBT-II/group-d/issues/8">#8</a>, Gülbahar <a href="https://github.com/MAKU-VBA-GBT-II/group-d/issues/6">#6</a> (11 Ekim) kapalı; junior kartları <a href="https://github.com/MAKU-VBA-GBT-II/group-d/issues/9">#9</a> ve <a href="https://github.com/MAKU-VBA-GBT-II/group-d/issues/10">#10</a> <strong>açık</strong></td></tr>
-<tr><td>Yan görev — Git keşfi</td><td><span class="chip warn">3/4 teslim</span></td><td>kesif-eylül (10 Ekim), kesif-emin + kesif-ayşe (11 Ekim); Gülbahar teslim etmedi. Juniorlar GitHub adresi olmadığı için teslim edemedi</td></tr>
-<tr><td>Junior davetleri</td><td><span class="chip bad">bekliyor</span></td><td>İki juniorun GitHub kullanıcı adı bilinmediği için org daveti gönderilemiyor; PM'den istenen <a href="https://github.com/MAKU-VBA-GBT-II/group-d/issues/11">#11</a> issue'su 11 Ekim'den beri cevapsız</td></tr>
-<tr><td>Commit dağılımı</td><td><span class="chip ok">4/4 üye</span></td><td>Eylül 7 · Mehmet Emin 4 · Ayşe 3 · Gülbahar 2 <em>(toplam 16)</em></td></tr>
-<tr><td>Pull Request</td><td><span class="chip bad">0</span></td><td>—</td></tr>
-</tbody>
-</table>
-</div>
-
-<div class="card">
-<h3>5. Grup G — PrimeBee <span class="chip warn">Dijital Pazarlama</span></h3>
-<p><strong>Ekip:</strong> Dilara Başer (PM, <a href="https://github.com/baserdilara94-ui">baserdilara94-ui</a>) · Özge Nur Doğu (BE, <a href="https://github.com/Ozge-nur">Ozge-nur</a>) · Tuana Gürkan (FE, <a href="https://github.com/tuanagurkan77">tuanagurkan77</a>) · Nuri Enes Seyhan (DQ, <a href="https://github.com/seyhannurienes-afk">seyhannurienes-afk</a>) · Ceren Doğrul (Junior, <a href="https://github.com/cerendogrul120-byte">cerendogrul120-byte</a>)</p>
-<table>
-<thead><tr><th>Görev</th><th>Durum</th><th>Ölçülen iz</th></tr></thead>
-<tbody>
-<tr><td>Görev 1 — ilanlar (#1–#3)</td><td><span class="chip ok">tamamlandı</span></td><td>İlanlar 30 Eylül–2 Ekim'de kapandı; her ilanda seçim kararı yorumla işlendi</td></tr>
-<tr><td>H2 ısınma (junior dahil)</td><td><span class="chip ok">5/5 kapandı</span></td><td>Dilara <a href="https://github.com/MAKU-VBA-GBT-II/group-g/issues/4">#4</a> (8 Ekim), Nuri Enes <a href="https://github.com/MAKU-VBA-GBT-II/group-g/issues/5">#5</a> (9 Ekim), Tuana <a href="https://github.com/MAKU-VBA-GBT-II/group-g/issues/6">#6</a>, Özge Nur <a href="https://github.com/MAKU-VBA-GBT-II/group-g/issues/7">#7</a> (11 Ekim), Ceren <a href="https://github.com/MAKU-VBA-GBT-II/group-g/issues/9">#9</a> (12 Ekim)</td></tr>
-<tr><td>Yan görev — Git keşfi</td><td><span class="chip bad">0/5 teslim</span></td><td><code>reports/yan-gorev-1/</code> klasörü hiç açılmamış</td></tr>
-<tr><td>Commit dağılımı</td><td><span class="chip ok">5/5 üye</span></td><td>Ceren (junior) 9 · Dilara 3 · Özge Nur 1 · Tuana 1 · Nuri Enes 1 <em>(toplam 15; junior'un 9 commit'i dikkat çekici)</em></td></tr>
-<tr><td>Pull Request</td><td><span class="chip bad">0</span></td><td>—</td></tr>
-</tbody>
-</table>
-</div>
-
-<div class="card">
-<h3>6. Grup A — Sepetix Analitik <span class="chip warn">E-ticaret</span></h3>
+<h3>Grup A — Sepetix Analitik <span class="chip warn">E-ticaret</span></h3>
 <p><strong>Ekip:</strong> Ali Haydar Polat (PM, <a href="https://github.com/plt0051ct-rgb">plt0051ct-rgb</a>) · Hilal Elçin Şahin (BE, <a href="https://github.com/hilalelcin-stack">hilalelcin-stack</a>) · Sema Nur Doğan (FE, <a href="https://github.com/semadogaan">semadogaan</a>) · Tuğba Tuana Kaygısız (DQ, <a href="https://github.com/tugbatuanakaygisiz-web">tugbatuanakaygisiz-web</a>) · Ebru Türk (Junior, <a href="https://github.com/ebruturk">ebruturk</a>)</p>
 <table>
 <thead><tr><th>Görev</th><th>Durum</th><th>Ölçülen iz</th></tr></thead>
@@ -156,7 +76,85 @@ li { margin: .25em 0; }
 </div>
 
 <div class="card">
-<h3>7. Grup Z — <em>şirket adı seçilmedi</em> <span class="chip warn">Tedarik</span></h3>
+<h3>Grup B — LIN <span class="chip warn">Lojistik</span></h3>
+<p><strong>Ekip:</strong> Sude Çukurtaş (PM, <a href="https://github.com/sudecukurtas">sudecukurtas</a>) · Sema Coşkun (BE, <a href="https://github.com/sema788">sema788</a>) · Ece Naz Aktürk (FE, <a href="https://github.com/ece-naz">ece-naz</a>) · Aykut Çakıcı (DQ, <a href="https://github.com/Aykuutt">Aykuutt</a>) · İpek Özarslan (Junior, <a href="https://github.com/ipek0-0">ipek0-0</a>)</p>
+<table>
+<thead><tr><th>Görev</th><th>Durum</th><th>Ölçülen iz</th></tr></thead>
+<tbody>
+<tr><td>Görev 1 — ilanlar (#1–#3)</td><td><span class="chip ok">tamamlandı</span></td><td>İlanlar 1 Ekim'de kapandı (ilk kapatan grup); README ve teknoloji kararı tam</td></tr>
+<tr><td>H2 ısınma (junior dahil)</td><td><span class="chip ok">5/5 kapandı</span></td><td>Sude <a href="https://github.com/MAKU-VBA-GBT-II/group-b/issues/8">#8</a>, Sema <a href="https://github.com/MAKU-VBA-GBT-II/group-b/issues/5">#5</a>, Aykut <a href="https://github.com/MAKU-VBA-GBT-II/group-b/issues/6">#6</a>, Ece Naz <a href="https://github.com/MAKU-VBA-GBT-II/group-b/issues/7">#7</a> (8–9 Ekim), İpek <a href="https://github.com/MAKU-VBA-GBT-II/group-b/issues/13">#13</a> (13 Ekim)</td></tr>
+<tr><td>Yan görev — Git keşfi</td><td><span class="chip bad">0/5 teslim</span></td><td><code>reports/yan-gorev-1/</code> klasörü hiç açılmamış</td></tr>
+<tr><td>Commit dağılımı</td><td><span class="chip ok">5/5 üye</span></td><td>Sude 20 · Aykut 4 · Sema 2 · İpek 2 · Ece Naz 1 <em>(toplam 29; PM'nin 20 commit'i sınıfın en yoğun bireysel katkısı)</em></td></tr>
+<tr><td>Pull Request</td><td><span class="chip bad">0</span></td><td>Bu ana kadar hiç PR açılmadı (PR kuralı Hafta 5'te başlayacak)</td></tr>
+</tbody>
+</table>
+<p class="small">Not: DQ Aykut Çakıcı, 8–9 Ekim'de dört adet "issue ajanı" deneme issue'sı açıp kapattı (#9–#12) — sınıfta yapay zekâ ajanı deneyen ilk iz.</p>
+</div>
+
+<div class="card">
+<h3>Grup C — VBA BANKACILIK <span class="chip warn">Bankacılık</span></h3>
+<p><strong>Ekip:</strong> Rüveyda Başboğa (PM, <a href="https://github.com/basbogaruveyda-afk">basbogaruveyda-afk</a>) · Hiranur Doğan (BE, <a href="https://github.com/dgnHira">dgnHira</a>) · Melih Yavuk (FE, <a href="https://github.com/melihyavuk">melihyavuk</a>) · Gürol Pekmezci (DQ, <a href="https://github.com/GurolPekmezci">GurolPekmezci</a>)</p>
+<table>
+<thead><tr><th>Görev</th><th>Durum</th><th>Ölçülen iz</th></tr></thead>
+<tbody>
+<tr><td>Görev 1 — ilanlar (#1–#3)</td><td><span class="chip ok">tamamlandı</span></td><td>BE ilanı 11 Ekim'e kadar açık kaldı; README düzeltmesi (#4) 5 gün gecikmeyle çözüldü</td></tr>
+<tr><td>H2 ısınma</td><td><span class="chip ok">4/4 kapandı</span></td><td>Hiranur <a href="https://github.com/MAKU-VBA-GBT-II/group-c/issues/6">#6</a>, Rüveyda <a href="https://github.com/MAKU-VBA-GBT-II/group-c/issues/8">#8</a>, Gürol <a href="https://github.com/MAKU-VBA-GBT-II/group-c/issues/9">#9</a> (12 Ekim), Melih <a href="https://github.com/MAKU-VBA-GBT-II/group-c/issues/7">#7</a> (13 Ekim)</td></tr>
+<tr><td>Yan görev — Git keşfi</td><td><span class="chip ok">4/4 teslim</span></td><td><code>reports/yan-gorev-1/</code> altında kesif-gurol, kesif-hiranur, kesif-melih, kesif-ruveyda (11–13 Ekim) — sınıfın eksiksiz tek teslimi</td></tr>
+<tr><td>Commit dağılımı</td><td><span class="chip ok">4/4 üye</span></td><td>Rüveyda 15 · Hiranur 11 · Melih 3 · Gürol 2 <em>(toplam 31 — sınıfın en yoğun deposu)</em></td></tr>
+<tr><td>Pull Request</td><td><span class="chip ok">2 merge</span></td><td>Melih <a href="https://github.com/MAKU-VBA-GBT-II/group-c/pull/10">#10</a> (12 Ekim) → PM tarafından <a href="https://github.com/MAKU-VBA-GBT-II/group-c/pull/11">#11</a> ile geri alındı (revert)</td></tr>
+</tbody>
+</table>
+<p class="small">Not: Ekip, zayıf başlangıcın (5 gün cevapsız issue) ardından 11–13 Ekim'de toparlanarak tüm işleri kapattı.</p>
+</div>
+
+<div class="card">
+<h3>Grup D — EMİN SİGORTA <span class="chip warn">Sigorta</span></h3>
+<p><strong>Ekip:</strong> Eylül Üstünkaya (PM, <a href="https://github.com/ustunkayaeylul72">ustunkayaeylul72</a>) · Mehmet Emin Emek (BE, <a href="https://github.com/emin-emek">emin-emek</a>) · Gülbahar Varol (FE, <a href="https://github.com/gulbaharvarol03-lang">gulbaharvarol03-lang</a>) · Ayşe Aydın (DQ, <a href="https://github.com/ays4ydn">ays4ydn</a>) · Juniorlar: Fatma Nisa Arslan, Ebru Gönül <em>(GitHub adresleri hâlâ yok)</em></p>
+<table>
+<thead><tr><th>Görev</th><th>Durum</th><th>Ölçülen iz</th></tr></thead>
+<tbody>
+<tr><td>Görev 1 — ilanlar (#1–#3)</td><td><span class="chip ok">tamamlandı</span></td><td>İlanlar 5 Ekim'de kapandı; README ve teknoloji kararı tam; CV'ler depoda</td></tr>
+<tr><td>H2 ısınma</td><td><span class="chip warn">4/6</span></td><td>Eylül <a href="https://github.com/MAKU-VBA-GBT-II/group-d/issues/5">#5</a> (10 Ekim), Ayşe <a href="https://github.com/MAKU-VBA-GBT-II/group-d/issues/7">#7</a>, Mehmet Emin <a href="https://github.com/MAKU-VBA-GBT-II/group-d/issues/8">#8</a>, Gülbahar <a href="https://github.com/MAKU-VBA-GBT-II/group-d/issues/6">#6</a> (11 Ekim) kapalı; junior kartları <a href="https://github.com/MAKU-VBA-GBT-II/group-d/issues/9">#9</a> ve <a href="https://github.com/MAKU-VBA-GBT-II/group-d/issues/10">#10</a> <strong>açık</strong></td></tr>
+<tr><td>Yan görev — Git keşfi</td><td><span class="chip warn">3/4 teslim</span></td><td>kesif-eylül (10 Ekim), kesif-emin + kesif-ayşe (11 Ekim); Gülbahar teslim etmedi. Juniorlar GitHub adresi olmadığı için teslim edemedi</td></tr>
+<tr><td>Junior davetleri</td><td><span class="chip bad">bekliyor</span></td><td>İki juniorun GitHub kullanıcı adı bilinmediği için org daveti gönderilemiyor; PM'den istenen <a href="https://github.com/MAKU-VBA-GBT-II/group-d/issues/11">#11</a> issue'su 11 Ekim'den beri cevapsız</td></tr>
+<tr><td>Commit dağılımı</td><td><span class="chip ok">4/4 üye</span></td><td>Eylül 7 · Mehmet Emin 4 · Ayşe 3 · Gülbahar 2 <em>(toplam 16)</em></td></tr>
+<tr><td>Pull Request</td><td><span class="chip bad">0</span></td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card">
+<h3>Grup E — RetailE <span class="chip warn">Perakende</span></h3>
+<p><strong>Ekip:</strong> Emin Umut Kılıç (PM, <a href="https://github.com/Umutklcc">Umutklcc</a>) · Yaşar Coşkun (BE, <a href="https://github.com/yasar07488">yasar07488</a>) · Burak Talha Demir (FE, <a href="https://github.com/buraktalhademir">buraktalhademir</a>) · Sena Çiftçi (DQ, <a href="https://github.com/senacifci5-prog">senacifci5-prog</a>)</p>
+<table>
+<thead><tr><th>Görev</th><th>Durum</th><th>Ölçülen iz</th></tr></thead>
+<tbody>
+<tr><td>Görev 1 — ilanlar (#1–#3)</td><td><span class="chip ok">tamamlandı</span></td><td>İlanlar 7 Ekim'de kapandı; BE/DQ başvuru izleri hoca hatırlatması (#6) sonrası işlendi</td></tr>
+<tr><td>H2 ısınma</td><td><span class="chip ok">4/4 kapandı</span></td><td>Umut <a href="https://github.com/MAKU-VBA-GBT-II/group-e/issues/7">#7</a> (12 Ekim), Burak <a href="https://github.com/MAKU-VBA-GBT-II/group-e/issues/8">#8</a> (10 Ekim), Yaşar <a href="https://github.com/MAKU-VBA-GBT-II/group-e/issues/9">#9</a> (13 Ekim), Sena <a href="https://github.com/MAKU-VBA-GBT-II/group-e/issues/10">#10</a> (14 Ekim — sınıfın son kapananı, son tarihe uyumlu)</td></tr>
+<tr><td>Yan görev — Git keşfi</td><td><span class="chip warn">2/4 teslim</span></td><td>kesif-sena (14 Ekim) + kesif-umut (12 Ekim) doğru yolda; Yaşar raporu <strong>repo kökünde <code>yan-gorev-1</code> dosyası</strong> olarak yanlış yola atmış (içerik: pandas keşfi); Burak teslim etmedi</td></tr>
+<tr><td>Commit dağılımı</td><td><span class="chip ok">4/4 üye</span></td><td>Umut 11 · Burak 2 · Yaşar 1 · Sena 1 <em>(toplam 15)</em></td></tr>
+<tr><td>Pull Request</td><td><span class="chip ok">1 merge</span></td><td>Sena <a href="https://github.com/MAKU-VBA-GBT-II/group-e/pull/4">#4</a> — README düzeltmesini branch + PR akışıyla yaptı (7 Ekim; PR kuralı Hafta 5'te başlarken öncül kullanım)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card">
+<h3>Grup G — PrimeBee <span class="chip warn">Dijital Pazarlama</span></h3>
+<p><strong>Ekip:</strong> Dilara Başer (PM, <a href="https://github.com/baserdilara94-ui">baserdilara94-ui</a>) · Özge Nur Doğu (BE, <a href="https://github.com/Ozge-nur">Ozge-nur</a>) · Tuana Gürkan (FE, <a href="https://github.com/tuanagurkan77">tuanagurkan77</a>) · Nuri Enes Seyhan (DQ, <a href="https://github.com/seyhannurienes-afk">seyhannurienes-afk</a>) · Ceren Doğrul (Junior, <a href="https://github.com/cerendogrul120-byte">cerendogrul120-byte</a>)</p>
+<table>
+<thead><tr><th>Görev</th><th>Durum</th><th>Ölçülen iz</th></tr></thead>
+<tbody>
+<tr><td>Görev 1 — ilanlar (#1–#3)</td><td><span class="chip ok">tamamlandı</span></td><td>İlanlar 30 Eylül–2 Ekim'de kapandı; her ilanda seçim kararı yorumla işlendi</td></tr>
+<tr><td>H2 ısınma (junior dahil)</td><td><span class="chip ok">5/5 kapandı</span></td><td>Dilara <a href="https://github.com/MAKU-VBA-GBT-II/group-g/issues/4">#4</a> (8 Ekim), Nuri Enes <a href="https://github.com/MAKU-VBA-GBT-II/group-g/issues/5">#5</a> (9 Ekim), Tuana <a href="https://github.com/MAKU-VBA-GBT-II/group-g/issues/6">#6</a>, Özge Nur <a href="https://github.com/MAKU-VBA-GBT-II/group-g/issues/7">#7</a> (11 Ekim), Ceren <a href="https://github.com/MAKU-VBA-GBT-II/group-g/issues/9">#9</a> (12 Ekim)</td></tr>
+<tr><td>Yan görev — Git keşfi</td><td><span class="chip bad">0/5 teslim</span></td><td><code>reports/yan-gorev-1/</code> klasörü hiç açılmamış</td></tr>
+<tr><td>Commit dağılımı</td><td><span class="chip ok">5/5 üye</span></td><td>Ceren (junior) 9 · Dilara 3 · Özge Nur 1 · Tuana 1 · Nuri Enes 1 <em>(toplam 15; junior'un 9 commit'i dikkat çekici)</em></td></tr>
+<tr><td>Pull Request</td><td><span class="chip bad">0</span></td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="card">
+<h3>Grup Z — <em>şirket adı seçilmedi</em> <span class="chip warn">Tedarik</span></h3>
 <p><strong>Ekip:</strong> İrem Deneri (PM, <a href="https://github.com/irem-deneri">irem-deneri</a>) · Ceren Gözel (BE, <a href="https://github.com/cerengzell">cerengzell</a>) · Baki Korkmaz (FE, <a href="https://github.com/bakikorkmaz">bakikorkmaz</a>) · Serra Erdem (DQ, <a href="https://github.com/serraerdem22-droid">serraerdem22-droid</a>)</p>
 <table>
 <thead><tr><th>Görev</th><th>Durum</th><th>Ölçülen iz</th></tr></thead>
@@ -174,7 +172,7 @@ li { margin: .25em 0; }
 
 <div class="card">
 <h3>Grup F — Optimum Tedarik <span class="chip">arşiv</span></h3>
-<p>Grup F, 5–6 Ekim 2026'da kadro dolmadığı için arşivlendi; üyeleri (Hiranur Doğan → Grup C BE, Burak Talha Demir → Grup E FE) diğer ekiplere yerleştirildi. Repo ve açık ilan issue'ları (#2, #3) referans amacıyla duruyor; puanlamaya katılmaz.</p>
+<p>Grup F, 5–6 Ekim 2026'da kadro dolmadığı için arşivlendi; üyeleri (Hiranur Doğan → Grup C BE, Burak Talha Demir → Grup E FE) diğer ekiplere yerleştirildi. Repo ve açık ilan issue'ları (#2, #3) referans amacıyla duruyor; panoya katılmaz.</p>
 </div>
 
 <hr />
@@ -196,6 +194,6 @@ li { margin: .25em 0; }
 </table>
 
 <hr />
-<p class="small">Bu pano <strong>2026-10-15</strong> tarihinde MAKU-VBA-GBT-II organizasyonundaki Issue, commit ve Pull Request kayıtlarından derlendi. Puan, süreç notunun (dönem planı §5) yerini almaz; yalnızca GitHub üzerindeki görünür işlem izlerini karşılaştırır. Sonraki görev (Görev 2) başladıktan sonra pano yenilenecektir.</p>
+<p class="small">Bu pano <strong>2026-10-15</strong> tarihinde MAKU-VBA-GBT-II organizasyonundaki Issue, commit ve Pull Request kayıtlarından derlendi. Pano, süreç notunun (dönem planı §5) yerini almaz; yalnızca GitHub üzerindeki görünür işlem izlerini karşılaştırır. Sonraki görev (Görev 1) başladıktan sonra pano yenilenecektir.</p>
 </body>
 </html>
