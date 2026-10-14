@@ -294,6 +294,12 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 **Pedagojik hedef:** Uygulamanın kendisi değil, **devir teslim zinciri**: BE üretir → DQ analiz eder → FE görselleştirir → DQ sınar → PM raporlar. Her ok (devir teslim), GitHub üzerinde yazılı bir izle kanıtlanır — notlandırılan budur.
 
+**Skill şartı (Görev 1 ile devreye girer):** Hat, bir yapay zekâ ajanının **skill**'leriyle üretilir. Her üye kendi adımı için en az bir skill yazar, adımı o skill'i kullanarak tamamlar; skill de çıktı da repoya commit'lenir.
+
+1. Skill'ler repoda `skills/<rol>-<iş>/SKILL.md` biçiminde durur. Örnek: `skills/be-veri/SKILL.md` (BE — veri üretimi) · `skills/dq-analiz/SKILL.md` (DQ — metrikler) · `skills/fe-gorsel/SKILL.md` (FE — grafikler) · `skills/dq-test/SKILL.md` (DQ — testler) · `skills/pm-rapor/SKILL.md` (PM — haftalık rapor).
+2. `SKILL.md` içinde en az üç bilgi bulunur: skill'in **ne yaptığı** (1–2 cümle), **adım adım talimat** (ajanın izleyeceği işlemler), **kullandığı dosyalar ve nasıl çalıştırıldığı**.
+3. Grup lideri reponun kök dizininde bir **`AGENTS.md`** oluşturur: repodaki skill'lerin envanteri — hangi skill nerede duruyor, ne işe yarar, nasıl kullanılır. Skill'ler eklendikçe bu dosya güncellenir. (Codex, Claude Code gibi ajan araçları kökteki `AGENTS.md`'i otomatik okur; ajan repoya girdiğinde skill'leri bu dosyadan tanır.)
+
 #### Hafta 3
 
 **PM (lider) şu adımları uygular:**
@@ -309,6 +315,7 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 
 2. 4 Issue'yu panoya ekleyip `To Do` sütununa koyun; hafta boyunca kartların doğru sütunda olduğunu her gün kontrol edin.
 3. `<TESLİM GÜNÜ/SAATİ>`'a kadar `reports/report-w03.md` dosyasını sprint şablonuyla (§7.1) doldurup commit'leyin: *planlanan / yapılan / tıkanan / kim-ne-yaptı*.
+4. Reponun kök dizinine `AGENTS.md` koyun (skill şartı madde 3): repodaki tüm skill'leri tanıtın — hangi skill nerede, ne işe yarar, nasıl kullanılır. Skill'ler eklendikçe dosyayı güncelleyin.
 
 **BE şu adımları uygular:**
 
@@ -370,8 +377,8 @@ Bir Issue/PR yorumunda `@kullaniciadi` yazarsanız o kişiye bildirim gider. **K
 3. `gorev1-final` release'ini oluşturun (§2.4).
 
 **Görev 1 kritik eşikleri (değerlendirme süreci: §5):**
-- *Grup eşikleri:* `gorev1-final` release'i son tarihte mevcut · sektör veri dosyası ve şeması teslim edilmiş · `docs/analiz-g1.md` en az 5 metrik (2 kırılım + top-N) ve bulgular bölümü içeriyor · devir teslim zinciri kanıtlı (BE'nin `G1-analiz`/`G1-gorsel`'e veri yorumu + DQ'nun `G1-gorsel`'e analiz yorumu) · `bug` etiketli ≥2 Issue açılmış ve `Fixes #n` ile kapatılmış · `report-w03.md` ve `report-w04.md` zamanında commit'lenmiş.
-- *Bireysel eşikler:* kendi rol teslimatı, Issue'sundaki kabul kriterini sağlıyor · ≥2 commit · üstlendiği Issue'lar kanıt yorumuyla kapatılmış.
+- *Grup eşikleri:* `gorev1-final` release'i son tarihte mevcut · sektör veri dosyası ve şeması teslim edilmiş · `docs/analiz-g1.md` en az 5 metrik (2 kırılım + top-N) ve bulgular bölümü içeriyor · devir teslim zinciri kanıtlı (BE'nin `G1-analiz`/`G1-gorsel`'e veri yorumu + DQ'nun `G1-gorsel`'e analiz yorumu) · `bug` etiketli ≥2 Issue açılmış ve `Fixes #n` ile kapatılmış · `report-w03.md` ve `report-w04.md` zamanında commit'lenmiş · her rol için `skills/` altında en az bir skill ve kökte bunları tanıtan `AGENTS.md` mevcut.
+- *Bireysel eşikler:* kendi rol teslimatı, Issue'sundaki kabul kriterini sağlıyor · ≥2 commit · üstlendiği Issue'lar kanıt yorumuyla kapatılmış · kendi rolünün skill'i yazılmış ve commit'lenmiş.
 
 ---
 
