@@ -4,7 +4,7 @@
 
 Bu derste tüm çalışma GitHub üzerinden yürür ve tek bir altın kural vardır:
 
-> **GitHub'da yoksa, yapılmamıştır.** (Dönem planı §3.3)
+> **GitHub'da yoksa, yapılmamıştır.**
 
 Bir işi yaptıysanız bile GitHub'da iz bırakmadıysanız, süreç gözünde o iş yapılmamış sayılır. Bu rehber, bu izleri doğru bırakmanız için bilmeniz gereken her şeyi anlatır.
 
@@ -59,7 +59,7 @@ Kötü commit mesajları: `update`, `değişiklikler`, `son hali`, `dosya`.
 
 Issue, GitHub'daki **görev kaydıdır**. Bu derste size gelen her iş bir Issue'dur; sizin de açacağınız işler Issue olacak.
 
-Bir görev Issue'sunda şu üç şeyin olması zorunludur (dönem planı §2.1):
+Bir görev Issue'sunda şu üç şeyin olması zorunludur (aşağıdaki kurallar):
 
 1. **Son tarih** — ne zamana kadar?
 2. **Kabul kriteri** — tek cümlelik "bitmiş" tanımı (örn. *"`data/prova-ali.csv` dosyası senin commit'inle depoda; 10 satır veri içeriyor"*)
@@ -87,7 +87,7 @@ Bir hata Issue'sunu düzeltirken commit mesajınıza `Fixes #7` yazarsanız, com
 | `pull` | uzak → bilgisayar | Uzaktaki yeni commit'leri dosyalarınıza getirir | **Her çalışma başında** |
 | `push` | bilgisayar → uzak | Commit'lerinizi ekibin görmesi için uzak depoya yazar | **Her commit'ten sonra** |
 
-Bilgisayarınızda commit'leyip push etmeyi unutursanız: siz yaptınız ama depoda yoktur → §3.3 gereği yapılmamıştır. Push etmeden ayrılmayın.
+Bilgisayarınızda commit'leyip push etmeyi unutursanız: siz yaptınız ama depoda yoktur → kural gereği yapılmamıştır. Push etmeden ayrılmayın.
 
 ## 6. Branch ve Pull Request (Görev 2'den itibaren zorunlu)
 
@@ -120,9 +120,9 @@ Issue açıldığında kart `To Do`'ya düşer. Bir işe başladığınızda kar
 
 Bu rehberdeki her şey şu üç plan kuralına hizmet eder:
 
-1. **§3.3 — "GitHub'da yoksa, yapılmamıştır."** Her işin izi commit + Issue + yorum'dur.
-2. **§2.1 — Issue düzeni.** Son tarih, kabul kriteri, atanan zorunlu.
-3. **§2.2 — PR kuralı.** Hafta 5'ten itibaren main'e doğrudan commit yok.
+1. **"GitHub'da yoksa, yapılmamıştır."** Her işin izi commit + Issue + yorum'dur.
+2. **Issue düzeni.** Son tarih, kabul kriteri, atanan zorunlu.
+3. **PR kuralı.** Hafta 5'ten itibaren main'e doğrudan commit yok.
 
 
 ## 10. En sık yapılan beş hata
