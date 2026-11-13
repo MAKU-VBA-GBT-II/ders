@@ -124,7 +124,6 @@ Bu rehberdeki her şey şu üç plan kuralına hizmet eder:
 2. **§2.1 — Issue düzeni.** Son tarih, kabul kriteri, atanan zorunlu.
 3. **§2.2 — PR kuralı.** Hafta 5'ten itibaren main'e doğrudan commit yok.
 
-Ayrıntılar dönem planında: [`AGENTS.md`](AGENTS.md)
 
 ## 10. En sık yapılan beş hata
 
